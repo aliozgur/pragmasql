@@ -1,9 +1,0 @@
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\PragmaSQL.Proxy.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\PragmaSQL.Proxy.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\ICSharpCode.Core.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\log4net.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\ICSharpCode.Core.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\bin\Debug\ICSharpCode.Core.xml
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\obj\Debug\PragmaSQL.Proxy.csprojResolveAssemblyReference.cache
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\obj\Debug\PragmaSQL.Proxy.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Proxy\obj\Debug\PragmaSQL.Proxy.pdb

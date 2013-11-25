@@ -1,1 +1,0 @@
-csc /target:library icompress.cs

@@ -1,5 +1,0 @@
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Subversion\bin\Debug\PragmaSQL.Subversion.addin
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Subversion\bin\Debug\PragmaSQL.Subversion.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Subversion\bin\Debug\PragmaSQL.Subversion.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Subversion\obj\Debug\PragmaSQL.Subversion.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.Subversion\obj\Debug\PragmaSQL.Subversion.pdb

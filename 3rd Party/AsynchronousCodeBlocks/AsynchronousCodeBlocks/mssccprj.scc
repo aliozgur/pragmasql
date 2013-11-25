@@ -1,9 +1,0 @@
-SCC = This is a Source Code Control file
-
-[AsynchronousCodeBlocks.csproj]
-SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
-SCC_Project_Name = "$/ThirdParty/OpenSource/AsynchronousCodeBlocks/AsynchronousCodeBlocks", GBAAAAAA
-
-[AsynchronousCodeBlocks.sln]
-SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
-SCC_Project_Name = "$/ThirdParty/OpenSource/AsynchronousCodeBlocks/AsynchronousCodeBlocks", GBAAAAAA

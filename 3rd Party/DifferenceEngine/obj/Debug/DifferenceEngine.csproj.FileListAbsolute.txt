@@ -1,4 +1,0 @@
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\DifferenceEngine\bin\Debug\DifferenceEngine.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\DifferenceEngine\bin\Debug\DifferenceEngine.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\DifferenceEngine\obj\Debug\DifferenceEngine.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\DifferenceEngine\obj\Debug\DifferenceEngine.pdb

@@ -1,4 +1,0 @@
-pragmasql
-=========
-
-PragmaSQL

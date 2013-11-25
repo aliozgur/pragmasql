@@ -1,4 +1,0 @@
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\FileAssociation\bin\Debug\FileAssociation.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\FileAssociation\bin\Debug\FileAssociation.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\FileAssociation\obj\Debug\FileAssociation.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\FileAssociation\obj\Debug\FileAssociation.pdb

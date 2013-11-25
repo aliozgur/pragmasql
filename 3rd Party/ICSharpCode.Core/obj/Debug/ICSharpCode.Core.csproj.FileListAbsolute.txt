@@ -1,7 +1,0 @@
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\bin\Debug\ICSharpCode.Core.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\bin\Debug\ICSharpCode.Core.pdb
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\bin\Debug\ICSharpCode.Core.xml
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\bin\Debug\log4net.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\obj\Debug\ICSharpCode.Core.csprojResolveAssemblyReference.cache
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\obj\Debug\ICSharpCode.Core.dll
-C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.Core\obj\Debug\ICSharpCode.Core.pdb
