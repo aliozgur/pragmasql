@@ -1,6 +1,6 @@
 [PragmaSQL Home](http://www.pragmasql.com/pragmasql/default.aspx "PragmaSQL Home")
 
-## PragmaSQL Fature Summary
+## PragmaSQL Feature Summary
 
 * T-SQL script editor with syntax highlighting
 * Object Explorer with filtering support
