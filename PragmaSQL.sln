@@ -57,8 +57,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PragmaSQL.ExternalTools", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PragmaSQL.VirtualResultRenderers", "PragmaSQL.AddIns\PragmaSQL.VirtualResultRenderers\PragmaSQL.VirtualResultRenderers.csproj", "{B6410048-3B91-4720-8171-37DFC57F7E46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PragmaSQL.Subversion", "PragmaSQL.Subversion\PragmaSQL.Subversion.csproj", "{02370D7A-12A7-4802-BB98-9DB2EE9E342F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Bilgi|Any CPU = Bilgi|Any CPU
@@ -824,30 +822,6 @@ Global
 		{B6410048-3B91-4720-8171-37DFC57F7E46}.Release|x64.Build.0 = Release|x64
 		{B6410048-3B91-4720-8171-37DFC57F7E46}.Release|x86.ActiveCfg = Release|x86
 		{B6410048-3B91-4720-8171-37DFC57F7E46}.Release|x86.Build.0 = Release|x86
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Bilgi|Any CPU.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Bilgi|Any CPU.Build.0 = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Bilgi|x64.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Bilgi|x86.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Documentation|Any CPU.Build.0 = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Documentation|x64.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Documentation|x86.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Debug|x64.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Debug|x86.ActiveCfg = Debug|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Release|Any CPU.Build.0 = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Release|x64.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Personal_Release|x86.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Release|x64.ActiveCfg = Release|Any CPU
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -870,6 +844,5 @@ Global
 		{20EF80AC-CA8D-4F52-BDD9-AD72B28B0092} = {FA5D1D03-AA85-4BB9-8D7D-C214ECFD19FE}
 		{659F9206-4272-4193-B5BB-A44D72DDB7A3} = {FA5D1D03-AA85-4BB9-8D7D-C214ECFD19FE}
 		{B6410048-3B91-4720-8171-37DFC57F7E46} = {FA5D1D03-AA85-4BB9-8D7D-C214ECFD19FE}
-		{02370D7A-12A7-4802-BB98-9DB2EE9E342F} = {FA5D1D03-AA85-4BB9-8D7D-C214ECFD19FE}
 	EndGlobalSection
 EndGlobal
