@@ -1,0 +1,116 @@
+﻿<AddIn name        = "PragmaSQL Editor"
+       author      = "Ali Özgür"
+       url         = ""
+       description = "T-SQL Editor for MS SQL Server 2000/2005"
+       addInManagerHidden = "true">
+  
+  <Runtime>
+    <Import assembly = "../PragmaSQL.exe"/>
+  </Runtime>
+  
+  <Path name = "/PragmaSQL/Tools">
+
+  </Path>
+
+  <Path name = "/PragmaSQL/MainMenu">
+    <MenuItem id = "File"
+		          type = "Menu"
+		          label = "File">
+      <MenuItem id = "New"
+		            type = "Menu"
+			          label = "New">
+        <MenuItem id = "NewScript"
+                  label = "Script"
+                  class = "PragmaSQL.NewScriptCommand" />
+        <MenuItem id = "NewScriptFromFile"
+                  label = "Script From File"
+                  icon = "Icons.Open"
+                  class = "PragmaSQL.NewScriptFromFileCommand" />
+        <MenuItem id = "NewText"
+                  label = "Text"
+                  class = "PragmaSQL.NewTextEditorCommand" />
+        <MenuItem id = "NewDiff"
+                  label = "Diff"
+                  class = "PragmaSQL.NewTextDiffCommand" />
+        <MenuItem id = "NewWebBrowser"
+                  label = "Web Browser"
+                  class = "PragmaSQL.NewWebBrowserCommand" />
+      </MenuItem>
+      <MenuItem id = "FileSperator1"
+                type = "Separator"/>
+      <MenuItem   id = "OpenProject"
+                  label = "Open Project"
+                  icon = "Icons.Open"
+                  class = "PragmaSQL.OpenProjectCommand"/>
+      <MenuItem id = "FileSperator2"
+                type = "Separator"/>
+      <MenuItem   id = "RecentFiles"
+                  label = "Recent Files">
+        <MenuItem id ="RecentFile"
+                  label =""/>
+          
+      </MenuItem>
+    </MenuItem>
+    
+    <MenuItem id = "Edit"
+            type = "Menu"
+            label = "Edit"/>
+    <MenuItem id = "View"
+            type = "Menu"
+            label = "View">
+      <MenuItem id = "ShowObjectExplorer"
+                label = "Object Explorer"
+                class = "PragmaSQL.ShowObjectExplorerCommand" />
+      <MenuItem id = "ShowProjectExplorer"
+                label = "Project Explorer"
+                class = "PragmaSQL.ShowProjectExplorerCommand" />
+      <MenuItem id = "ViewSperator1"
+                type = "Separator"/>
+      <MenuItem id = "ShowObjectGroupingForm"
+                label = "Object Grouping"
+                class = "PragmaSQL.ShowObjectGroupingFormCommand" />
+      <MenuItem id = "ShowSearchDatabaseForm"
+                label = "Search Database"
+                class = "PragmaSQL.ShowSearchDatabaseCommand" />
+      <MenuItem id = "ShowObjectChangeHistoryViewer"
+                label = "Object Change History Viewer"
+                class = "PragmaSQL.ShowObjectChangeHistoryViewerCommand" />
+      <MenuItem id = "ViewSperator2"
+                type = "Separator"/>
+      <MenuItem id = "ShowSharedSnippets"
+                label = "Shared Snippets"
+                class = "PragmaSQL.ShowSharedSnippetsCommand" />
+      <MenuItem id = "ShowSharedScripts"
+                label = "Shared Scripts"
+                class = "PragmaSQL.ShowSharedScriptsCommand" />
+      <MenuItem id = "ViewSperator3"
+                type = "Separator"/>
+      <MenuItem id = "ShowSavedConnections"
+                label = "Saved Connections"
+                class = "PragmaSQL.ShowSavedConnectionsCommand" />
+      <MenuItem id = "ShowOptions"
+                label = "Options"
+                class = "PragmaSQL.ShowOptionsCommand" />
+    </MenuItem>
+    <MenuItem id = "Tools"
+		          type = "Menu"
+		          label = "Tools">
+      <Include id = "ToolList" path = "/PragmaSQL/Tools"/>
+    </MenuItem>
+    <MenuItem id = "Window"
+          type = "Menu"
+          label = "Window">
+      <MenuItem id = "CloseAllWindows"
+                label = "Close All Windows"
+                class = "PragmaSQL.CloseAllWindowsCommand" />
+
+    </MenuItem>
+    <MenuItem id = "Help"
+            type = "Menu"
+            label = "Help">
+      <MenuItem id = "ShowAbout"
+                label = "About"
+                class = "PragmaSQL.ShowAboutCommand" />
+    </MenuItem>
+  </Path>
+</AddIn>

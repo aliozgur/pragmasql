@@ -1,0 +1,6 @@
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\bin\Debug\ICSharpCode.TextEditor.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\bin\Debug\ICSharpCode.TextEditor.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\obj\Debug\ICSharpCode.TextEditor.Properties.Resources.resources
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\obj\Debug\ICSharpCode.TextEditor.csproj.GenerateResource.Cache
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\obj\Debug\ICSharpCode.TextEditor.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ICSharpCode.TextEditor\Project\obj\Debug\ICSharpCode.TextEditor.pdb

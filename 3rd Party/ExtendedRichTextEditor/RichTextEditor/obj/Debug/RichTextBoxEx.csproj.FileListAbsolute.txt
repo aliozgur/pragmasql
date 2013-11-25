@@ -1,0 +1,7 @@
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\bin\Debug\RichTextBoxEx.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\bin\Debug\RichTextBoxEx.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\obj\Debug\RichTextBoxEx.Properties.Resources.resources
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\obj\Debug\RichTextBoxEx.RichTextEditor.resources
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\obj\Debug\RichTextBoxEx.csproj.GenerateResource.Cache
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\obj\Debug\RichTextBoxEx.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\ExtendedRichTextEditor\RichTextEditor\obj\Debug\RichTextBoxEx.pdb

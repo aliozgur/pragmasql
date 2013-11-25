@@ -1,0 +1,4 @@
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\MW\MWCommon\bin\Debug\MWCommon.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\MW\MWCommon\bin\Debug\MWCommon.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\MW\MWCommon\obj\Debug\MWCommon.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\MW\MWCommon\obj\Debug\MWCommon.pdb

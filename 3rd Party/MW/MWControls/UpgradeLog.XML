@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MWControls">
+</Property><Property Name="Solution File" Value="D:\Personal Projects\PragmaSQL\Play Ground\3rd Party Download\TREEVIEWs\mwcontrols2_src\MWControls\MWControls.sln">
+</Property><Property Name="Date" Value="24 Ocak 2007 Çarşamba">
+</Property><Property Name="Time" Value="22:35:27">
+</Property></Properties><Event ErrorLevel="0" Project="MWControls" Source="MWControls.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MWControls" Source="MWControls.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MWControls" Source="MWControls.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

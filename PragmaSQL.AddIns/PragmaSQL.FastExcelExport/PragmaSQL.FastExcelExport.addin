@@ -1,0 +1,24 @@
+<AddIn name        = "Fast Excel Export addin for PragmaSQL"
+       author      = "Ali Özgür"
+       description = "Export all results or only the current result to Excel very fast.">
+	<Manifest>
+		<Identity name = "PragmaSQL.FastExcelExport"/>
+	</Manifest>
+
+	<Runtime>
+		<Import assembly="PragmaSQL.FastExcelExport.dll"/>
+	</Runtime>
+
+	<Path name = "/Workspace/ScriptEditor/ResultsContextMenu">
+		<MenuItem id="" type="Menu" label="Fast Excel Export">
+				  
+			<MenuItem id = "FastExcelExport.ExportCurrent"
+							 label = "Current Resultset"
+							 class ="PragmaSQL.FastExcelExport.ExportCurrent"/>
+			
+			<MenuItem id = "FastExcelExport.ExportAll"
+							 label = "All Resultsets"
+							 class ="PragmaSQL.FastExcelExport.ExportAll"/>
+		</MenuItem>
+	</Path>
+</AddIn>

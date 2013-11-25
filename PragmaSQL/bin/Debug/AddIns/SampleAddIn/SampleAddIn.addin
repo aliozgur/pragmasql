@@ -1,0 +1,388 @@
+﻿<AddIn name        = "Sample AddIn"
+       author      = "Ali Özgür"
+       copyright   = ""
+       description = "Sample PragmaSQL AddIn.">
+
+
+  <Manifest>
+    <Identity name = "SampleAddIn"/>
+  </Manifest>
+
+  <Runtime>
+    <Import assembly = "SampleAddIn.dll">
+    </Import>
+  </Runtime>
+
+  <Path name = "/Workspace/ToolsMenu">
+    <MenuItem id = "SampleAddIn"
+		          label = "Sample PragmaSQL AddIn"
+              class ="PragmaSQL.AddIns.SampleAddIn.ShowNewFormCommand"/>
+  </Path>
+
+  <!-- BEGIN Menu Test For TextEditor -->
+  <Path name = "/Workspace/TextEditor/Toolbar">
+    <ToolbarItem  id = "ShowAddIn"
+                  label="Sample DropDown"
+                  tooltip = "Sample DropDown"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "SampleToolbarItem"
+                    label="Sample ToolbarItem"
+                    tooltip = "Sample ToolbarItem"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/TextEditor/ContextMenu">
+    <MenuItem id = "TextEditorSampleContextMenu"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="MenuItem 1"/>
+      <MenuItem id ="Sample2"
+                label ="MenuItem 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="MenuItem 3">
+        <MenuItem id ="Sample31"
+                  label ="MenuItem 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="MenuItem 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/TextEditor/MainMenu">
+    <MenuItem id = "TextEditorSampleMainMenu"
+              type ="Menu"
+		          label = "Sample MainMenu">
+      <MenuItem id ="Sample1"
+                label ="MenuItem 1"/>
+      <MenuItem id ="Sample2"
+                label ="MenuItem 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="MenuItem 3">
+        <MenuItem id ="Sample31"
+                  label ="MenuItem 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="MenuItem 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/TextEditor/ContentContextMenu">
+    <MenuItem id = "TextEditorSampleContentContextMenu"
+              type ="Menu"
+		          label = "Sample Content Context">
+      <MenuItem id ="Sample1"
+                label ="MenuItem 1"/>
+      <MenuItem id ="Sample2"
+                label ="MenuItem 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="MenuItem 3">
+        <MenuItem id ="Sample31"
+                  label ="MenuItem 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="MenuItem 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- END Menu Test For TextEditor -->
+
+  <!-- BEGIN Menu Test For ScriptEditor -->
+  <Path name = "/Workspace/ScriptEditor/Toolbar">
+    <ToolbarItem  id = "ScriptDropDown"
+                  label="Sample DropDown"
+                  tooltip = "Sample DropDow"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "SampleToolbarItem1"
+                    label="Sample ToolbarItem"
+                    tooltip = "Sample ToolbarItem"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/ScriptEditor/ContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/ScriptEditor/MainMenu">
+    <MenuItem id = "SampleMainMenu"
+              type ="Menu"
+		          label = "Sample MainMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/ScriptEditor/ContentContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/ScriptEditor/ResultsContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+
+  <Path name = "/Workspace/ScriptEditor/MessagesContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- END Menu Test For ScriptEditor -->
+
+  <!-- BEGIN Menu Test For ObjectExplorer -->
+  <Path name = "/Workspace/ObjectExplorer/Toolbar">
+    <ToolbarItem  id = "ShowAddIn"
+                  label="Show Sample AddIn"
+                  tooltip = "Sample DropDown"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "Samplezzz"
+                    label="Sample Sub"
+                    tooltip = "Sample Sub"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/ObjectExplorer/ContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+		          label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- BEGIN Menu Test For ObjectExplorer -->
+
+  <!-- BEGIN Menu Test For ProjectExplorer -->
+  <Path name = "/Workspace/ProjectExplorer/Toolbar">
+    <ToolbarItem  id = "ShowAddIn"
+                  label="Show Sample AddIn"
+                  tooltip = "Sample DropDown"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "Samplezzz"
+                    label="Sample Sub"
+                    tooltip = "Sample Sub"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/ProjectExplorer/ContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <Path name = "/Workspace/ProjectExplorer/ContextMenu/Project">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <Path name = "/Workspace/ProjectExplorer/ConnectionSpec">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <Path name = "/Workspace/ProjectExplorer/Folder">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- End Menu Test For ProjectExplorer -->
+  
+  <!-- BEGIN Menu Test For SharedScriptsViewer -->
+  <Path name = "/Workspace/SharedScriptsViewer/Toolbar">
+    <ToolbarItem  id = "ShowAddIn"
+                  label="Show Sample AddIn"
+                  tooltip = "Sample DropDown"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "Samplezzz"
+                    label="Sample Sub"
+                    tooltip = "Sample Sub"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/SharedScriptsViewer/ContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- BEGIN Menu Test For SharedScriptsViewer -->
+
+  <!-- BEGIN Menu Test For SharedSnippetsViewer -->
+  <Path name = "/Workspace/SharedSnippetsViewer/Toolbar">
+    <ToolbarItem  id = "ShowAddIn"
+                  label="Show Sample AddIn"
+                  tooltip = "Sample DropDown"
+                  type ="DropDownButton" >
+      <ToolbarItem  id = "Samplezzz"
+                    label="Sample Sub"
+                    tooltip = "Sample Sub"/>
+    </ToolbarItem>
+
+  </Path>
+
+  <Path name = "/Workspace/SharedSnippetsViewer/ContextMenu">
+    <MenuItem id = "SampleAddIn"
+              type ="Menu"
+              label = "Sample ContextMenu">
+      <MenuItem id ="Sample1"
+                label ="Sample 1"/>
+      <MenuItem id ="Sample2"
+                label ="Sample 2"/>
+      <MenuItem id ="Sample3"
+                type ="Menu"
+                label ="Sample 3">
+        <MenuItem id ="Sample31"
+                  label ="Sample 3.1"/>
+        <MenuItem id ="Sample32"
+                  label ="Sample 3.2"/>
+      </MenuItem>
+    </MenuItem>
+  </Path>
+  <!-- BEGIN Menu Test For SharedSnippetsViewer -->
+
+</AddIn>

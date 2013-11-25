@@ -1,0 +1,4 @@
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\GoldParser\CalithaLib\bin\Debug\CalithaLib.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\GoldParser\CalithaLib\bin\Debug\CalithaLib.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\GoldParser\CalithaLib\obj\Debug\CalithaLib.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\3rd Party\GoldParser\CalithaLib\obj\Debug\CalithaLib.pdb

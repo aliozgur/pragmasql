@@ -1,0 +1,19 @@
+﻿<AddIn name        = "PragmaSQL.DxResultRenderer"
+       author      = "Ali Özgür"
+       copyright   = ""
+       description = "Result renderers implemented with Developer Express Grid">
+
+
+  <Manifest>
+    <Identity name = "PragmaSQL.DxResultRenderer"/>
+  </Manifest>
+
+  <Runtime>
+    <Import assembly = "PragmaSQL.DxResultRenderer.dll">
+    </Import>
+  </Runtime>
+
+	<Path name = "/Workspace/Autostart">
+		<Class id = "RegisterRenderer" class = "PragmaSQL.DxResultRenderer.RegisterRenderer"/>
+	</Path>
+</AddIn>

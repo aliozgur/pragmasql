@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Teroid.DataGridViewToolStrip">
+</Property><Property Name="Solution File" Value="E:\Personal\PragmaSQL\Source\3rd Party\TeriodDataGridViewToolStrip\Teroid.DataGridViewToolStrip_Source\Teroid.DataGridViewToolStrip.sln">
+</Property><Property Name="Date" Value="11 Eylül 2008 Perşembe">
+</Property><Property Name="Time" Value="11:56:05">
+</Property></Properties><Event ErrorLevel="0" Project="Teroid.DataGridViewToolStrip" Source="Teroid.DataGridViewToolStrip.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Teroid.DataGridViewToolStrip" Source="Teroid.DataGridViewToolStrip.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Teroid.DataGridViewToolStrip" Source="Teroid.DataGridViewToolStrip.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

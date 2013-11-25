@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[DemoApp.csproj]
+SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
+SCC_Project_Name = "$/ThirdParty/OpenSource/ExtendedRichTextEditor/RichTextEditor/DemoApp", KABAAAAA

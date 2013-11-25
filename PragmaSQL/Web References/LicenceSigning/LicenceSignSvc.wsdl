@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.pragmasql.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.pragmasql.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.pragmasql.com/webservices/">
+      <s:element name="SignLicence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenceXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignLicenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignLicenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecureSignLicence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedLic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecureSignLicenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecureSignLicenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SignLicenceSoapIn">
+    <wsdl:part name="parameters" element="tns:SignLicence" />
+  </wsdl:message>
+  <wsdl:message name="SignLicenceSoapOut">
+    <wsdl:part name="parameters" element="tns:SignLicenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SecureSignLicenceSoapIn">
+    <wsdl:part name="parameters" element="tns:SecureSignLicence" />
+  </wsdl:message>
+  <wsdl:message name="SecureSignLicenceSoapOut">
+    <wsdl:part name="parameters" element="tns:SecureSignLicenceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LicenceSignSvcSoap">
+    <wsdl:operation name="SignLicence">
+      <wsdl:input message="tns:SignLicenceSoapIn" />
+      <wsdl:output message="tns:SignLicenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SecureSignLicence">
+      <wsdl:input message="tns:SecureSignLicenceSoapIn" />
+      <wsdl:output message="tns:SecureSignLicenceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LicenceSignSvcSoap" type="tns:LicenceSignSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignLicence">
+      <soap:operation soapAction="http://www.pragmasql.com/webservices/SignLicence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSignLicence">
+      <soap:operation soapAction="http://www.pragmasql.com/webservices/SecureSignLicence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LicenceSignSvcSoap12" type="tns:LicenceSignSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignLicence">
+      <soap12:operation soapAction="http://www.pragmasql.com/webservices/SignLicence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSignLicence">
+      <soap12:operation soapAction="http://www.pragmasql.com/webservices/SecureSignLicence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LicenceSignSvc">
+    <wsdl:port name="LicenceSignSvcSoap" binding="tns:LicenceSignSvcSoap">
+      <soap:address location="http://localhost/PragmaWeb/WebServices/LicenceSignSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LicenceSignSvcSoap12" binding="tns:LicenceSignSvcSoap12">
+      <soap12:address location="http://localhost/PragmaWeb/WebServices/LicenceSignSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

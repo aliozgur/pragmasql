@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[RichTextBoxEx.csproj]
+SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
+SCC_Project_Name = "$/ThirdParty/OpenSource/ExtendedRichTextEditor/RichTextEditor", CABAAAAA
+
+[RichTextBoxExtended.sln]
+SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
+SCC_Project_Name = "$/ThirdParty/OpenSource/ExtendedRichTextEditor/RichTextEditor", CABAAAAA

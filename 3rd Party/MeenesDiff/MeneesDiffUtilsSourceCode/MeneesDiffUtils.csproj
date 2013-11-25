@@ -1,0 +1,245 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{669C2D18-50C6-44BE-810E-53371AB25741}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>MeneesDiffUtils</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Menees.DiffUtils</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Menees, Version=2.0.2269.20113, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Menees.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AddCopyList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\BinaryDiff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\BinaryDiffLines.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\DiagonalVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\DirectoryDiff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\DirectoryDiffFileFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\DirectoryDiffHelpers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\EditDataTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Functions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\MyersDiff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\StringHasher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\SubArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\TextDiff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffOverview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffViewLines.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DiffViewPosition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\DirDiffControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DirDiffTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GoToDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Miscellaneous\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\Bitmaps\DiffControl.bmp" />
+    <EmbeddedResource Include="Controls\Bitmaps\DiffOverview.bmp" />
+    <EmbeddedResource Include="Controls\Bitmaps\DiffView.bmp" />
+    <EmbeddedResource Include="Controls\Bitmaps\DirDiffControl.bmp" />
+    <EmbeddedResource Include="Controls\Bitmaps\DirDiffTreeView.bmp" />
+    <EmbeddedResource Include="Controls\Bitmaps\NonSelectButton.bmp" />
+    <EmbeddedResource Include="Controls\DiffControl.resx">
+      <DependentUpon>DiffControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DiffView.resx">
+      <DependentUpon>DiffView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DirDiffControl.resx">
+      <DependentUpon>DirDiffControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DirDiffTreeView.resx">
+      <DependentUpon>DirDiffTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GoToDlg.resx">
+      <DependentUpon>GoToDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Miscellaneous\Diff TODO.doc">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Bitmaps\16x16.bmp" />
+    <Content Include="Controls\Bitmaps\Changed.bmp" />
+    <Content Include="Controls\Bitmaps\FirstDiff.bmp" />
+    <Content Include="Controls\Bitmaps\LastDiff.bmp" />
+    <Content Include="Controls\Bitmaps\Copy.bmp" />
+    <Content Include="Controls\Bitmaps\Delete.bmp" />
+    <Content Include="Controls\Bitmaps\Deleted.bmp" />
+    <Content Include="Controls\Bitmaps\File.bmp" />
+    <Content Include="Controls\Bitmaps\FileError.bmp" />
+    <Content Include="Controls\Bitmaps\Find.bmp" />
+    <Content Include="Controls\Bitmaps\FindNext.bmp" />
+    <Content Include="Controls\Bitmaps\FindPrev.bmp" />
+    <Content Include="Controls\Bitmaps\FolderClosed.bmp" />
+    <Content Include="Controls\Bitmaps\FolderOpen.bmp" />
+    <Content Include="Controls\Bitmaps\GotoLine.bmp" />
+    <Content Include="Controls\Bitmaps\Inserted.bmp" />
+    <Content Include="Controls\Bitmaps\MissingFile.bmp" />
+    <Content Include="Controls\Bitmaps\MissingFolder.bmp" />
+    <Content Include="Controls\Bitmaps\NextDiff.bmp" />
+    <Content Include="Controls\Bitmaps\PrevDiff.bmp" />
+    <Content Include="Controls\Bitmaps\Recompare.bmp" />
+    <Content Include="Controls\Bitmaps\ShowDifferences.bmp" />
+    <Content Include="Controls\Bitmaps\View.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

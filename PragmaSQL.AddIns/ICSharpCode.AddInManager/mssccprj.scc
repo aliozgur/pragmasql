@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[AddInManager.csproj]
+SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
+SCC_Project_Name = "$/ThirdParty/OpenSource/ICSharpCode.Core/ICSharpCode.AddInManager", TLBAAAAA
+
+[AddInManager.sln]
+SCC_Aux_Path = "\\ssserver\SourceSafeDB\"
+SCC_Project_Name = "$/ThirdParty/OpenSource/ICSharpCode.Core/ICSharpCode.AddInManager", TLBAAAAA

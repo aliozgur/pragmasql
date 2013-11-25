@@ -1,0 +1,15 @@
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\AddInManager.addin
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.AddInManager.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.AddInManager.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ComponentFactory.Krypton.Toolkit.DLL
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.Core.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\log4net.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.Core.pdb
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\bin\Debug\ICSharpCode.Core.xml
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\AddInManager.csprojResolveAssemblyReference.cache
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\ICSharpCode.AddInManager.ManagerForm.resources
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\ICSharpCode.AddInManager.AboutForm.resources
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\AddInManager.csproj.GenerateResource.Cache
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\ICSharpCode.AddInManager.dll
+C:\Users\ali.ozgur\Desktop\PragmaSQL\PragmaSQL.AddIns\ICSharpCode.AddInManager\obj\Debug\ICSharpCode.AddInManager.pdb

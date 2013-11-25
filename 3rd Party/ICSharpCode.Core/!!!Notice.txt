@@ -1,0 +1,39 @@
+ICSharpCode.Core
+* AddInTree.cs
+ 1)  
+    _loadErrors field and related property added
+  
+    // Revision: Added by Ali Özgür on 15.05.2007
+    static List<string> _loadErrors = new List<string>();
+    /// <summary>
+    /// Returns read-only list of add-in load errors.
+    /// </summary>
+    public static IList<string> LoadErrors
+    {
+      get
+      {
+        return _loadErrors.AsReadOnly();
+      }
+    }
+  2) public static void Load( List<string> addInFiles, List<string> disabledAddIns )
+  modified.
+        // Revision: Added by Ali Özgür on 15.05.2007 
+        if (!File.Exists(fileName))
+        {
+          _loadErrors.Add(String.Format("AddIn Load Error {0}: File does not exist! \"{1}\".", errCnt, fileName));
+          errCnt++;
+          continue;
+        }
+* CoreStartup.cs
+ 1) Shortcut for AddInTree.LoadErrors added.
+    // Revision: Added by Ali Özgür on 15.05.2007
+    /// <summary>
+    /// AddIn load errors.
+    /// </summary>
+    public IList<string> AddInLoadErrors
+    {
+      get
+      {
+        return AddInTree.LoadErrors;
+      }
+    }

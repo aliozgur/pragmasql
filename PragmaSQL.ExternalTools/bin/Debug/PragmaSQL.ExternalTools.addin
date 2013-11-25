@@ -1,0 +1,22 @@
+<AddIn name        = "External Tools AddIn for PragmaSQL"
+       author      = "Ali Özgür"
+       description = "Enables you to define external tools for PragmaSQL">
+	<Manifest>
+		<Identity name = "PragmaSQL.ExternalTools"/>
+	</Manifest>
+
+	<Runtime>
+		<Import assembly="PragmaSQL.ExternalTools.dll"/>
+	</Runtime>
+
+  <Path name = "/Workspace/Autostart">
+    <Class id = "ExternalToolsSubscribeToEventsCommand" class = "PragmaSQL.ExternalTools.ExternalToolsSubscribeToEventsCommand"/>
+  </Path>
+
+	<Path name = "/Workspace/ToolsMenu">
+		<MenuItem id = "ExtTools.Run"
+						 label = "Run External Tool"
+						 shortcut     = "Control|Shift|E"
+						 class ="PragmaSQL.ExternalTools.RunExternalTool"/>
+	</Path>
+</AddIn>
