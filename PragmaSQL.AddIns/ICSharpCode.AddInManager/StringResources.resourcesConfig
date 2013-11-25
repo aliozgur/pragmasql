@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Resources Extension=".resources">
+  <Resource Name="AddInManager.ActionCancelUpdate" Type="System.String" FileName="" Value="Cancel update" />
+  <Resource Name="AddInManager.IgnoreButtonText" Type="System.String" FileName="" Value="Ignore" />
+  <Resource Name="AddInManager.ActionInstall" Type="System.String" FileName="" Value="Install" />
+  <Resource Name="AddInManager.RetryButtonText" Type="System.String" FileName="" Value="Retry" />
+  <Resource Name="AddInManager.ActionUninstall" Type="System.String" FileName="" Value="Uninstall" />
+  <Resource Name="AddInManager.DescriptionCancelUpdate" Type="System.String" FileName="" Value="Aborts the update of the selected AddIn(s)." />
+  <Resource Name="AddInManager.CloseButtonText" Type="System.String" FileName="" Value="&amp;Close" />
+  <Resource Name="AddInManager.AddInInstalled" Type="System.String" FileName="" Value="AddIn will be installed after restarting SharpDevelop" />
+  <Resource Name="AddInManager.OpenWebsite" Type="System.String" FileName="" Value="Open Website" />
+  <Resource Name="AddInManager.AddInDisabled" Type="System.String" FileName="" Value="Disabled" />
+  <Resource Name="AddInManager.FileAssociation" Type="System.String" FileName="" Value="AddIn Installation Package" />
+  <Resource Name="AddInManager.NoAddInsInstalled" Type="System.String" FileName="" Value="You don't have any AddIns installed.&#xA;&#xD;&#xA;Download an AddIn from the Internet, then click 'Install AddIn' and choose the downloaded file to install it." />
+  <Resource Name="AddInManager.OKButtonText" Type="System.String" FileName="" Value="OK" />
+  <Resource Name="AddInManager.AddInWillBeDisabled" Type="System.String" FileName="" Value="AddIn will be disabled after restarting SharpDevelop" />
+  <Resource Name="AddInManager.ErrorText" Type="System.String" FileName="" Value="Error" />
+  <Resource Name="AddInManager.DescriptionCancelInstall" Type="System.String" FileName="" Value="Aborts the installation of the selected AddIn(s)." />
+  <Resource Name="AddInManager.FileFilter" Type="System.String" FileName="" Value="AddIns|*.addin;*.sdaddin;*.zip|All files|*.*" />
+  <Resource Name="AddInManager.ActionCancelInstallation" Type="System.String" FileName="" Value="Cancel installation" />
+  <Resource Name="AddInManager.DescriptionCancelDeinstallation" Type="System.String" FileName="" Value="Aborts the deinstallation of the selected AddIn(s)." />
+  <Resource Name="AddInManager.AddInRemoved" Type="System.String" FileName="" Value="AddIn will be removed after restarting SharpDevelop" />
+  <Resource Name="AddInManager.ActionEnable" Type="System.String" FileName="" Value="Enable" />
+  <Resource Name="AddInManager.AddInDependencyFailed" Type="System.String" FileName="" Value="A dependency for this AddIn was not found. Install it to enable this AddIn." />
+  <Resource Name="AddInManager.CancelButtonText" Type="System.String" FileName="" Value="Cancel" />
+  <Resource Name="AddInManager.ActionCancelDeinstallation" Type="System.String" FileName="" Value="Cancel deinstallation" />
+  <Resource Name="AddInManager.AddInEnabled" Type="System.String" FileName="" Value="AddIn will be enabled after restarting SharpDevelop" />
+  <Resource Name="AddInManager.ActionUpdate" Type="System.String" FileName="" Value="Update" />
+  <Resource Name="AddInManager.ChooseLocationButtonText" Type="System.String" FileName="" Value="Choose location" />
+  <Resource Name="AddInManager.RequiredDependencies" Type="System.String" FileName="" Value="Required dependencies:" />
+  <Resource Name="AddInManager.RequiredBy" Type="System.String" FileName="" Value="AddIns are required by:" />
+  <Resource Name="AddInManager.DescriptionInconsistentSelection" Type="System.String" FileName="" Value="The selection is inconsistent, please select only AddIns with the same status." />
+  <Resource Name="AddInManager.ShowPreinstalledAddIns" Type="System.String" FileName="" Value="Show preinstalled AddIns" />
+  <Resource Name="AddInManager.DescriptionEnable" Type="System.String" FileName="" Value="Enables the selected AddIn(s)." />
+  <Resource Name="AddInManager.DescriptionDisable" Type="System.String" FileName="" Value="Disables the selected AddIn(s)." />
+  <Resource Name="AddInManager.WarningText" Type="System.String" FileName="" Value="Warning" />
+  <Resource Name="AddInManager.InstallButton" Type="System.String" FileName="" Value="&amp;Install AddIn" />
+  <Resource Name="AddInManager.AddInInstalledTwice" Type="System.String" FileName="" Value="This AddIns is installed twice. Please uninstall one  copy." />
+  <Resource Name="AddInManager.ActionDisable" Type="System.String" FileName="" Value="Disable" />
+  <Resource Name="AddInManager.QuestionText" Type="System.String" FileName="" Value="Question" />
+  <Resource Name="AddInManager.Title" Type="System.String" FileName="" Value="PragmaSQL AddIns" />
+  <Resource Name="AddInManager.About" Type="System.String" FileName="" Value="About" />
+  <Resource Name="AddInManager.AddInUpdated" Type="System.String" FileName="" Value="AddIn will be updated after restarting SharpDevelop" />
+  <Resource Name="AddInManager.Options" Type="System.String" FileName="" Value="Options" />
+</Resources>

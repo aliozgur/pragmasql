@@ -1,0 +1,400 @@
+﻿<AddIn name        = "PragmaSQL Server Management AddIn"
+       author      = "Ali Özgür"
+       copyright   = "2007"
+       description = "SQL Server management utilities.">
+
+
+	<Manifest>
+		<Identity name = "SQLManagement"/>
+	</Manifest>
+
+	<Runtime>
+		<Import assembly = "SQLManagement.dll">
+			<ConditionEvaluator name="DatabaseCommandsEnabled" class="SQLManagement.DatabaseCommandsEnabled"/>
+			<ConditionEvaluator name="UserTableCommandsEnabled" class="SQLManagement.UserTableCommandsEnabled"/>
+			<ConditionEvaluator name="IndexCommandsEnabled" class="SQLManagement.IndexCommandsEnabled"/>
+		</Import>
+	</Runtime>
+
+	<!-- BEGIN Object explorer context menu items-->
+	<Path name = "/Workspace/ObjectExplorer/ContextMenu">
+		<MenuItem id = "ObjExplorerContextMenu_TopSeperator"
+					  type ="Separator"/>
+		<!-- BEGIN PragmaSQL Scripter And Bulk Copy-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "ObjExplorerContextMenu_ScriptObjects"
+														 label = "Script Objects"
+														 class ="SQLManagement.ShowPragmaSQLScripterDialog"/>
+			<MenuItem id = "ObjExplorerContextMenu_CopyData"
+														 label = "Bulk Copy Data"
+														 class ="SQLManagement.ShowPragmaSQLBulkCopyDialog"/>
+			<MenuItem id = "ObjExplorerContextMenu_DumpObjectInfos"
+														 label = "Dump Selectd Object Names"
+														 class ="SQLManagement.DumpObjectInfosFromExplorer"/>
+		</Condition>
+		<!-- END PragmaSQL Scripter And Bulk Copy-->
+		<MenuItem id = "ObjExplorerContextMenu_SpeScriptMenus"
+									type ="Separator"/>
+
+		<!-- BEGIN Table/View Management-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "ObjExplorerContextMenu_TableManagement"
+					type ="Menu"
+					label = "Table/View Management">
+				<Condition name="DatabaseCommandsEnabled" action="Disable">
+					<MenuItem id = "ObjExplorerContextMenu_NewTable"
+								  label = "New Table"
+								  class ="SQLManagement.CreateNewTableCommand"/>
+				</Condition>
+				<MenuItem id = "ctxMnuUserTable_Seperator1"
+								 type ="Separator"/>
+
+				<Condition name="UserTableCommandsEnabled" action="Disable">
+					<MenuItem id = "ctxMnuUserTable_ModifyTable"
+								 label = "Modify Table"
+								 class ="SQLManagement.ShowTableEditorCommand"/>
+					<MenuItem id = "ctxMnuUserTable_RenameTable"
+								   label = "Rename Table"
+								   class ="SQLManagement.RenameTableCommand"/>
+					<MenuItem id = "ctxMnuUserTable_Indexes"
+								 label = "Indexes"
+								 class ="SQLManagement.ShowIndexesCommand"/>
+				</Condition>
+			</MenuItem>
+		</Condition>
+		<!-- END Table/View Management-->
+
+		<!-- BEGIN Database Management-->
+
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "ObjExplorerContextMenu_GroupSeperator"
+					  type ="Menu"
+					  label = "Database Management">
+				<MenuItem id = "ObjExplorerContextMenu_NewTable"
+								label = "New Table"
+								class ="SQLManagement.CreateNewTableCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseSeperator1"
+							  type ="Separator"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseUsers"
+						label = "Users"
+						class ="SQLManagement.ShowDatabaseUsersCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseRoles"
+						label = "Roles"
+						class ="SQLManagement.ShowRolesCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_AllFk"
+						label = "Foreign Keys"
+						class ="SQLManagement.ShowAllForeignKeysCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_AllIndexes"
+						label = "Indexes"
+						class ="SQLManagement.ShowAllIndexesCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseRules"
+						label = "Rules"
+						class ="SQLManagement.ShowRulesCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_CheckConstraints"
+						label = "Check Constraints"
+						class ="SQLManagement.ShowCheckConstraintsCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_Udt"
+						label = "User Data Types"
+						class ="SQLManagement.ShowUdtListCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseSeperator2"
+							  type ="Separator"/>
+
+				<MenuItem id = "ObjExplorerContextMenu_DetachDatabase"
+						  label = "Detach Database"
+						  class ="SQLManagement.DetachDatabaseCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_ShrinkDatabase"
+						  label = "Shrink Database"
+						  class ="SQLManagement.ShrinkDatabaseCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_TruncateDatabaseLogs"
+						  label = "Truncate Logs"
+						  class ="SQLManagement.TruncateDatabaseLogsCommand"/>
+				<MenuItem id = "ObjExplorerContextMenu_DropDatabase"
+						  label = "Drop Database"
+						  class ="SQLManagement.DropDatabaseCommand"/>
+
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseSeperator4"
+							  type ="Separator"/>
+				<MenuItem id = "ObjExplorerContextMenu_DatabaseProperties"
+							label = "Properties"
+							class ="SQLManagement.ShowDatabasePropertiesCommand"/>
+			</MenuItem>
+		</Condition>
+		<!-- END Database Management-->
+
+		<!-- BEGIN Server Management-->
+		<MenuItem id = "ObjExplorerContextMenu_ServerMan"
+				  type ="Menu"
+					  label = "Server Management">
+			<MenuItem id = "ObjExplorerContextMenu_ServerProcesses"
+						  label = "Processes"
+						  class ="SQLManagement.ShowServerProcessesCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_ServerLocks"
+						  label = "Locks"
+						  class ="SQLManagement.ShowServerLocksCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_BlockingProcesses"
+						  label = "Blocking Processes"
+						  class ="SQLManagement.ShowBlockingProcessesCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_ServerLogins"
+						  label = "Logins"
+						  class ="SQLManagement.ShowLoginsCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_Seperator2"
+						  type ="Separator"/>
+			<MenuItem id = "ObjExplorerContextMenu_ServerNewDatabase"
+					  label = "New Database"
+					  class ="SQLManagement.ShowNewDatabaseDialogCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_ServerOpsAttachDatabase"
+					  label = "Attach Database"
+					  class ="SQLManagement.AttachDatabaseCommand"/>
+			<MenuItem id = "ObjExplorerContextMenu_Seperator3"
+						  type ="Separator"/>
+			<MenuItem id = "ObjExplorerContextMenu_ServerInfo"
+						label = "Properties"
+						class ="SQLManagement.ShowServerInfoCommand"/>
+		</MenuItem>
+		<!-- END Server Management-->
+	</Path>
+	<!-- END Object explorer context menu items-->
+
+	<!-- BEGIN Object explorer toolbar  items-->
+	<Path name = "/Workspace/ObjectExplorer/Toolbar">
+		<!-- BEGIN Database Management-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<ToolbarItem id = "ObjExplorerContextMenu_GroupSeperator"
+					  type ="DropDownButton"
+					  label = "Database Management">
+				<ToolbarItem id = "ObjExplorerContextMenu_NewTable"
+								label = "New Table"
+								class ="SQLManagement.CreateNewTableCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseSeperator1"
+							  type ="Separator"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseUsers"
+						label = "Users"
+						class ="SQLManagement.ShowDatabaseUsersCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseRoles"
+						label = "Roles"
+						class ="SQLManagement.ShowRolesCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_AllFk"
+						label = "Foreign Keys"
+						class ="SQLManagement.ShowAllForeignKeysCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_AllIndexes"
+						label = "Indexes"
+						class ="SQLManagement.ShowAllIndexesCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseRules"
+						label = "Rules"
+						class ="SQLManagement.ShowRulesCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_CheckConstraints"
+						label = "Check Constraints"
+						class ="SQLManagement.ShowCheckConstraintsCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_Udt"
+						label = "User Data Types"
+						class ="SQLManagement.ShowUdtListCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseSeperator2"
+							  type ="Separator"/>
+
+				<ToolbarItem id = "ObjExplorerContextMenu_DetachDatabase"
+						  label = "Detach Database"
+						  class ="SQLManagement.DetachDatabaseCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_ShrinkDatabase"
+						  label = "Shrink Database"
+						  class ="SQLManagement.ShrinkDatabaseCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_TruncateDatabaseLogs"
+						  label = "Truncate Logs"
+						  class ="SQLManagement.TruncateDatabaseLogsCommand"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DropDatabase"
+						  label = "Drop Database"
+						  class ="SQLManagement.DropDatabaseCommand"/>
+
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseSeperator4"
+							  type ="Separator"/>
+				<ToolbarItem id = "ObjExplorerContextMenu_DatabaseProperties"
+							label = "Properties"
+							class ="SQLManagement.ShowDatabasePropertiesCommand"/>
+			</ToolbarItem>
+		</Condition>
+		<!-- END Database Management-->
+
+		<!-- BEGIN Server Management-->
+		<ToolbarItem id = "ObjExplorerContextMenu_ServerMan"
+				 type ="DropDownButton"
+				 label = "Server Management">
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerProcesses"
+						  label = "Processes"
+						  class ="SQLManagement.ShowServerProcessesCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerLocks"
+						  label = "Locks"
+						  class ="SQLManagement.ShowServerLocksCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_BlockingProcesses"
+						  label = "Blocking Processes"
+						  class ="SQLManagement.ShowBlockingProcessesCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerLogins"
+						  label = "Logins"
+						  class ="SQLManagement.ShowLoginsCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_Seperator2"
+						  type ="Separator"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerNewDatabase"
+					  label = "New Database"
+					  class ="SQLManagement.ShowNewDatabaseDialogCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerOpsAttachDatabase"
+					  label = "Attach Database"
+					  class ="SQLManagement.AttachDatabaseCommand"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_Seperator3"
+						  type ="Separator"/>
+			<ToolbarItem id = "ObjExplorerContextMenu_ServerInfo"
+						label = "Properties"
+						class ="SQLManagement.ShowServerInfoCommand"/>
+		</ToolbarItem>
+		<!-- END Server Management-->
+	</Path>
+	<!-- END Object explorer toolbar items-->
+
+
+	<!-- BEGIN Main tools menu context menu items-->
+	<Path name = "/Workspace/ToolsMenu">
+		<MenuItem id = "MainToolsMenu_GroupSeperator"
+					  type ="Separator"/>
+
+		<!-- BEGIN PragmaSQL Scripter And Bulk Copy-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "MainToolsMenu_ScriptObjects"
+														 label = "Script Objects"
+														 class ="SQLManagement.ShowPragmaSQLScripterDialog"/>
+			<MenuItem id = "MainToolsMenu_CopyData"
+														 label = "Bulk Copy Data"
+														 class ="SQLManagement.ShowPragmaSQLBulkCopyDialog"/>
+			<MenuItem id = "MainToolsMenu_DumpObjectInfos"
+														 label = "Dump Selectd Object Names"
+														 class ="SQLManagement.DumpObjectInfosFromExplorer"/>
+		</Condition>
+		<MenuItem id = "MainToolsMenu_SpeScriptMenus"
+									type ="Separator"/>
+		<!-- END PragmaSQL Scripter And Bulk Copy-->
+
+		<!-- BEGIN Table/View Management-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "MainToolsMenu_TableManagement"
+              type ="Menu"
+              label = "Table/View Management">
+				<Condition name="DatabaseCommandsEnabled" action="Disable">
+					<MenuItem id = "MainToolsMenu_NewTable"
+								  label = "New Table"
+								  class ="SQLManagement.CreateNewTableCommand"/>
+				</Condition>
+				<MenuItem id = "ctxMnuUserTable_Seperator1"
+								 type ="Separator"/>
+
+				<Condition name="UserTableCommandsEnabled" action="Disable">
+					<MenuItem id = "MainToolsMenu_ModifyTable"
+								 label = "Modify Table"
+								 class ="SQLManagement.ShowTableEditorCommand"/>
+					<MenuItem id = "ctxMnuUserTable_RenameTable"
+								   label = "Rename Table"
+								   class ="SQLManagement.RenameTableCommand"/>
+					<MenuItem id = "MainToolsMenu_Indexes"
+								 label = "Indexes"
+								 class ="SQLManagement.ShowIndexesCommand"/>
+
+				</Condition>
+			</MenuItem>
+		</Condition>
+
+		<!-- END Table/View Management-->
+
+		<!-- BEGIN Database Management-->
+		<Condition name="DatabaseCommandsEnabled" action="Disable">
+			<MenuItem id = "MainToolsMenu_DatabaseManagement"
+					  type ="Menu"
+					  label = "Database Management">
+
+				<MenuItem id = "MainToolsMenu_DatabaseUsers"
+						label = "Users"
+						class ="SQLManagement.ShowDatabaseUsersCommand"/>
+				<MenuItem id = "MainToolsMenu_DatabaseRoles"
+						label = "Roles"
+						class ="SQLManagement.ShowRolesCommand"/>
+				<MenuItem id = "MainToolsMenu_AllFk"
+						label = "Foreign Keys"
+						class ="SQLManagement.ShowAllForeignKeysCommand"/>
+				<MenuItem id = "MainToolsMenu_AllIndexes"
+						label = "Indexes"
+						class ="SQLManagement.ShowAllIndexesCommand"/>
+				<MenuItem id = "MainToolsMenu_DatabaseRules"
+						label = "Rules"
+						class ="SQLManagement.ShowRulesCommand"/>
+				<MenuItem id = "MainToolsMenu_CheckConstraints"
+						label = "Check Constraints"
+						class ="SQLManagement.ShowCheckConstraintsCommand"/>
+				<MenuItem id = "MainToolsMenu_Udt"
+						label = "User Data Types"
+						class ="SQLManagement.ShowUdtListCommand"/>
+
+				<MenuItem id = "MainToolsMenu_DatabaseSeperator1"
+							  type ="Separator"/>
+				<MenuItem id = "MainToolsMenu_DetachDatabase"
+						  label = "Detach Database"
+						  class ="SQLManagement.DetachDatabaseCommand"/>
+				<MenuItem id = "MainToolsMenu_ShrinkDatabase"
+						  label = "Shrink Database"
+						  class ="SQLManagement.ShrinkDatabaseCommand"/>
+				<MenuItem id = "MainToolsMenu_TruncateDatabaseLogs"
+						  label = "Truncate Logs"
+						  class ="SQLManagement.TruncateDatabaseLogsCommand"/>
+				<MenuItem id = "MainToolsMenu_DropDatabase"
+						  label = "Drop Database"
+						  class ="SQLManagement.DropDatabaseCommand"/>
+
+				<MenuItem id = "MainToolsMenu_DatabaseSeperator3"
+							  type ="Separator"/>
+				<MenuItem id = "MainToolsMenu_DatabaseProperties"
+							label = "Properties"
+							class ="SQLManagement.ShowDatabasePropertiesCommand"/>
+			</MenuItem>
+		</Condition>
+		<!-- END Database Management-->
+
+		<!-- BEGIN Server Management-->
+		<MenuItem id = "MainToolsMenu_ServerManagement"
+				type ="Menu"
+				label = "Server Management">
+
+			<MenuItem id = "MainToolsMenu_NewConnectionFromList"
+						  label = "Connection From List "
+						  class ="SQLManagement.NewConnectionFromListCommand"/>
+			<MenuItem id = "MainToolsMenu_NewConnection"
+						  label = "New Connection"
+						  class ="SQLManagement.NewConnectionCommand"/>
+
+			<MenuItem id = "MainToolsMenu_Seperator1"
+						  type ="Separator"/>
+			<MenuItem id = "MainToolsMenu_ServerProcesses"
+						  label = "Processes"
+						  class ="SQLManagement.ShowServerProcessesCommand"/>
+			<MenuItem id = "MainToolsMenu_ServerLocks"
+						  label = "Locks"
+						  class ="SQLManagement.ShowServerLocksCommand"/>
+			<MenuItem id = "MainToolsMenu_BlockingProcesses"
+						  label = "Blocking Processes"
+						  class ="SQLManagement.ShowBlockingProcessesCommand"/>
+			<MenuItem id = "MainToolsMenu_ServerLogins"
+						  label = "Logins"
+						  class ="SQLManagement.ShowLoginsCommand"/>
+
+			<MenuItem id = "MainToolsMenu_Seperator2"
+						  type ="Separator"/>
+			<MenuItem id = "MainToolsMenu_ServerNewDatabase"
+					  label = "New Database"
+					  class ="SQLManagement.ShowNewDatabaseDialogCommand"/>
+			<MenuItem id = "MainToolsMenu_ServerOpsAttachDatabase"
+					  label = "Attach Database"
+					  class ="SQLManagement.AttachDatabaseCommand"/>
+
+			<MenuItem id = "MainToolsMenu_Seperator3"
+						  type ="Separator"/>
+			<MenuItem id = "MainToolsMenu_ServerInfo"
+						  label = "Properties "
+						  class ="SQLManagement.ShowServerInfoCommand"/>
+		</MenuItem>
+		<!-- END Server Management-->
+	</Path>
+	<!-- END Main tools menu context menu items-->
+
+</AddIn>

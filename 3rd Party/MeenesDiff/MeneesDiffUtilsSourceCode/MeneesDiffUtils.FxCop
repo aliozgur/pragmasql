@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<FxCopProject Version="1.072">
+    <ProjectOptions>
+        <PersistViolations>False</PersistViolations>
+        <SharedProject>False</SharedProject>
+    </ProjectOptions>
+    <TargetAssemblies>
+        <TargetAssembly Visible="True">c:\projects\csharp\meneesdiffutils\bin\debug\menees.dll</TargetAssembly>
+        <TargetAssembly Visible="True">c:\projects\csharp\meneesdiffutils\bin\debug\meneesdiffutils.dll</TargetAssembly>
+    </TargetAssemblies>
+    <Rules>
+        <RuleAssemblies>
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\comrules.dll" />
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\designrules.dll" />
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\globalizationrules.dll">
+                <RuleStatus Name="StringMethodsAreCalledWithCultureInfoParameters" Visible="False" />
+                <RuleStatus Name="LocaleShouldBeSetForDataTypes" Visible="False" />
+                <RuleStatus Name="IFormatProviderShouldBePassed" Visible="False" />
+                <RuleStatus Name="CultureInfoShouldBePassed" Visible="False" />
+            </RuleAssembly>
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\namingrules.dll">
+                <RuleStatus Name="NamespaceNamesArePascalCased" Visible="False" />
+                <RuleStatus Name="TypeNamesArePascalCased" Visible="False" />
+                <RuleStatus Name="MemberNamesArePascalCased" Visible="False" />
+                <RuleStatus Name="ParameterNamesAreCamelCased" Visible="False" />
+                <RuleStatus Name="NamespaceNamesHaveOnlyShortAcronymsAllCaps" Visible="False" />
+                <RuleStatus Name="TypeNamesHaveOnlyShortAcronymsAllCaps" Visible="False" />
+                <RuleStatus Name="MemberNamesHaveOnlyShortAcronymsAllCaps" Visible="False" />
+                <RuleStatus Name="ParameterNamesHaveOnlyShortAcronymsAllCaps" Visible="False" />
+                <RuleStatus Name="TypeNamesDoNotHaveUnderscores" Visible="False" />
+                <RuleStatus Name="MemberNamesDoNotHaveUnderscores" Visible="False" />
+                <RuleStatus Name="ParameterNamesDoNotHaveUnderscores" Visible="False" />
+                <RuleStatus Name="ParameterNamesShouldHaveCompleteWords" Visible="False" />
+            </RuleAssembly>
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\performancerules.dll" />
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\securityrules.dll" />
+            <RuleAssembly Visible="True" Name="%fxcop%\rules\usagerules.dll" />
+        </RuleAssemblies>
+    </Rules>
+    <ExcludeFiles>
+        <ProjectExclude Visible="True" />
+    </ExcludeFiles>
+    <Exclusions>
+        <Exclusion Kind="Assembly">
+            <Assembly>Menees</Assembly>
+            <Rule>AssembliesAreMarkedClsCompliant</Rule>
+        </Exclusion>
+        <Exclusion Kind="Assembly">
+            <Assembly>Menees</Assembly>
+            <Rule>AssembliesHavePermissionRequests</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.MenuPainter</Type>
+            <Member>GetDrawItemStateDescription(System.Windows.Forms.DrawItemState,System.Windows.Forms.DrawItemState)</Member>
+            <Rule>AvoidBuildingNonCallableCode</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.MenuPainter</Type>
+            <Member>ImageList</Member>
+            <Rule>PropertyNamesShouldNotMatchGetMethodNames</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.MenuPainter</Type>
+            <Member>ReportDrawItemState(System.String,System.Windows.Forms.DrawItemState)</Member>
+            <Rule>AvoidBuildingNonCallableCode</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.NumericTextBox</Type>
+            <Member>Lines</Member>
+            <Rule>PropertiesShouldNotReturnArrays</Rule>
+        </Exclusion>
+        <Exclusion Kind="Param">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.NumericTextBox</Type>
+            <Member>WndProc(System.Windows.Forms.Message&amp;)</Member>
+            <Param>m</Param>
+            <Rule>AvoidValueTypesPassedAsByRefParameters</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.NumericTextBox</Type>
+            <Member>WndProc(System.Windows.Forms.Message&amp;)</Member>
+            <Rule>VirtualMethodsAndOverridesRequireSameLinkDemands</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>Menees</Assembly>
+            <Type>Menees.RecentFiles</Type>
+            <Member>Files</Member>
+            <Rule>PropertiesShouldNotReturnArrays</Rule>
+        </Exclusion>
+        <Exclusion Kind="Assembly">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Rule>AssembliesAreMarkedClsCompliant</Rule>
+        </Exclusion>
+        <Exclusion Kind="Assembly">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Rule>AssembliesHavePermissionRequests</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.AddCopyList</Type>
+            <Rule>CollectionNamesHaveCollectionSuffix</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.AddCopyList</Type>
+            <Rule>ICollectionImplementationsHaveStronglyTypedMembers</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.AddCopyList</Type>
+            <Rule>IListImplementationsHaveStronglyTypedMembers</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Addition</Type>
+            <Member>arBytes</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Caret</Type>
+            <Member>Finalize()</Member>
+            <Rule>FinalizeMethodsCallBaseClassMethodsOnly</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffOverview</Type>
+            <Member>FireLineClicked(System.Int32)</Member>
+            <Rule>EventsShouldBeUsed</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffOverview</Type>
+            <Member>get_CreateParams()</Member>
+            <Rule>VirtualMethodsAndOverridesRequireSameLinkDemands</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffView</Type>
+            <Member>get_CreateParams()</Member>
+            <Rule>VirtualMethodsAndOverridesRequireSameLinkDemands</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffView</Type>
+            <Member>SetData(System.Collections.IList,Menees.DiffUtils.EditScript,System.Boolean)</Member>
+            <Rule>OverloadedMembersShouldHaveConsistentSignatures</Rule>
+        </Exclusion>
+        <Exclusion Kind="Param">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffView</Type>
+            <Member>WndProc(System.Windows.Forms.Message&amp;)</Member>
+            <Param>m</Param>
+            <Rule>AvoidValueTypesPassedAsByRefParameters</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffView</Type>
+            <Member>WndProc(System.Windows.Forms.Message&amp;)</Member>
+            <Rule>VirtualMethodsAndOverridesRequireSameLinkDemands</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewLines</Type>
+            <Member>.ctor(System.Collections.IList,Menees.DiffUtils.EditScript,System.Boolean)</Member>
+            <Rule>OverloadedMembersShouldHaveConsistentSignatures</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewLines</Type>
+            <Rule>CollectionNamesHaveCollectionSuffix</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewLines</Type>
+            <Member>DiffEndLines</Member>
+            <Rule>PropertiesShouldNotReturnArrays</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewLines</Type>
+            <Member>DiffStartLines</Member>
+            <Rule>PropertiesShouldNotReturnArrays</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewLines</Type>
+            <Rule>ICollectionImplementationsHaveStronglyTypedMembers</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewPosition</Type>
+            <Member>Column</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.DiffViewPosition</Type>
+            <Member>Line</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.FindData</Type>
+            <Member>MatchCase</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.FindData</Type>
+            <Member>SearchUp</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.FindData</Type>
+            <Member>Text</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Param">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Controls.GoToDlg</Type>
+            <Member>Execute(System.Windows.Forms.IWin32Window,System.Int32,System.Int32&amp;)</Member>
+            <Param>iLine</Param>
+            <Rule>AvoidOutParameters</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Copy</Type>
+            <Member>iBaseOffset</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Copy</Type>
+            <Member>iLength</Member>
+            <Rule>TypesDoNotHavePublicInstanceFields</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.EditScript</Type>
+            <Rule>CollectionNamesHaveCollectionSuffix</Rule>
+        </Exclusion>
+        <Exclusion Kind="Type">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.EditScript</Type>
+            <Rule>ICollectionImplementationsHaveStronglyTypedMembers</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.MyersDiff</Type>
+            <Member>GetLCSLength()</Member>
+            <Rule>ConsiderReplacingMethodsWithProperties</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.MyersDiff</Type>
+            <Member>GetReverseSESLength()</Member>
+            <Rule>ConsiderReplacingMethodsWithProperties</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.MyersDiff</Type>
+            <Member>GetSESLength()</Member>
+            <Rule>ConsiderReplacingMethodsWithProperties</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.MyersDiff</Type>
+            <Member>GetSimilarity()</Member>
+            <Rule>ConsiderReplacingMethodsWithProperties</Rule>
+        </Exclusion>
+        <Exclusion Kind="Param">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Win32</Type>
+            <Member>ScrollWindow(System.Windows.Forms.IWin32Window,System.Int32,System.Int32,System.Drawing.Rectangle&amp;,System.Drawing.Rectangle&amp;)</Member>
+            <Param>rcClip</Param>
+            <Rule>AvoidValueTypesPassedAsByRefParameters</Rule>
+        </Exclusion>
+        <Exclusion Kind="Param">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Win32</Type>
+            <Member>ScrollWindow(System.Windows.Forms.IWin32Window,System.Int32,System.Int32,System.Drawing.Rectangle&amp;,System.Drawing.Rectangle&amp;)</Member>
+            <Param>rcScroll</Param>
+            <Rule>AvoidValueTypesPassedAsByRefParameters</Rule>
+        </Exclusion>
+        <Exclusion Kind="Member">
+            <Assembly>MeneesDiffUtils</Assembly>
+            <Type>Menees.DiffUtils.Win32</Type>
+            <Member>SetScrollPageAndRange(System.Windows.Forms.IWin32Window,System.Boolean,System.Int32,System.Int32,System.Int32)</Member>
+            <Rule>ConsiderReplacingRepetitiveArgsWithParameterArray</Rule>
+        </Exclusion>
+    </Exclusions>
+</FxCopProject>

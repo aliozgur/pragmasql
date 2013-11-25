@@ -1,0 +1,8 @@
+- TextEditor
+- ScriptEditor
+- ObjectExplorer
+- ProjectExplorer
+- WebBrowser
+- TextDiff
+- User defined code completion lists
+- PragmaSQL system database connection information

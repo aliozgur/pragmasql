@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeneesDiffUtils", "MeneesDiffUtils.csproj", "{669C2D18-50C6-44BE-810E-53371AB25741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDiffUtils", "TestDiffUtils\TestDiffUtils.csproj", "{A442718B-4AF8-43BA-A94D-775E9E163C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menees", "..\Menees\Menees.csproj", "{7458EF8F-F1FD-4302-BAAD-D7EB65C487DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffDotNet", "..\DiffDotNet\DiffDotNet.csproj", "{A3118AEE-39BD-4F4F-AF5C-5A31F142614F}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{669C2D18-50C6-44BE-810E-53371AB25741}.Debug.ActiveCfg = Debug|.NET
+		{669C2D18-50C6-44BE-810E-53371AB25741}.Debug.Build.0 = Debug|.NET
+		{669C2D18-50C6-44BE-810E-53371AB25741}.Release.ActiveCfg = Release|.NET
+		{669C2D18-50C6-44BE-810E-53371AB25741}.Release.Build.0 = Release|.NET
+		{A442718B-4AF8-43BA-A94D-775E9E163C46}.Debug.ActiveCfg = Debug|.NET
+		{A442718B-4AF8-43BA-A94D-775E9E163C46}.Debug.Build.0 = Debug|.NET
+		{A442718B-4AF8-43BA-A94D-775E9E163C46}.Release.ActiveCfg = Release|.NET
+		{A442718B-4AF8-43BA-A94D-775E9E163C46}.Release.Build.0 = Release|.NET
+		{7458EF8F-F1FD-4302-BAAD-D7EB65C487DB}.Debug.ActiveCfg = Debug|.NET
+		{7458EF8F-F1FD-4302-BAAD-D7EB65C487DB}.Debug.Build.0 = Debug|.NET
+		{7458EF8F-F1FD-4302-BAAD-D7EB65C487DB}.Release.ActiveCfg = Release|.NET
+		{7458EF8F-F1FD-4302-BAAD-D7EB65C487DB}.Release.Build.0 = Release|.NET
+		{A3118AEE-39BD-4F4F-AF5C-5A31F142614F}.Debug.ActiveCfg = Debug|.NET
+		{A3118AEE-39BD-4F4F-AF5C-5A31F142614F}.Debug.Build.0 = Debug|.NET
+		{A3118AEE-39BD-4F4F-AF5C-5A31F142614F}.Release.ActiveCfg = Release|.NET
+		{A3118AEE-39BD-4F4F-AF5C-5A31F142614F}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

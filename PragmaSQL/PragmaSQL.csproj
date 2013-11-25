@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEA9FA01-D14D-404A-BCC3-CBDF3DAE922E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PragmaSQL</RootNamespace>
+    <AssemblyName>PragmaSQL</AssemblyName>
+    <ApplicationIcon>sql_runner.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <PublishUrl>http://localhost/PragmaSQL/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Bilgi|AnyCPU' ">
+    <OutputPath>bin\Bilgi\</OutputPath>
+    <DefineConstants>TRACE;BILGI_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Bilgi_Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Bilgi_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BILGI_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Personal_Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Personal_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PERSONAL_EDITION</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Personal_Release|AnyCPU' ">
+    <OutputPath>bin\Personal_Release\</OutputPath>
+    <DefineConstants>TRACE;PERSONAL_EDITION</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_64bit|AnyCPU'">
+    <OutputPath>bin\Release_64bit\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Bilgi|x64'">
+    <OutputPath>bin\x64\Bilgi\</OutputPath>
+    <DefineConstants>TRACE;BILGI_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Bilgi\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Bilgi_Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Bilgi_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BILGI_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Bilgi_Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Personal_Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Personal_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PERSONAL_EDITION</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Personal_Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Personal_Release|x64'">
+    <OutputPath>bin\x64\Personal_Release\</OutputPath>
+    <DefineConstants>TRACE;PERSONAL_EDITION</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Personal_Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_64bit|x64'">
+    <OutputPath>bin\x64\Release_64bit\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Bilgi|x86'">
+    <OutputPath>bin\x86\Bilgi\</OutputPath>
+    <DefineConstants>TRACE;BILGI_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Bilgi\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Bilgi_Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Bilgi_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BILGI_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Bilgi_Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Personal_Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Personal_Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PERSONAL_EDITION</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Personal_Debug\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Personal_Release|x86'">
+    <OutputPath>bin\x86\Personal_Release\</OutputPath>
+    <DefineConstants>TRACE;PERSONAL_EDITION</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Personal_Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_64bit|x86'">
+    <OutputPath>bin\x86\Release_64bit\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\PragmaSQL.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.5.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\ComponentFactory\KryptonToolkit_3.5.2\ComponentFactory.Krypton.Toolkit.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\3rd Party\WindowsAPICodePack\_Release\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\3rd Party\WindowsAPICodePack\_Release\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardBase, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\WizardBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeCompletionForUserDefinedList\CodeCompletionPresenterEx.cs" />
+    <Compile Include="CodeCompletionForUserDefinedList\frmObjectSelectorEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeCompletionForUserDefinedList\frmObjectSelectorEx.Designer.cs">
+      <DependentUpon>frmObjectSelectorEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeCompletion\CodeCompletionPresenter.cs" />
+    <Compile Include="CodeCompletion\frmObjectSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeCompletion\frmObjectSelector.Designer.cs">
+      <DependentUpon>frmObjectSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUIRenderers\Office2007\Office2007ColorTable.cs" />
+    <Compile Include="CustomUIRenderers\Office2007\Office2007Helpers.cs" />
+    <Compile Include="CustomUIRenderers\Office2007\Office2007Renderer.cs">
+    </Compile>
+    <Compile Include="DBObjectSearch\DBObjectSearchWhereBuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DBObjectSearch\DBObjectSearchWhereBuilder.Designer.cs">
+      <DependentUpon>DBObjectSearchWhereBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpProvider.cs" />
+    <Compile Include="ObjectChangeHistory\frmObjectChangeHistoryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectChangeHistory\frmObjectChangeHistoryViewer.Designer.cs">
+      <DependentUpon>frmObjectChangeHistoryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectChangeHistory\ObjectChangeHistoryData.cs" />
+    <Compile Include="ObjectChangeHistory\ObjectChangeHistoryFacade.cs" />
+    <Compile Include="ObjectChangeHistory\ObjectChangeHistoryViewerFactory.cs" />
+    <Compile Include="ObjectGroupingSupport\frmObjectGrouping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectGroupingSupport\frmObjectGrouping.Designer.cs">
+      <DependentUpon>frmObjectGrouping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectGroupingSupport\ObjectGroupingFormFactory.cs" />
+    <Compile Include="ObjectGroupingSupport\ucObjectGrouping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectGroupingSupport\ucObjectGrouping.Designer.cs">
+      <DependentUpon>ucObjectGrouping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectReference\frmObjectReferencesViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectReference\frmObjectReferencesViewer.Designer.cs">
+      <DependentUpon>frmObjectReferencesViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectReference\ObjectReferenceViewerFactory.cs" />
+    <Compile Include="ObjectReference\ObjectRefList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectReference\ObjectRefList.Designer.cs">
+      <DependentUpon>ObjectRefList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PragmaSQL System\SystemConnectionManager.cs" />
+    <Compile Include="Project\frmProjectExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\frmProjectExplorer.Designer.cs">
+      <DependentUpon>frmProjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScripGeneration\frmCrudGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScripGeneration\frmCrudGenerator.Designer.cs">
+      <DependentUpon>frmCrudGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\TextEditor\TextEditorFactory.cs" />
+    <Compile Include="Editor\ContentPersistance\IContentPersister.cs" />
+    <Compile Include="Editor\ContentPersistance\DefaultContentPersister.cs" />
+    <Compile Include="Editor\ScriptEditor\frmScriptEditor.Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\ObjectHelperPopupBuilder.cs" />
+    <Compile Include="SharedScripts\frmSharedScriptSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedScripts\frmSharedScriptSelectDialog.Designer.cs">
+      <DependentUpon>frmSharedScriptSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharedScripts\SharedScriptContentPersister.cs" />
+    <Compile Include="SharedScripts\ucSharedScripts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SharedScripts\ucSharedScripts.Designer.cs">
+      <DependentUpon>ucSharedScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharedSnippets\frmSharedSnippetSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedSnippets\frmSharedSnippetSelectDialog.Designer.cs">
+      <DependentUpon>frmSharedSnippetSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharedSnippets\SharedSnippetContentPersister.cs" />
+    <Compile Include="SharedSnippets\ucSharedSnippets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SharedSnippets\ucSharedSnippets.Designer.cs">
+      <DependentUpon>ucSharedSnippets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Utilities\SharpDevelopTextEditorUtilities.cs" />
+    <Compile Include="Editor\Utilities\TokenConversionType.cs" />
+    <Compile Include="DBObjectSearch\DBObjectSearchFactory.cs" />
+    <Compile Include="DBObjectSearch\frmDbObjectSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjectSearch\frmDbObjectSearch.Designer.cs">
+      <DependentUpon>frmDbObjectSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataViewer\frmDataViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataViewer\frmDataViewer.Designer.cs">
+      <DependentUpon>frmDataViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Utilities\frmGoToLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Utilities\frmGoToLine.Designer.cs">
+      <DependentUpon>frmGoToLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Utilities\frmSaveScripts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Utilities\frmSaveScripts.Designer.cs">
+      <DependentUpon>frmSaveScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\ScriptEditorFactory.cs" />
+    <Compile Include="DataViewer\SqlCommandGenerator.cs" />
+    <Compile Include="DataViewer\DataViewerFactory.cs" />
+    <Compile Include="Utils\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\frmException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\frmException.Designer.cs">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocalSnippets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocalSnippets.Designer.cs">
+      <DependentUpon>frmLocalSnippets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ContentPersistance\ScriptData.cs" />
+    <Compile Include="Editor\Utilities\SearchAndReplace\frmSearchAndReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Utilities\SearchAndReplace\frmSearchAndReplace.Designer.cs">
+      <DependentUpon>frmSearchAndReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharedScripts\frmSharedScripts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedScripts\frmSharedScripts.Designer.cs">
+      <DependentUpon>frmSharedScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharedSnippets\frmSharedSnippets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedSnippets\frmSharedSnippets.Designer.cs">
+      <DependentUpon>frmSharedSnippets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectExplorer\frmObjectExplorerFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectExplorer\frmObjectExplorerFilter.Designer.cs">
+      <DependentUpon>frmObjectExplorerFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectExplorer\frmObjectExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectExplorer\frmObjectExplorer.Designer.cs">
+      <DependentUpon>frmObjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmScriptEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmScriptEditor.Designer.cs">
+      <DependentUpon>frmScriptEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Utilities\SearchAndReplace\ReplaceEventArgs.cs" />
+    <Compile Include="Editor\Utilities\SearchAndReplace\ReplaceEventHandler.cs" />
+    <Compile Include="Editor\Utilities\SearchAndReplace\SearchEventArgs.cs" />
+    <Compile Include="Editor\Utilities\SearchAndReplace\SearchEventHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CodeCompletionForUserDefinedList\frmObjectSelectorEx.resx">
+      <DependentUpon>frmObjectSelectorEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeCompletion\frmObjectSelector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBObjectSearch\DBObjectSearchWhereBuilder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DBObjectSearchWhereBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBObjectSearch\frmDbObjectSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDbObjectSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataViewer\frmDataViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDataViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectChangeHistory\frmObjectChangeHistoryViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectChangeHistoryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectGroupingSupport\frmObjectGrouping.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectGrouping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectGroupingSupport\ucObjectGrouping.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucObjectGrouping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectReference\frmObjectReferencesViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectReferencesViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectReference\ObjectRefList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ObjectRefList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Utilities\frmGoToLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGoToLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Utilities\frmSaveScripts.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSaveScripts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedScripts\frmSharedScriptSelectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSharedScriptSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedScripts\ucSharedScripts.resx">
+      <DependentUpon>ucSharedScripts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedSnippets\frmSharedSnippetSelectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSharedSnippetSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedSnippets\ucSharedSnippets.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucSharedSnippets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\frmException.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocalSnippets.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLocalSnippets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Utilities\SearchAndReplace\frmSearchAndReplace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSearchAndReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedScripts\frmSharedScripts.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSharedScripts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedSnippets\frmSharedSnippets.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSharedSnippets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectExplorer\frmObjectExplorerFilter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectExplorerFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\frmSplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectExplorer\frmObjectExplorer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\ScriptEditor\frmScriptEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmScriptEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base.addin" />
+    <Content Include="database1.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="db.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbs.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="folderopen.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="globe.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PragmaSQL.ico" />
+    <Content Include="saveall.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql.ico" />
+    <Content Include="sql_old.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql_runner.ico" />
+    <Content Include="text.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="generic.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\DbRefresh.png" />
+    <None Include="Resources\dbex.png" />
+    <None Include="Resources\networkConnections.bmp" />
+    <None Include="Resources\Database 32x32.png" />
+    <None Include="Resources\app.png" />
+    <None Include="Resources\asterisk_orange.png" />
+    <None Include="Resources\arrow_refresh_small.png" />
+    <None Include="Resources\application_split.png" />
+    <None Include="Resources\SortHS.png" />
+    <None Include="Resources\folder_page_white.png" />
+    <None Include="Resources\application_go.png" />
+    <None Include="Resources\lock1.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\library_icon.ico" />
+    <None Include="Resources\CommentOut_Line.bmp" />
+    <None Include="Resources\CommentOut.bmp" />
+    <None Include="Resources\PlayHS_Black.png" />
+    <None Include="Resources\multi_exec.png" />
+    <None Include="Resources\db.png" />
+    <None Include="Resources\dbs.png" />
+    <None Include="Web References\ProducUpdateCheck\CheckUpdates.disco" />
+    <None Include="Resources\Web_StyleSheet.ico" />
+    <None Include="Resources\sql.ico" />
+    <None Include="Resources\danger.ico" />
+    <None Include="Resources\DataContainer_NewRecordHS.png" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\00_me.bmp" />
+    <None Include="Resources\AppBackground_Stones.bmp" />
+    <None Include="Web References\LicenceSigning\LicenceSignSvc.disco" />
+    <None Include="Resources\search.ico" />
+    <None Include="Resources\hourglass.ico" />
+    <None Include="Resources\SearchWeb1.bmp" />
+    <None Include="Resources\stop2.png" />
+    <None Include="Resources\stop2.bmp" />
+    <None Include="Resources\Stop1.bmp" />
+    <None Include="Resources\UtilityText.ico" />
+    <None Include="Resources\EditCode.bmp" />
+    <None Include="Resources\VSObject_Template.bmp" />
+    <None Include="Resources\funnel_edit.png" />
+    <None Include="Resources\filter-2.bmp" />
+    <None Include="Resources\Icon #21.ico" />
+    <None Include="Resources\Exit.bmp" />
+    <None Include="Resources\attention.png" />
+    <None Include="Resources\VSFolder_closed.bmp" />
+    <None Include="Resources\TurnAhead.bmp" />
+    <Compile Include="AddInLoader.cs" />
+    <Compile Include="Editor\IPragmaEditor.cs" />
+    <Compile Include="Editor\ThemedHighlightingStrategy.cs" />
+    <Compile Include="JumpListOperationsEnum.cs" />
+    <Compile Include="Recovery\RecoveryManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Recovery\frmRecoverContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recovery\frmRecoverContent.Designer.cs">
+      <DependentUpon>frmRecoverContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataViewer\ColumnWrapper.cs" />
+    <Compile Include="DataViewer\TableWrapper.cs" />
+    <Compile Include="EditorManagers\TableDataEditorManager.cs" />
+    <Compile Include="Editor\ContentPersistance\ContentPersisterBase.cs" />
+    <Compile Include="Editor\ContentPersistance\IContentPersisterEventSink.cs" />
+    <Compile Include="Editor\ScriptEditor\frmMultiConnectionSpec2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmMultiConnectionSpec2.Designer.cs">
+      <DependentUpon>frmMultiConnectionSpec2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\MultiExecSpec.cs" />
+    <Compile Include="Editor\ScriptEditor\frmMultiDbTemplateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmMultiDbTemplateEditor.Designer.cs">
+      <DependentUpon>frmMultiDbTemplateEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmScriptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmScriptPreview.Designer.cs">
+      <DependentUpon>frmScriptPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutProvider.cs" />
+    <Compile Include="ObjectGroupingSupport\frmObjGroupDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectGroupingSupport\frmObjGroupDlg.Designer.cs">
+      <DependentUpon>frmObjGroupDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\PersistedDockStates.cs" />
+    <Compile Include="Services\ResultRendererService.cs" />
+    <Compile Include="User32.cs" />
+    <Compile Include="Web References\LicenceSigning\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ProducUpdateCheck\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowserEx\frmWebBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowserEx\frmWebBrowser.Designer.cs">
+      <DependentUpon>frmWebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IToolTipProvider.cs" />
+    <Compile Include="Services\AppMsgService.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Editor\frmEditorBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\frmEditorBase.Designer.cs">
+      <DependentUpon>frmEditorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\TextEditor\frmTextEditor.Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\TextEditor\frmTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\TextEditor\frmTextEditor.Designer.cs">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EditorServices.cs" />
+    <Compile Include="Services\HostServices.cs" />
+    <Compile Include="Services\TextDiffService.cs" />
+    <Compile Include="Services\WebBrowserService.cs" />
+    <Compile Include="MruStripMenu.cs" />
+    <Compile Include="ObjectExplorer\Delegates.cs" />
+    <Compile Include="ObjectExplorer\frmObjectExplorer.Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\frmProjectExplorer.Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedScripts\SharedScriptsService.cs" />
+    <Compile Include="SharedSnippets\SharedSnippetProvider.cs" />
+    <Compile Include="SharedSnippets\SharedSnippetsService.cs" />
+    <Compile Include="TextDiff\DiffText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextDiff\DiffText.designer.cs">
+      <DependentUpon>DiffText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextDiff\frmTextDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextDiff\frmTextDiff.Designer.cs">
+      <DependentUpon>frmTextDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextDiff\ObjectDragDropData.cs" />
+    <Compile Include="TextDiff\TextDiffFactory.cs" />
+    <Compile Include="GoldTokenizer.cs" />
+    <Compile Include="Utils\frmMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\frmMessages.Designer.cs">
+      <DependentUpon>frmMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowserEx\WebBrowserFactory.cs" />
+    <Compile Include="EditorManagers\ScriptEditorManager.cs" />
+    <None Include="Resources\new- style 21.bmp" />
+    <None Include="Resources\db insert_2.bmp" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\generic.png" />
+    <None Include="Resources\saveItem.ico" />
+    <None Include="Resources\shared.ico" />
+    <None Include="Resources\history.png" />
+    <None Include="App.config" />
+    <None Include="Resources\Icon #2.ico" />
+    <None Include="Resources\edit.bmp" />
+    <None Include="Resources\AddToFavorites.bmp" />
+    <None Include="Resources\Treeview.bmp" />
+    <None Include="Resources\library.png" />
+    <None Include="Resources\SaveAsWebPage.bmp" />
+    <None Include="Resources\VSProject_html.bmp" />
+    <None Include="Resources\help-2.bmp" />
+    <None Include="Resources\new case16x16 24-bit.png" />
+    <None Include="Resources\reload16x16 24-bit.png" />
+    <None Include="Resources\RenameFolder.bmp" />
+    <None Include="Resources\NewFolder.bmp" />
+    <None Include="Resources\DeleteFolder.bmp" />
+    <None Include="Resources\Information-2.bmp" />
+    <None Include="Resources\print preview.bmp" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error2.png" />
+    <None Include="Resources\appwindow_info_annotation_16.bmp" />
+    <None Include="Resources\Help %28Alt 2%29.ico" />
+    <None Include="Resources\Preview.ico" />
+    <None Include="Resources\view-.ico" />
+    <None Include="Resources\display.ico" />
+    <None Include="Resources\table.ico" />
+    <None Include="Resources\Print.bmp" />
+    <None Include="Resources\GoLtr.bmp" />
+    <None Include="Resources\SearchWeb.bmp" />
+    <None Include="Resources\home.bmp" />
+    <None Include="Resources\forward.bmp" />
+    <None Include="Resources\back.bmp" />
+    <None Include="Resources\search.bmp" />
+    <None Include="Resources\SearchFolder.bmp" />
+    <None Include="Resources\refresh2.bmp" />
+    <None Include="Resources\Indent.bmp" />
+    <None Include="Resources\IndentRTL.bmp" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\gear_1.bmp" />
+    <None Include="Resources\delete.bmp" />
+    <None Include="Resources\window-maximize.ico" />
+    <None Include="Resources\window-minimize.ico" />
+    <None Include="Resources\window-cascade.ico" />
+    <None Include="Resources\window.ico" />
+    <None Include="Resources\database2.ico" />
+    <None Include="Resources\cal.ico" />
+    <None Include="Resources\Data_Dataset.ico" />
+    <None Include="Resources\font_capitalize.bmp" />
+    <None Include="Resources\font_decrease.bmp" />
+    <None Include="Resources\font_increase.bmp" />
+    <None Include="Resources\font size.bmp" />
+    <None Include="Resources\Filter2.bmp" />
+    <None Include="Resources\Help.ico" />
+    <None Include="Resources\clock-2.bmp" />
+    <None Include="Resources\redo.bmp" />
+    <None Include="Resources\undo.bmp" />
+    <None Include="Resources\status_anim.gif" />
+    <None Include="Resources\Save As.bmp" />
+    <None Include="Resources\save.ico" />
+    <None Include="Resources\OK.bmp" />
+    <None Include="Resources\Stop.bmp" />
+    <None Include="Resources\Run.bmp" />
+    <None Include="Resources\NewWindow.bmp" />
+    <None Include="Resources\Refresh.bmp" />
+    <None Include="Resources\new- style 2.bmp" />
+    <None Include="Resources\Database.bmp" />
+    <None Include="Resources\correct.png" />
+    <None Include="Resources\stop-2.bmp" />
+    <None Include="Resources\Play.bmp" />
+    <None Include="Resources\open.bmp" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\Database Remove.bmp" />
+    <None Include="Resources\Database Edit.bmp" />
+    <None Include="Resources\Database Add.bmp" />
+    <None Include="Resources\vw-lrgic.bmp" />
+    <None Include="Resources\vw-list.bmp" />
+    <None Include="Resources\vw-dtls.bmp" />
+    <None Include="Resources\vw-smlic.bmp" />
+    <None Include="Resources\cut-2.bmp" />
+    <None Include="Resources\saveall.bmp" />
+    <None Include="Resources\copy.bmp" />
+    <None Include="Resources\paste.bmp" />
+    <None Include="Resources\save.bmp" />
+    <None Include="Web References\LicenceSigning\LicenceSignSvc.wsdl" />
+    <None Include="Web References\LicenceSigning\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ProducUpdateCheck\CheckUpdates.wsdl" />
+    <None Include="Web References\ProducUpdateCheck\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Recovery\frmRecoverContent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRecoverContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\frmEditorBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditorBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\ScriptEditor\frmMultiConnectionSpec2.resx">
+      <DependentUpon>frmMultiConnectionSpec2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\ScriptEditor\frmMultiDbTemplateEditor.resx">
+      <DependentUpon>frmMultiDbTemplateEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\ScriptEditor\frmScriptPreview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmScriptPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\TextEditor\frmTextEditor.resx">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectGroupingSupport\frmObjGroupDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjGroupDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowserEx\frmWebBrowser.resx">
+      <DependentUpon>frmWebBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\frmProjectExplorer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProjectExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScripGeneration\frmCrudGenerator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCrudGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextDiff\DiffText.resx">
+      <DependentUpon>DiffText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextDiff\frmTextDiff.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTextDiff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\frmMessages.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMessages.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rd Party\AsynchronousCodeBlocks\AsynchronousCodeBlocks\AsynchronousCodeBlocks.csproj">
+      <Project>{3B501F44-B9FA-4A16-9F58-D3E627250DF7}</Project>
+      <Name>AsynchronousCodeBlocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\Crad.Windows.Forms.Actions\Crad.Windows.Forms.Actions.csproj">
+      <Project>{6E50D1BD-D8EA-4992-8B25-C5A0D7E179A5}</Project>
+      <Name>Crad.Windows.Forms.Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\DifferenceEngine\DifferenceEngine.csproj">
+      <Project>{8AE4897A-EA74-49B1-BA55-D892C27AF9C9}</Project>
+      <Name>DifferenceEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\ExtendedRichTextEditor\RichTextEditor\RichTextBoxEx.csproj">
+      <Project>{A3A17708-F37E-47FE-B6B3-A43E1A008206}</Project>
+      <Name>RichTextBoxEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\FileAssociation\FileAssociation.csproj">
+      <Project>{E2EDE3ED-1E9E-46D9-903E-1A8FEB4B2371}</Project>
+      <Name>FileAssociation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\GoldParser\CalithaLib\CalithaLibrary.csproj">
+      <Project>{9E8F8FBC-29C0-4DCB-83CE-058AA757D570}</Project>
+      <Name>CalithaLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\GoldParser\GoldParserEngine\GoldParserEngine.csproj">
+      <Project>{837DC4CB-4BEA-4171-8366-A1AA6207F576}</Project>
+      <Name>GoldParserEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\ICSharpCode.Core\ICSharpCode.Core.csproj">
+      <Project>{35CEF10F-2D4C-45F2-9DD1-161E0FEC583C}</Project>
+      <Name>ICSharpCode.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\MW\MWCommon\MWCommon.csproj">
+      <Project>{FAD9A8E2-EE7C-4192-82DA-11DF9A1BB717}</Project>
+      <Name>MWCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rd Party\MW\MWControls\MWControls.csproj">
+      <Project>{9986C595-9BF5-42B1-935E-C1203108248D}</Project>
+      <Name>MWControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PragmaSQL.Core\PragmaSQL.Core.csproj">
+      <Project>{0EDA4515-05C1-408F-B078-59496B2AA23C}</Project>
+      <Name>PragmaSQL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PragmaSQL.Proxy\PragmaSQL.Proxy.csproj">
+      <Project>{BBF2CAB3-AD66-4087-AE26-5162235CD923}</Project>
+      <Name>PragmaSQL.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PragmaSQL.Scripting.Smo\PragmaSQL.Scripting.Smo.csproj">
+      <Project>{7B5A08CA-51B3-4769-A3F2-CC084EED47E0}</Project>
+      <Name>PragmaSQL.Scripting.Smo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/PragmaWeb/WebServices/LicenceSignSvc.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LicenceSigning\</RelPath>
+      <UpdateFromURL>http://localhost/PragmaWeb/WebServices/LicenceSignSvc.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PragmaSQL_LicenceSigning_LicenceSignSvc</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.pragmasql.com/webservices/CheckUpdates.asmx%3fop=HasUpdate">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ProducUpdateCheck\</RelPath>
+      <UpdateFromURL>http://www.pragmasql.com/webservices/CheckUpdates.asmx%3fop=HasUpdate</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PragmaSQL_ProducUpdateCheck_CheckUpdates</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(ProjectDir)Base.addin" "$(TargetDir)AddIns"
+echo "$(ProjectDir)bin\NotifyReleasePostBuild.cmd" "$(ProjectDir)bin" $(ConfigurationName)</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

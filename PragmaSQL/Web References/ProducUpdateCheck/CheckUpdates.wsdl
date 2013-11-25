@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.pragmasql.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.pragmasql.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.pragmasql.com/webservices/">
+      <s:element name="HasUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasUpdateResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="newVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HasUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:HasUpdate" />
+  </wsdl:message>
+  <wsdl:message name="HasUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:HasUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CheckUpdatesSoap">
+    <wsdl:operation name="HasUpdate">
+      <wsdl:input message="tns:HasUpdateSoapIn" />
+      <wsdl:output message="tns:HasUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckUpdatesSoap" type="tns:CheckUpdatesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HasUpdate">
+      <soap:operation soapAction="http://www.pragmasql.com/webservices/HasUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CheckUpdatesSoap12" type="tns:CheckUpdatesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HasUpdate">
+      <soap12:operation soapAction="http://www.pragmasql.com/webservices/HasUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckUpdates">
+    <wsdl:port name="CheckUpdatesSoap" binding="tns:CheckUpdatesSoap">
+      <soap:address location="http://www.pragmasql.com/webservices/CheckUpdates.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CheckUpdatesSoap12" binding="tns:CheckUpdatesSoap12">
+      <soap12:address location="http://www.pragmasql.com/webservices/CheckUpdates.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

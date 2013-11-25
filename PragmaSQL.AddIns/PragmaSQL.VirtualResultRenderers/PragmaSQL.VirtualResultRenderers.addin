@@ -1,0 +1,18 @@
+﻿<AddIn name        = "PragmaSQL.VirtualResultRenderers"
+       author      = "Ali Özgür"
+       copyright   = ""
+       description = "Result renderer implemented with DataGridView working in virtual mode.">
+
+  <Manifest>
+    <Identity name = "PragmaSQL.VirtualResultRenderers"/>
+  </Manifest>
+
+  <Runtime>
+    <Import assembly = "PragmaSQL.VirtualResultRenderers.dll">
+    </Import>
+  </Runtime>
+
+	<Path name = "/Workspace/Autostart">
+		<Class id = "RegisterRenderer" class = "PragmaSQL.VirtualResultRenderers.RegisterRenderer"/>
+	</Path>
+</AddIn>

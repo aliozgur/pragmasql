@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PragmaSQL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PragmaSQL_ProducUpdateCheck_CheckUpdates" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.pragmasql.com/webservices/CheckUpdates.asmx</Value>
+    </Setting>
+    <Setting Name="PragmaSQLDownloadsUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.pragmasql.com/home/downloads/pragmasql.aspx</Value>
+    </Setting>
+    <Setting Name="Help_QueryResultFiltering" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://msdn.microsoft.com/tr-tr/library/system.data.datacolumn.expression(en-us,VS.80).aspx</Value>
+    </Setting>
+    <Setting Name="Help_QueryResultSorting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://msdn.microsoft.com/en-us/library/system.data.dataview.sort(VS.80).aspx</Value>
+    </Setting>
+    <Setting Name="DownloadUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.pragmasql.com/home/downloads/pragmasql.aspx</Value>
+    </Setting>
+    <Setting Name="PragmaSQL_LicenceSigning_LicenceSignSvc" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/PragmaWeb/WebServices/LicenceSignSvc.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
