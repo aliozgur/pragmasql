@@ -1,4 +1,3 @@
-# PragmaSQL is an open source T-SQL editor
 [PragmaSQL Home](http://www.pragmasql.com/pragmasql/default.aspx "PragmaSQL Home")
 
 ## PragmaSQL Fature Summary
