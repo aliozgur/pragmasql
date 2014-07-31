@@ -341,7 +341,11 @@ namespace PragmaSQL
       }
 
       string script = row["ObjectScript"] as string;
-      string caption = row["ObjectName"] as string;
+      string caption = String.Format("{0} ({1} | {2})"
+          , row["ObjectName"] as string
+          , row["CreatedOn"]
+          , row["CreatedBy"] as string);
+
       frmTextDiff diffForm = frmTextDiff.ActiveTextDiff;
       if (diffForm == null)
       {
