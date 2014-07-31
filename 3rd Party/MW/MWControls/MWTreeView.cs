@@ -3954,6 +3954,9 @@ namespace MWControls
 		/// <param name="tn">TreeNode to remove highlight from.</param>
 		public void LowlightNode(TreeNode tn)
 		{
+            if (tn == null)
+                return;
+
 			if(tn.BackColor != this.BackColor)
 			{
 				tn.BackColor = this.BackColor;
