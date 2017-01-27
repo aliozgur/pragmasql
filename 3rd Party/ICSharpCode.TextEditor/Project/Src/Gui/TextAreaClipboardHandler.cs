@@ -82,10 +82,11 @@ namespace ICSharpCode.TextEditor
 					lineSelected.WriteByte(1);
 					dataObject.SetData(LineSelectedType, false, lineSelected);
 				}
-				// Default has no highlighting, therefore we don't need RTF output
-				if (textArea.Document.HighlightingStrategy.Name != "Default") {
-					dataObject.SetData(DataFormats.Rtf, RtfWriter.GenerateRtf(textArea));
-				}
+                // Default has no highlighting, therefore we don't need RTF output
+                // Ali 27.01.2017 : Comment out since RTF is not generated properly for unicode chars
+                //if (textArea.Document.HighlightingStrategy.Name != "Default") {
+				//	dataObject.SetData(DataFormats.Rtf, RtfWriter.GenerateRtf(textArea));
+				//}
 				OnCopyText(new CopyTextEventArgs(stringToCopy));
 				
 				// Work around ExternalException bug. (SD2-426)

@@ -4175,7 +4175,7 @@ namespace PragmaSQL
                 sb.AppendLine(selLine);
             }
 
-            Clipboard.SetText(sb.ToString());
+            Clipboard.SetText(sb.ToString(),TextDataFormat.UnicodeText);
         }
 
         private void ReclaimWindowNumber()

@@ -486,6 +486,7 @@ namespace PragmaSQL
     private void CopySelectionToClipboard()
     {
       DataObject dtObj = grd.GetClipboardContent();
+
       if (dtObj == null)
       {
         return;

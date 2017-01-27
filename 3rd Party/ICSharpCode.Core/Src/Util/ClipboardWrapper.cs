@@ -31,9 +31,9 @@ namespace ICSharpCode.Core
 		{
 			// retry 2 times should be enough for read access
 			try {
-				return Clipboard.GetText();
+				return Clipboard.GetText(TextDataFormat.UnicodeText);
 			} catch (ExternalException) {
-				return Clipboard.GetText();
+				return Clipboard.GetText(TextDataFormat.UnicodeText);
 			}
 		}
 		
