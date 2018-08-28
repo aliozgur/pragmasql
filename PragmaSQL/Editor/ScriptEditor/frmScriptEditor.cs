@@ -2430,6 +2430,10 @@ namespace PragmaSQL
                 {
                     OpenObjectScripInNewEditor(e.objectInfo);
                 }
+                else if (e.ActionType == ActionType.SelectTop100Rows)
+                {
+                    ExecScript($"SELECT TOP 100 * FROM {e.objectInfo.FullNameQuoted}", ScriptRunType.Execute, 0, false, false);
+                }
                 else if (e.ActionType == ActionType.Open)
                 {
                     LoadTableOrViewData(e.objectInfo);

@@ -49,15 +49,7 @@ namespace PragmaSQL
             set { _isInitialShow = value; }
         }
 
-        /*
-        private bool _connectInitial = true;
-        public bool ConnectInitial
-        {
-          get { return _connectInitial; }
-          set { _connectInitial = value; }
-        }
-        */
-
+      
         public TreeNode SelectedNode
         {
             get
@@ -113,10 +105,12 @@ namespace PragmaSQL
             }
 
             NodeData data = NodeDataFactory.GetNodeData(SelectedNode.Tag);
+
             if (data == null)
             {
                 return false;
             }
+
             if (data.Type == DBObjectType.View
               || data.Type == DBObjectType.Trigger
               || data.Type == DBObjectType.StoredProc
@@ -138,10 +132,6 @@ namespace PragmaSQL
         {
             get
             {
-                //if (ConfigHelper.Current != null)
-                //  return ConfigHelper.Current.ObjectExplorerOptions.ShowFullObjectNames;
-                //else
-                //  return true;
                 return true;
             }
         }
@@ -1928,44 +1918,32 @@ namespace PragmaSQL
 
         }
 
-        //private void GenerateTableCreateScriptToScriptWindow()
-        //{
-        //  TreeNode node = SelectedNode;
-        //  if (node == null)
-        //  {
-        //    return;
-        //  }
+        private void GenerateSelectTop100ScriptToScriptWindow()
+        {
+            TreeNode node = SelectedNode;
+            if (node == null)
+            {
+                return;
+            }
 
-        //  NodeData data = NodeDataFactory.GetNodeData(node.Tag);
-        //  if (data == null)
-        //  {
-        //    return;
-        //  }
+            NodeData data = NodeDataFactory.GetNodeData(node.Tag);
+            var isTable = (data?.Type??DBObjectType.None ) == DBObjectType.UserTable 
+                || (data?.Type ?? DBObjectType.None) == DBObjectType.SystemTable 
+                || ( data?.Type ?? DBObjectType.None)  == DBObjectType.View;
 
-        //  try
-        //  {
-        //    string script = String.Empty;
-        //    FuzzyWait.ShowFuzzyWait("Generating table create script...");
-        //    ConnectionParams cp = data.ConnParams.CreateCopy();
-        //    cp.Database = data.DBName;
-        //    using (DbObjectScripter scripter = new DbObjectScripter(cp))
-        //    {
-        //      script = scripter.ScriptUserTable((int)data.ID);
-        //    }
+            if (!isTable)
+            {
+                return;
+            }
 
-        //    frmScriptEditor editor = ScriptEditorFactory.CreateNew("Create " + data.Name, script, data);
-        //    ScriptEditorFactory.ShowScriptEditor(editor);
-        //  }
-        //  catch (Exception ex)
-        //  {
-        //    FuzzyWait.CloseFuzzyWait();
-        //    throw ex;
-        //  }
-        //  finally
-        //  {
-        //    FuzzyWait.CloseFuzzyWait();
-        //  }
-        //}
+            ConnectionParams cp = data.ConnParams.CreateCopy();
+            cp.Database = data.DBName;
+            string script = $"SELECT TOP 100 * FROM {data.QualifiedFullName}";
+            frmScriptEditor editor = ScriptEditorFactory.CreateNew("SELECT " + data.FullName, script, data);
+            ScriptEditorFactory.ShowScriptEditor(editor);
+            editor.ExecScript(ScriptRunType.Execute);
+        }
+
 
         private void ViewColumnsOfSelectedObjectInScriptWindow()
         {
@@ -2220,48 +2198,7 @@ namespace PragmaSQL
             ObjectGroupingFormFactory.ShowForm(frm);
         }
 
-        //private void ShowDatabaseObjectScriptDialog( )
-        //{
-        //  NodeData data = NodeDataFactory.GetNodeData(SelectedNode.Tag);
-        //  if (data == null || data.Type != DBObjectType.Database)
-        //  {
-        //    return;
-        //  }
-
-        //  ConnectionParams cp = data.ConnParams.CreateCopy();
-        //  cp.Database = data.DBName;
-        //  frmDBObjectScripter.ShowScripterDialog(cp);
-        //}
-
-
-
-        //private void ShowDatabaseObjectScriptDialog()
-        //{
-        //  NodeData data = NodeDataFactory.GetNodeData(SelectedNode.Tag);
-        //  if (data == null || data.Type != DBObjectType.Database)
-        //  {
-        //    return;
-        //  }
-
-        //  ConnectionParams cp = data.ConnParams.CreateCopy();
-        //  cp.Database = data.DBName;
-        //  BatchScripterDialog.ShowBatchScriptDialog(cp);
-        //}
-
-        //private void ShowBulkCopyDataDialog()
-        //{
-        //  NodeData data = NodeDataFactory.GetNodeData(SelectedNode.Tag);
-        //  if (data == null || data.Type != DBObjectType.Database)
-        //  {
-        //    return;
-        //  }
-
-        //  ConnectionParams cp = data.ConnParams.CreateCopy();
-        //  cp.Database = data.DBName;
-        //  BulkCopyDialog.ShowBulkCopyDialog(cp);
-        //}
-
-
+        
         private void ShowFilterDialog(TreeNode node)
         {
             if (node == null)
@@ -2978,14 +2915,11 @@ namespace PragmaSQL
                 return;
 
             edtPath.Text = e.Node.FullPath;
-            if (
-          (data.Type == DBObjectType.GroupingFolderB
-            || data.Type == DBObjectType.GroupingFolderY
-            || data.Type == DBObjectType.UsersGroup
-          )
-          &&
-          (data.Filter.HasValue)
-        )
+            var isFolderOrGroup = data.Type == DBObjectType.GroupingFolderB 
+                || data.Type == DBObjectType.GroupingFolderY
+                || data.Type == DBObjectType.UsersGroup;
+
+            if (isFolderOrGroup && data.Filter.HasValue)
             {
                 btnFilter.Enabled = true;
             }

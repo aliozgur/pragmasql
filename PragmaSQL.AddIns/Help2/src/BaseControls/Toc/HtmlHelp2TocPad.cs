@@ -29,11 +29,11 @@ namespace HtmlHelp2
       set { HtmlHelp2TocPad._current = value; }
     }
 
-		MSHelp2TocControl help2TocControl;
-		public Control Control
-		{
-			get { return help2TocControl; }
-		}
+        MSHelp2TocControl help2TocControl;
+        public Control Control
+        {
+            get { return help2TocControl; }
+        }
 
     public HtmlHelp2TocPad( )
     {
@@ -49,39 +49,39 @@ namespace HtmlHelp2
       HostServicesSingleton.HostServices.ShowForm(this);
     }
 
-		public void SyncToc(string topic)
-		{
-			help2TocControl.SynchronizeToc(topic);
-		}
+        public void SyncToc(string topic)
+        {
+            help2TocControl.SynchronizeToc(topic);
+        }
 
-		public void GetPrevFromNode()
-		{
-			help2TocControl.GetPrevFromNode();
-		}
+        public void GetPrevFromNode()
+        {
+            help2TocControl.GetPrevFromNode();
+        }
 
-		public void GetPrevFromUrl(string topic)
-		{
-			help2TocControl.GetPrevFromUrl(topic);
-		}
+        public void GetPrevFromUrl(string topic)
+        {
+            help2TocControl.GetPrevFromUrl(topic);
+        }
 
-		public void GetNextFromNode()
-		{
-			help2TocControl.GetNextFromNode();
-		}
+        public void GetNextFromNode()
+        {
+            help2TocControl.GetNextFromNode();
+        }
 
-		public void GetNextFromUrl(string topic)
-		{
-			help2TocControl.GetNextFromUrl(topic);
-		}
+        public void GetNextFromUrl(string topic)
+        {
+            help2TocControl.GetNextFromUrl(topic);
+        }
 
-		public bool IsNotFirstNode
-		{
-			get { return help2TocControl.IsNotFirstNode; }
-		}
+        public bool IsNotFirstNode
+        {
+            get { return help2TocControl.IsNotFirstNode; }
+        }
 
-		public bool IsNotLastNode
-		{
-			get { return help2TocControl.IsNotLastNode; }
-		}
+        public bool IsNotLastNode
+        {
+            get { return help2TocControl.IsNotLastNode; }
+        }
   }
 }

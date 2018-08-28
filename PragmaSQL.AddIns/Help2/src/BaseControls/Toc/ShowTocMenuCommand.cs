@@ -16,21 +16,28 @@ using PragmaSQL.Core;
 
 namespace HtmlHelp2
 {
-  public class ShowTocMenuCommand : AbstractMenuCommand
-  {
-    public override void Run( )
+    public class ShowTocMenuCommand : AbstractMenuCommand
     {
-      HtmlHelp2TocPad pad = HtmlHelp2TocPad.Current;
-      if (pad == null)
-      {
-        HtmlHelp2TocPad.Current = new HtmlHelp2TocPad();
-        pad = HtmlHelp2TocPad.Current;
-        HostServicesSingleton.HostServices.ShowForm(pad, AddInDockState.DockRightAutoHide);
-      }
-      else
-      {
-        HostServicesSingleton.HostServices.ShowForm(pad);
-      }
+        public override void Run()
+        {
+            HtmlHelp2TocPad pad = HtmlHelp2TocPad.Current;
+            if (pad == null)
+            {
+                try
+                {
+                    HtmlHelp2TocPad.Current = new HtmlHelp2TocPad();
+                    pad = HtmlHelp2TocPad.Current;
+                    HostServicesSingleton.HostServices.ShowForm(pad, AddInDockState.DockRightAutoHide);
+                }
+                catch(Exception ex)
+                {
+                    MessageService.ShowError($"Table of Contents can not be initialized!\r\n{ex.Message}");
+                }
+            }
+            else
+            {
+                HostServicesSingleton.HostServices.ShowForm(pad);
+            }
+        }
     }
-  }
 }

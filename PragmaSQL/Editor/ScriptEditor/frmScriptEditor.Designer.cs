@@ -122,9 +122,9 @@ namespace PragmaSQL
             this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripSeparator();
             this.textDiffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.destToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.scriptObjectAsSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            this.destToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scriptObjectAsDestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMnuItemMarkSelAsCodeBlock = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +166,7 @@ namespace PragmaSQL
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuItemObjectHelpOperations = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuItemModifySelObject = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemSelectTop100SelObject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemOpenSelObject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemExecProc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemObjectChangeHist = new System.Windows.Forms.ToolStripMenuItem();
@@ -231,21 +232,21 @@ namespace PragmaSQL
             // _textEditor
             // 
             this._textEditor.Location = new System.Drawing.Point(0, 53);
-            this._textEditor.Size = new System.Drawing.Size(947, 171);
+            this._textEditor.Size = new System.Drawing.Size(1353, 348);
             // 
             // panEditor
             // 
             this.panEditor.Location = new System.Drawing.Point(0, 78);
-            this.panEditor.Size = new System.Drawing.Size(947, 224);
+            this.panEditor.Size = new System.Drawing.Size(1353, 401);
             // 
             // panOutput
             // 
             this.panOutput.Controls.Add(this.tabOutput);
             this.panOutput.Controls.Add(this.kryptonHeader1);
             this.panOutput.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panOutput.Location = new System.Drawing.Point(0, 306);
+            this.panOutput.Location = new System.Drawing.Point(0, 483);
             this.panOutput.Name = "panOutput";
-            this.panOutput.Size = new System.Drawing.Size(947, 217);
+            this.panOutput.Size = new System.Drawing.Size(1353, 217);
             this.panOutput.TabIndex = 1;
             // 
             // tabOutput
@@ -258,11 +259,12 @@ namespace PragmaSQL
             this.tabOutput.Name = "tabOutput";
             this.tabOutput.SelectedIndex = 0;
             this.tabOutput.ShowToolTips = true;
-            this.tabOutput.Size = new System.Drawing.Size(947, 186);
+            this.tabOutput.Size = new System.Drawing.Size(1353, 186);
             this.tabOutput.TabIndex = 0;
             // 
             // popUpOutputPane
             // 
+            this.popUpOutputPane.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.popUpOutputPane.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearToolStripMenuItem,
             this.toolStripMenuItem15,
@@ -304,7 +306,7 @@ namespace PragmaSQL
             this.tabMessages.Location = new System.Drawing.Point(4, 25);
             this.tabMessages.Name = "tabMessages";
             this.tabMessages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMessages.Size = new System.Drawing.Size(939, 157);
+            this.tabMessages.Size = new System.Drawing.Size(1345, 157);
             this.tabMessages.TabIndex = 0;
             this.tabMessages.Text = "Messages";
             this.tabMessages.ToolTipText = "Messages";
@@ -329,7 +331,7 @@ namespace PragmaSQL
             this.lv.LargeImageList = this.imgListMessages;
             this.lv.Location = new System.Drawing.Point(3, 3);
             this.lv.Name = "lv";
-            this.lv.Size = new System.Drawing.Size(929, 147);
+            this.lv.Size = new System.Drawing.Size(1335, 147);
             this.lv.SmallImageList = this.imgListMessages;
             this.lv.TabIndex = 1;
             this.lv.UseCompatibleStateImageBehavior = false;
@@ -370,6 +372,7 @@ namespace PragmaSQL
             // 
             // popUpMessages
             // 
+            this.popUpMessages.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.popUpMessages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem,
             this.copyWithHeadersToolStripMenuItem});
@@ -410,7 +413,7 @@ namespace PragmaSQL
             this.kryptonHeader1.Location = new System.Drawing.Point(0, 0);
             this.kryptonHeader1.Name = "kryptonHeader1";
             this.kryptonHeader1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.kryptonHeader1.Size = new System.Drawing.Size(947, 31);
+            this.kryptonHeader1.Size = new System.Drawing.Size(1353, 31);
             this.kryptonHeader1.TabIndex = 3;
             this.kryptonHeader1.Text = "Messages And Results";
             this.kryptonHeader1.Values.Description = "";
@@ -431,14 +434,15 @@ namespace PragmaSQL
             // 
             this.splitterOutput.BackColor = System.Drawing.SystemColors.Control;
             this.splitterOutput.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitterOutput.Location = new System.Drawing.Point(0, 302);
+            this.splitterOutput.Location = new System.Drawing.Point(0, 479);
             this.splitterOutput.Name = "splitterOutput";
-            this.splitterOutput.Size = new System.Drawing.Size(947, 4);
+            this.splitterOutput.Size = new System.Drawing.Size(1353, 4);
             this.splitterOutput.TabIndex = 2;
             this.splitterOutput.TabStop = false;
             // 
             // popUpTab
             // 
+            this.popUpTab.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.popUpTab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cMnuItemClose,
             this.cMnuCloseAll,
@@ -505,12 +509,13 @@ namespace PragmaSQL
             // 
             // mainMenu
             // 
+            this.mainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuEdit,
             this.mnuQuery,
             this.helpToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Location = new System.Drawing.Point(0, 30);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(947, 24);
             this.mainMenu.TabIndex = 4;
@@ -721,36 +726,36 @@ namespace PragmaSQL
             // mnuItemKeywordsToUppercase
             // 
             this.mnuItemKeywordsToUppercase.Name = "mnuItemKeywordsToUppercase";
-            this.mnuItemKeywordsToUppercase.Size = new System.Drawing.Size(200, 22);
+            this.mnuItemKeywordsToUppercase.Size = new System.Drawing.Size(199, 22);
             this.mnuItemKeywordsToUppercase.Text = "Keywords To Uppercase";
             // 
             // mnuItemKeywordsToLowercase
             // 
             this.mnuItemKeywordsToLowercase.Name = "mnuItemKeywordsToLowercase";
-            this.mnuItemKeywordsToLowercase.Size = new System.Drawing.Size(200, 22);
+            this.mnuItemKeywordsToLowercase.Size = new System.Drawing.Size(199, 22);
             this.mnuItemKeywordsToLowercase.Text = "Keywords To Lowercase";
             // 
             // mnuItemCapitilizeKeywords
             // 
             this.mnuItemCapitilizeKeywords.Name = "mnuItemCapitilizeKeywords";
-            this.mnuItemCapitilizeKeywords.Size = new System.Drawing.Size(200, 22);
+            this.mnuItemCapitilizeKeywords.Size = new System.Drawing.Size(199, 22);
             this.mnuItemCapitilizeKeywords.Text = "Captialize Keywords";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(197, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 6);
             // 
             // mnuItemScriptToUppercase
             // 
             this.mnuItemScriptToUppercase.Name = "mnuItemScriptToUppercase";
-            this.mnuItemScriptToUppercase.Size = new System.Drawing.Size(200, 22);
+            this.mnuItemScriptToUppercase.Size = new System.Drawing.Size(199, 22);
             this.mnuItemScriptToUppercase.Text = "Script To Uppercase";
             // 
             // mnuItemScriptToLowercase
             // 
             this.mnuItemScriptToLowercase.Name = "mnuItemScriptToLowercase";
-            this.mnuItemScriptToLowercase.Size = new System.Drawing.Size(200, 22);
+            this.mnuItemScriptToLowercase.Size = new System.Drawing.Size(199, 22);
             this.mnuItemScriptToLowercase.Text = "Script To Lowercase";
             // 
             // foldingsToolStripMenuItem
@@ -800,42 +805,42 @@ namespace PragmaSQL
             // mnuItemRun
             // 
             this.mnuItemRun.Name = "mnuItemRun";
-            this.mnuItemRun.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemRun.Size = new System.Drawing.Size(180, 22);
             this.mnuItemRun.Text = "Run";
             // 
             // mnuItemMultiRun
             // 
             this.mnuItemMultiRun.Name = "mnuItemMultiRun";
-            this.mnuItemMultiRun.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemMultiRun.Size = new System.Drawing.Size(180, 22);
             this.mnuItemMultiRun.Text = "Multi Run";
             // 
             // mnuItemStop
             // 
             this.mnuItemStop.Name = "mnuItemStop";
-            this.mnuItemStop.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemStop.Size = new System.Drawing.Size(180, 22);
             this.mnuItemStop.Text = "Stop ";
             // 
             // mnuItemCheckSyntax
             // 
             this.mnuItemCheckSyntax.Name = "mnuItemCheckSyntax";
-            this.mnuItemCheckSyntax.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemCheckSyntax.Size = new System.Drawing.Size(180, 22);
             this.mnuItemCheckSyntax.Text = "Check Syntax";
             // 
             // mnuItemShowPlan
             // 
             this.mnuItemShowPlan.Name = "mnuItemShowPlan";
-            this.mnuItemShowPlan.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemShowPlan.Size = new System.Drawing.Size(180, 22);
             this.mnuItemShowPlan.Text = "Show Plan";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuItemToggleOutputPane
             // 
             this.mnuItemToggleOutputPane.Name = "mnuItemToggleOutputPane";
-            this.mnuItemToggleOutputPane.Size = new System.Drawing.Size(181, 22);
+            this.mnuItemToggleOutputPane.Size = new System.Drawing.Size(180, 22);
             this.mnuItemToggleOutputPane.Text = "Toggle Output Pane";
             // 
             // helpToolStripMenuItem
@@ -967,24 +972,24 @@ namespace PragmaSQL
             this.sourceToolStripMenuItem.Text = "As Source [Editor Content]";
             this.sourceToolStripMenuItem.Click += new System.EventHandler(this.OnDiffScriptAsSource_Click);
             // 
-            // destToolStripMenuItem
-            // 
-            this.destToolStripMenuItem.Name = "destToolStripMenuItem";
-            this.destToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.destToolStripMenuItem.Text = "As Dest [Editor Content]";
-            this.destToolStripMenuItem.Click += new System.EventHandler(this.OnDiffScriptAsDest_Click);
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(222, 6);
-            // 
             // scriptObjectAsSourceToolStripMenuItem
             // 
             this.scriptObjectAsSourceToolStripMenuItem.Name = "scriptObjectAsSourceToolStripMenuItem";
             this.scriptObjectAsSourceToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.scriptObjectAsSourceToolStripMenuItem.Text = "As Source [Object At Cursor]";
             this.scriptObjectAsSourceToolStripMenuItem.Click += new System.EventHandler(this.scriptObjectAsSourceToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(222, 6);
+            // 
+            // destToolStripMenuItem
+            // 
+            this.destToolStripMenuItem.Name = "destToolStripMenuItem";
+            this.destToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.destToolStripMenuItem.Text = "As Dest [Editor Content]";
+            this.destToolStripMenuItem.Click += new System.EventHandler(this.OnDiffScriptAsDest_Click);
             // 
             // scriptObjectAsDestToolStripMenuItem
             // 
@@ -1080,10 +1085,10 @@ namespace PragmaSQL
             this.statContentModifiedIndicator,
             this.statLblContentInfo,
             this.statLblQueryCompletionTime});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 523);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 700);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.ShowItemToolTips = true;
-            this.statusStrip1.Size = new System.Drawing.Size(947, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1353, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1117,7 +1122,7 @@ namespace PragmaSQL
             // statLblContentInfo
             // 
             this.statLblContentInfo.Name = "statLblContentInfo";
-            this.statLblContentInfo.Size = new System.Drawing.Size(760, 17);
+            this.statLblContentInfo.Size = new System.Drawing.Size(1166, 17);
             this.statLblContentInfo.Spring = true;
             this.statLblContentInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1156,13 +1161,13 @@ namespace PragmaSQL
             this.toolStripContainer1.ContentPanel.Controls.Add(this.strip2);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.strip1);
             this.toolStripContainer1.ContentPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(947, 48);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1353, 48);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 30);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(947, 48);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1353, 48);
             this.toolStripContainer1.TabIndex = 9;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -1194,7 +1199,7 @@ namespace PragmaSQL
             this.toolStripButton2});
             this.strip3.Location = new System.Drawing.Point(0, 25);
             this.strip3.Name = "strip3";
-            this.strip3.Size = new System.Drawing.Size(947, 25);
+            this.strip3.Size = new System.Drawing.Size(1353, 25);
             this.strip3.TabIndex = 8;
             this.strip3.Text = "toolStrip2";
             // 
@@ -1318,6 +1323,7 @@ namespace PragmaSQL
             this.mnuItemObjectHelpOperations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.mnuItemObjectHelpOperations.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuItemModifySelObject,
+            this.mnuItemSelectTop100SelObject,
             this.mnuItemOpenSelObject,
             this.mnuItemExecProc,
             this.mnuItemObjectChangeHist,
@@ -1339,6 +1345,12 @@ namespace PragmaSQL
             this.mnuItemModifySelObject.Name = "mnuItemModifySelObject";
             this.mnuItemModifySelObject.Size = new System.Drawing.Size(194, 22);
             this.mnuItemModifySelObject.Text = "Modify";
+            // 
+            // mnuItemSelectTop100SelObject
+            // 
+            this.mnuItemSelectTop100SelObject.Name = "mnuItemSelectTop100SelObject";
+            this.mnuItemSelectTop100SelObject.Size = new System.Drawing.Size(194, 22);
+            this.mnuItemSelectTop100SelObject.Text = "Select Top 100 Rows";
             // 
             // mnuItemOpenSelObject
             // 
@@ -1560,7 +1572,7 @@ namespace PragmaSQL
             this.btnEditMultiExecDbList});
             this.strip1.Location = new System.Drawing.Point(0, 0);
             this.strip1.Name = "strip1";
-            this.strip1.Size = new System.Drawing.Size(947, 25);
+            this.strip1.Size = new System.Drawing.Size(1353, 25);
             this.strip1.TabIndex = 6;
             this.strip1.Text = "toolStrip1";
             // 
@@ -1710,7 +1722,7 @@ namespace PragmaSQL
             this.hdrAsyncConn.Location = new System.Drawing.Point(0, 0);
             this.hdrAsyncConn.Name = "hdrAsyncConn";
             this.hdrAsyncConn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.hdrAsyncConn.Size = new System.Drawing.Size(947, 30);
+            this.hdrAsyncConn.Size = new System.Drawing.Size(1353, 30);
             this.hdrAsyncConn.TabIndex = 11;
             this.hdrAsyncConn.Values.Description = "";
             this.hdrAsyncConn.Values.Heading = "";
@@ -1742,7 +1754,7 @@ namespace PragmaSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 545);
+            this.ClientSize = new System.Drawing.Size(1353, 722);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.splitterOutput);
             this.Controls.Add(this.mainMenu);
@@ -1830,7 +1842,7 @@ namespace PragmaSQL
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
     private System.Windows.Forms.ToolStripMenuItem mnuItemSave;
     private System.Windows.Forms.ToolStripMenuItem mnuItemSaveAs;
-		private System.Windows.Forms.ListView lv;
+        private System.Windows.Forms.ListView lv;
     private System.Windows.Forms.ColumnHeader colMessageType;
     private System.Windows.Forms.ColumnHeader colMessage;
     private System.Windows.Forms.ColumnHeader colLine;
@@ -1851,7 +1863,7 @@ namespace PragmaSQL
     private System.Windows.Forms.ToolStripMenuItem mnuItemReplace;
     private System.Windows.Forms.ToolStripMenuItem mnuItemUndo;
     private System.Windows.Forms.ToolStripStatusLabel statLblQueryCompletionTime;
-		private System.Windows.Forms.Timer timerExec;
+        private System.Windows.Forms.Timer timerExec;
     private System.Windows.Forms.SaveFileDialog saveDlgExport;
     private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     private System.Windows.Forms.ToolStrip strip2;
@@ -1898,7 +1910,7 @@ namespace PragmaSQL
     private System.Windows.Forms.ToolStripMenuItem mnuItemScriptToLowercase;
     private System.Windows.Forms.ToolStripMenuItem tsMnuItemUndo;
     private System.Windows.Forms.ToolStripMenuItem tsMnuItemRedo;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
     private System.Windows.Forms.ToolStripDropDownButton mnuItemObjectHelpOperations;
     private System.Windows.Forms.ToolStripMenuItem mnuItemModifySelObject;
     private System.Windows.Forms.ToolStripMenuItem mnuItemOpenSelObject;
@@ -1944,31 +1956,31 @@ namespace PragmaSQL
     private System.Windows.Forms.ToolStripMenuItem asSourceToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem asDestToolStripMenuItem;
     private System.Windows.Forms.ContextMenuStrip popUpMessages;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-		private System.Windows.Forms.ToolStripComboBox cmbResultRenderers;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripComboBox cmbResultRenderers;
     private System.Windows.Forms.Timer tmParse;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
     private System.Windows.Forms.ToolStripMenuItem findInDatabaseToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem mnuItemObjectChangeHist;
-		private System.Windows.Forms.ColumnHeader colServer;
-		private System.Windows.Forms.ColumnHeader colDb;
-		private System.Windows.Forms.ToolStripButton btnEditMultiExecDbList;
-		private System.Windows.Forms.ToolStripButton btnMultiExec;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemMultiRun;
-		private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem copyWithHeadersToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem18;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemIncSearch;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemRevIncSearch;
-		private System.Windows.Forms.ToolStripStatusLabel statIncSearch;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemAddObjToGroup;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemShowGroupStats;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem20;
-		private System.Windows.Forms.ToolStripMenuItem mnuItemFastScriptPreview;
-		private System.Windows.Forms.ToolStripButton toolStripButton2;
-		private System.Windows.Forms.ToolStripMenuItem searchInWebToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem19;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem21;
+        private System.Windows.Forms.ColumnHeader colServer;
+        private System.Windows.Forms.ColumnHeader colDb;
+        private System.Windows.Forms.ToolStripButton btnEditMultiExecDbList;
+        private System.Windows.Forms.ToolStripButton btnMultiExec;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemMultiRun;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyWithHeadersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem18;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemIncSearch;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemRevIncSearch;
+        private System.Windows.Forms.ToolStripStatusLabel statIncSearch;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemAddObjToGroup;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemShowGroupStats;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem20;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemFastScriptPreview;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem searchInWebToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem19;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem21;
     private System.Windows.Forms.ToolStripButton btnDefaultRenderer;
     private ComponentFactory.Krypton.Toolkit.KryptonHeader kryptonHeader1;
     private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny1;
@@ -1980,6 +1992,6 @@ namespace PragmaSQL
     private System.Windows.Forms.ToolStripMenuItem scriptObjectAsSourceToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
     private System.Windows.Forms.ToolStripMenuItem scriptObjectAsDestToolStripMenuItem;
-
-  }
+        private System.Windows.Forms.ToolStripMenuItem mnuItemSelectTop100SelObject;
+    }
 }
