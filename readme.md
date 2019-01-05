@@ -1,4 +1,6 @@
 [PragmaSQL Home](http://www.pragmasql.com/pragmasql/default.aspx "PragmaSQL Home")
+## Travis CI Build Status
+[![Build Status](https://travis-ci.org/aliozgur/pragmasql.svg?branch=master)](https://travis-ci.org/aliozgur/pragmasql)
 
 ## PragmaSQL Feature Summary
 
