@@ -1,17 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Threading;
 using System.IO;
-using System.Reflection;
 
 using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Smo.RegisteredServers;
-using Microsoft.SqlServer.Management.Common;
 
 using PragmaSQL.Core;
 using ICSharpCode.Core;
@@ -54,18 +46,18 @@ namespace PragmaSQL.Scripting.Smo
       }
     }
 
-		private string _destFile = String.Empty;
-		private string DestFile
-		{
-			get { return _destFile; }
-			set { _destFile = value; edtDestFile.Text = value; }
-		}
-		
-		private ScriptingOptions _options = new ScriptingOptions();
+        private string _destFile = String.Empty;
+        private string DestFile
+        {
+            get { return _destFile; }
+            set { _destFile = value; edtDestFile.Text = value; }
+        }
+        
+        private ScriptingOptions _options = new ScriptingOptions();
     private DateTime _startTime = DateTime.Now;
    
 
-		string _taskProgressTemplate = String.Empty;
+        string _taskProgressTemplate = String.Empty;
 
     #endregion //Fields And Properties
 
@@ -75,12 +67,12 @@ namespace PragmaSQL.Scripting.Smo
     {
       InitializeComponent();
       
-			_options.DriPrimaryKey = true;
+            _options.DriPrimaryKey = true;
       _options.DriForeignKeys = true;
       _options.TargetServerVersion = SqlServerVersion.Version90;
       _options.Triggers = true;
-			_options.IncludeHeaders = true;
-			_options.DriDefaults = true;
+            _options.IncludeHeaders = true;
+            _options.DriDefaults = true;
 
       propOptions.SelectedObject = _options;
       lblObjectInfo.Text = String.Empty;
@@ -95,44 +87,44 @@ namespace PragmaSQL.Scripting.Smo
       ShowBatchScriptDialog(String.Empty);
     }
 
-		public static void ShowBatchScriptDialog(string objectList)
-		{
-			IObjectExplorerService srv = HostServicesSingleton.HostServices.ObjectExplorerService;
-			if (srv == null)
-			{
-				MessageService.ShowError("No object explorer available!");
-				return;
-			}
+        public static void ShowBatchScriptDialog(string objectList)
+        {
+            IObjectExplorerService srv = HostServicesSingleton.HostServices.ObjectExplorerService;
+            if (srv == null)
+            {
+                MessageService.ShowError("No object explorer available!");
+                return;
+            }
 
-			if (srv.SelNode == null || srv.SelNode.ConnParams == null)
-			{
-				MessageService.ShowError("Database data is not available!");
-				return;
-			}
+            if (srv.SelNode == null || srv.SelNode.ConnParams == null)
+            {
+                MessageService.ShowError("Database data is not available!");
+                return;
+            }
 
-			if (String.IsNullOrEmpty(srv.SelNode.ConnParams.Database))
-			{
-				MessageService.ShowError("Selected node is not a database or child of a database!");
-				return;
-			}
+            if (String.IsNullOrEmpty(srv.SelNode.ConnParams.Database))
+            {
+                MessageService.ShowError("Selected node is not a database or child of a database!");
+                return;
+            }
 
-			ConnectionParams cp = srv.SelNode.ConnParams.CreateCopy();
-			cp.Database = srv.SelNode.DatabaseName;
-			ShowBatchScriptDialog(cp,objectList);
-		}
+            ConnectionParams cp = srv.SelNode.ConnParams.CreateCopy();
+            cp.Database = srv.SelNode.DatabaseName;
+            ShowBatchScriptDialog(cp,objectList);
+        }
 
     public static void ShowBatchScriptDialog(ConnectionParams cp, string objectList)
     {
      
-			if (cp == null)
+            if (cp == null)
         throw new ArgumentNullException("cp", "Connection parameters object is null!");
 
-			try
-			{
-				FuzzyWait.ShowFuzzyWait("Preparing PragmaSQL Scripter wizard...");
-				BatchScripterDialog frm = new BatchScripterDialog();
-				frm.ConnParams = cp;
-				frm.Text = "PragmaSQL Scripter [" + cp.InfoDbServer + "]";
+            try
+            {
+                FuzzyWait.ShowFuzzyWait("Preparing PragmaSQL Scripter wizard...");
+                BatchScripterDialog frm = new BatchScripterDialog();
+                frm.ConnParams = cp;
+                frm.Text = "PragmaSQL Scripter [" + cp.InfoDbServer + "]";
         try
         {
           if (!String.IsNullOrEmpty(objectList))
@@ -146,11 +138,11 @@ namespace PragmaSQL.Scripting.Smo
         }
 
         frm.Show();
-			}
-			finally
-			{
-				FuzzyWait.CloseFuzzyWait();
-			}
+            }
+            finally
+            {
+                FuzzyWait.CloseFuzzyWait();
+            }
     }
 
     #endregion // Static Methods
@@ -199,8 +191,8 @@ namespace PragmaSQL.Scripting.Smo
     {
       DestFile = String.Empty;
 
-			if (rdToWindow.Checked)
-				return true;
+            if (rdToWindow.Checked)
+                return true;
 
       if (saveFileDialog1.ShowDialog() != DialogResult.OK)
         return false;
@@ -212,7 +204,7 @@ namespace PragmaSQL.Scripting.Smo
     private void OutputScript(string script)
     {
       
-			if (rdToWindow.Checked || String.IsNullOrEmpty(DestFile))
+            if (rdToWindow.Checked || String.IsNullOrEmpty(DestFile))
       {
         string caption = "Generated Script For [" + _cp.InfoDbServer + "]";
         HostServicesSingleton.HostServices.EditorServices.CreateScriptEditor(caption, script, _cp);
@@ -221,11 +213,11 @@ namespace PragmaSQL.Scripting.Smo
       {
         File.WriteAllText(DestFile, script);
       }
-			else if (rbToFileAndOpen.Checked)
-			{
-				File.WriteAllText(DestFile, script);
-				HostServicesSingleton.HostServices.EditorServices.LoadScriptFile(DestFile, _cp);				
-			}
+            else if (rbToFileAndOpen.Checked)
+            {
+                File.WriteAllText(DestFile, script);
+                HostServicesSingleton.HostServices.EditorServices.LoadScriptFile(DestFile, _cp);				
+            }
     }
 
     private void DumpSelectedObjects()
@@ -311,56 +303,56 @@ namespace PragmaSQL.Scripting.Smo
     {
       if (rbOnCompleteClose.Checked)
         this.Close();
-			else if (rbOnCompleteMessage.Checked)
-			{
-				MessageBox.Show("Scripting of objects completed." 
-					+ ( String.IsNullOrEmpty(DestFile) ? String.Empty : "File: " + DestFile)
-					, "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-		}
+            else if (rbOnCompleteMessage.Checked)
+            {
+                MessageBox.Show("Scripting of objects completed." 
+                    + ( String.IsNullOrEmpty(DestFile) ? String.Empty : "File: " + DestFile)
+                    , "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
-		private void StartScripting()
-		{
-			gbError.Visible = false;
+        private void StartScripting()
+        {
+            gbError.Visible = false;
 
-			ResetProgressInfo();
+            ResetProgressInfo();
 
-			if (!PromptForFileName())
-				return;
+            if (!PromptForFileName())
+                return;
 
-			BatchScripter.ScriptingArgs args = PrepareWorkerThreadArgs();
+            BatchScripter.ScriptingArgs args = PrepareWorkerThreadArgs();
 
-			wizardControl1.BackButtonEnabled = false;
-			wizardControl1.NextButtonEnabled = false;
+            wizardControl1.BackButtonEnabled = false;
+            wizardControl1.NextButtonEnabled = false;
 
-			PrepareScripter();
-			StartTimer();
+            PrepareScripter();
+            StartTimer();
 
-			bw.RunWorkerAsync(args);
-		}
+            bw.RunWorkerAsync(args);
+        }
 
-		private BatchScripter.ScriptingArgs PrepareWorkerThreadArgs()
-		{
-			BatchScripter.ScriptingArgs args = new BatchScripter.ScriptingArgs();
-			args.Objects = objList.SelectedObjects;
-			args.Options = _options;
-			args.BatchSeparator = edtBatchSep.Text;
-			return args;
-		}
+        private BatchScripter.ScriptingArgs PrepareWorkerThreadArgs()
+        {
+            BatchScripter.ScriptingArgs args = new BatchScripter.ScriptingArgs();
+            args.Objects = objList.SelectedObjects;
+            args.Options = _options;
+            args.BatchSeparator = edtBatchSep.Text;
+            return args;
+        }
 
-		private void PrepareScripter()
-		{
-			_scripter = new BatchScripter(_cp);
-			_scripter.ScriptingInProgress += new ProgressReportEventHandler(_scripter_Progress);
-			_scripter.WalkingDependencies += new ProgressReportEventHandler(_scripter_Progress);
-			_scripter.TaskProgressInfo += new TaskProgressInfoDelegate(_scripter_TaskProgressInfo);
-		}
+        private void PrepareScripter()
+        {
+            _scripter = new BatchScripter(_cp);
+            _scripter.ScriptingInProgress += new ProgressReportEventHandler(_scripter_Progress);
+            _scripter.WalkingDependencies += new ProgressReportEventHandler(_scripter_Progress);
+            _scripter.TaskProgressInfo += new TaskProgressInfoDelegate(_scripter_TaskProgressInfo);
+        }
 
-		private void StartTimer()
-		{
-			_startTime = DateTime.Now;
-			timer1.Enabled = true;
-		}
+        private void StartTimer()
+        {
+            _startTime = DateTime.Now;
+            timer1.Enabled = true;
+        }
 
     #endregion //Methods
 
@@ -382,7 +374,7 @@ namespace PragmaSQL.Scripting.Smo
     private bool _isScripting = false;
     private void bw_DoWork(object sender, DoWorkEventArgs e)
     {
-			BatchScripter.ScriptingArgs args = e.Argument as BatchScripter.ScriptingArgs;
+            BatchScripter.ScriptingArgs args = e.Argument as BatchScripter.ScriptingArgs;
       _isScripting = true;
 
       ScripterResult result = new ScripterResult();
@@ -438,7 +430,7 @@ namespace PragmaSQL.Scripting.Smo
         OutputScript(result.Content);
         NotifyUserOrClose();
       }
-			this.BringToFront();
+            this.BringToFront();
     }
 
     private void _scripter_TaskProgressInfo(object sender, string info)
@@ -511,21 +503,21 @@ namespace PragmaSQL.Scripting.Smo
       lblTimer.Text = "Elapsed: " + diff.Hours.ToString("00")
         + ":" + diff.Minutes.ToString("00")
         + ":" + diff.Seconds.ToString("00");
-		}
+        }
 
     private void objList_DumpToTexteditorCompleted(object sender, EventArgs e)
     {
       this.BringToFront();
     }
 
-		private void wizardControl1_NextButtonClick(object sender, GenericCancelEventArgs<WizardControl> tArgs)
-		{
-			
-			if (wizardControl1.CurrentStepIndex == 1 && objList.SelectedObjectCount == 0)
-			{
-				MessageService.ShowError("You did not selected any objects.");
-				tArgs.Cancel = true;
-			}
-		}
+        private void wizardControl1_NextButtonClick(object sender, GenericCancelEventArgs<WizardControl> tArgs)
+        {
+            
+            if (wizardControl1.CurrentStepIndex == 1 && objList.SelectedObjectCount == 0)
+            {
+                MessageService.ShowError("You did not selected any objects.");
+                tArgs.Cancel = true;
+            }
+        }
   }
 }

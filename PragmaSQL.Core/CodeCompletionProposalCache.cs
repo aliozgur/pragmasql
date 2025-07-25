@@ -11,14 +11,14 @@ namespace PragmaSQL.Core
   /// <summary>
   /// Cache class
   /// </summary>
-	public static class CodeCompletionProposalCache
+    public static class CodeCompletionProposalCache
   {
     #region Fields and properties
    
     private static readonly object _padlock = new object();
 
-		private static IDictionary<CachedDataTableIdentifier, DataTable> _cache = new Dictionary<CachedDataTableIdentifier, DataTable>();
-		
+        private static IDictionary<CachedDataTableIdentifier, DataTable> _cache = new Dictionary<CachedDataTableIdentifier, DataTable>();
+        
     private static IDictionary<CachedDataTableIdentifier, CacheDataTableTimeoutSpec> _updateHist = new Dictionary<CachedDataTableIdentifier, CacheDataTableTimeoutSpec>();
 
     private static CodeCompletionProposalCacheCleanup _cleanup = null;
@@ -347,75 +347,75 @@ namespace PragmaSQL.Core
   /// <summary>
   /// Timeout specification structure
   /// </summary>
-	public struct CacheDataTableTimeoutSpec
-	{
-		public int Timeout;
-		public DateTime RetrievedOn;
-	}
+    public struct CacheDataTableTimeoutSpec
+    {
+        public int Timeout;
+        public DateTime RetrievedOn;
+    }
 
   /// <summary>
   /// Cached data table identifier
   /// </summary>
-	public struct CachedDataTableIdentifier
-	{
-		public string Server;
-		public string Database;
-		public CachedDataType DataType;
-		public string Name;
-		public int Timeout;
+    public struct CachedDataTableIdentifier
+    {
+        public string Server;
+        public string Database;
+        public CachedDataType DataType;
+        public string Name;
+        public int Timeout;
 
-		public CachedDataTableIdentifier(string server, string database, string name, CachedDataType dataType)
-		{
-			Server = server;
-			Database = database;
-			DataType = dataType;
-			Name = name;
-			Timeout = 0;
-		}
+        public CachedDataTableIdentifier(string server, string database, string name, CachedDataType dataType)
+        {
+            Server = server;
+            Database = database;
+            DataType = dataType;
+            Name = name;
+            Timeout = 0;
+        }
 
-		public void CopyFrom(CachedDataTableIdentifier source)
-		{
-			Server = source.Server;
-			Database = source.Database;
-			DataType = source.DataType;
-			Name = source.Name;
-			Timeout = source.Timeout;
-		}
+        public void CopyFrom(CachedDataTableIdentifier source)
+        {
+            Server = source.Server;
+            Database = source.Database;
+            DataType = source.DataType;
+            Name = source.Name;
+            Timeout = source.Timeout;
+        }
 
-		public override string ToString()
-		{
-			return Server.ToLowerInvariant() + ";" + Database.ToLowerInvariant() + ";" + DataType.ToString() + ";" + Name.ToLowerInvariant();
-		}
+        public override string ToString()
+        {
+            return Server.ToLowerInvariant() + ";" + Database.ToLowerInvariant() + ";" + DataType.ToString() + ";" + Name.ToLowerInvariant();
+        }
 
-		public static bool operator ==(CachedDataTableIdentifier x, CachedDataTableIdentifier y)
-		{
-			return x.ToString() == y.ToString();
-		}
+        public static bool operator ==(CachedDataTableIdentifier x, CachedDataTableIdentifier y)
+        {
+            return x.ToString() == y.ToString();
+        }
 
-		public static bool operator !=(CachedDataTableIdentifier x, CachedDataTableIdentifier y)
-		{
-			return x.ToString() != y.ToString();
-		}
+        public static bool operator !=(CachedDataTableIdentifier x, CachedDataTableIdentifier y)
+        {
+            return x.ToString() != y.ToString();
+        }
 
-		public override int GetHashCode()
-		{
-			return this.ToString().GetHashCode();
-		}
+        public override int GetHashCode()
+        {
+            return this.ToString().GetHashCode();
+        }
 
-		public override bool Equals(object obj)
-		{
-			return this.ToString().Equals(obj.ToString());
-		}
-	}
+        public override bool Equals(object obj)
+        {
+            return this.ToString().Equals(obj.ToString());
+        }
+    }
 
   /// <summary>
   /// Type of the data cached
   /// </summary>
-	public enum CachedDataType
-	{
-		None,
-		Databases,
-		Users,
-		Objects
-	}
+    public enum CachedDataType
+    {
+        None,
+        Databases,
+        Users,
+        Objects
+    }
 }

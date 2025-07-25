@@ -126,7 +126,7 @@
             this.linkLabel12.AutoSize = true;
             this.linkLabel12.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel12.Location = new System.Drawing.Point(423, 104);
+            this.linkLabel12.Location = new System.Drawing.Point(376, 104);
             this.linkLabel12.Name = "linkLabel12";
             this.linkLabel12.Size = new System.Drawing.Size(69, 13);
             this.linkLabel12.TabIndex = 33;
@@ -141,8 +141,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 126);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(272, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -194,6 +194,7 @@
             this.lv.ForeColor = System.Drawing.Color.Black;
             this.lv.GridLines = true;
             this.lv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lv.HideSelection = false;
             this.lv.Location = new System.Drawing.Point(3, 3);
             this.lv.Name = "lv";
             this.lv.Size = new System.Drawing.Size(627, 321);
@@ -231,7 +232,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(620, 184);
+            this.tabPage3.Size = new System.Drawing.Size(633, 327);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "License Information";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -396,7 +397,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(620, 184);
+            this.tabPage4.Size = new System.Drawing.Size(633, 327);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "License Information";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -409,7 +410,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(614, 178);
+            this.textBox1.Size = new System.Drawing.Size(627, 321);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -444,7 +445,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(620, 184);
+            this.tabPage2.Size = new System.Drawing.Size(633, 327);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Credits";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -756,10 +757,10 @@
             this.linkLabel1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel1.Location = new System.Drawing.Point(310, 104);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(107, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(62, 13);
             this.linkLabel1.TabIndex = 29;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "info@pragmasql.com";
+            this.linkLabel1.Text = "Send E-Mail";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label4
@@ -793,9 +794,9 @@
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(310, 39);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(264, 13);
+            this.label23.Size = new System.Drawing.Size(301, 13);
             this.label23.TabIndex = 27;
-            this.label23.Text = "Supported SQL Server Versions: 2000,2005 and 2008";
+            this.label23.Text = "SQL Server Versions: 2000,2005,2008, 2012, 2016 and 2022";
             // 
             // lblVersion
             // 

@@ -1,13 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.IO;
 using System.Data.SqlClient;
 
 using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Smo.RegisteredServers;
 using Microsoft.SqlServer.Management.Common;
 using PragmaSQL.Core;
 
@@ -69,25 +63,23 @@ namespace PragmaSQL.Scripting.Smo
 		public static Version GetServerVersion(ConnectionParams cp)
 		{
 			Version result = null;
+			var connStr = cp.GetConnectionString(false, false);
 
-			using (SqlConnection conn = cp.CreateSqlConnection(false, false))
+			ServerConnection sqlConn = null;
+			try
 			{
-				ServerConnection sqlConn = null;
-				try
+				sqlConn = new ServerConnection(connStr);
+				Server srvr = new Server(sqlConn);
+				result = srvr.Information.Version;
+			}
+			finally
+			{
+				if (sqlConn != null)
 				{
-					sqlConn = new ServerConnection(conn);
-					Server srvr = new Server(sqlConn);
-					result = srvr.Information.Version;
-				}
-				finally
-				{
-					if (sqlConn != null)
-					{
-						if (sqlConn.InUse)
-							sqlConn.Cancel();
-						if(sqlConn.IsOpen)
-							sqlConn.Disconnect();
-					}
+					if (sqlConn.InUse)
+						sqlConn.Cancel();
+					if(sqlConn.IsOpen)
+						sqlConn.Disconnect();
 				}
 			}
 			return result;
