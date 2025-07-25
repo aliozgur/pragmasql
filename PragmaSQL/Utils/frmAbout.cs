@@ -154,7 +154,7 @@ namespace PragmaSQL
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("mailto:info@pragmasql.com?Subject=PragmaSQL");
+            System.Diagnostics.Process.Start("mailto:aliozgur@outlook.com?Subject=PragmaSQL");
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -222,7 +222,7 @@ namespace PragmaSQL
 
         private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmWebBrowser frm = WebBrowserFactory.CreateAndBrowse(String.Empty, "www.pragmasql.com");
+            frmWebBrowser frm = WebBrowserFactory.CreateAndBrowse(String.Empty, "aliozgur.net");
             WebBrowserFactory.ShowWebBrowser(frm);
         }
 

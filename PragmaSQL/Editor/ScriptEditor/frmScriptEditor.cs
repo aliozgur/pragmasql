@@ -5,16 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
-using System.IO;
-using System.Drawing.Printing;
 using System.Reflection;
-using System.Runtime.InteropServices;
-
-using WeifenLuo.WinFormsUI.Docking;
 using System.Threading;
 
 using ICSharpCode.TextEditor;
@@ -25,8 +19,6 @@ using Crad.Windows.Forms.Actions;
 using AsynchronousCodeBlocks;
 
 using com.calitha.goldparser;
-
-using PragmaSQL;
 using PragmaSQL.Core;
 using MWCommon;
 
