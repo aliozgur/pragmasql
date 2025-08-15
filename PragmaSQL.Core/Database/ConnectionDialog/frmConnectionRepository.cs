@@ -81,7 +81,9 @@ namespace PragmaSQL.Core
             }
 
             ListViewItem item = new ListViewItem(normalKey, group);
+            
             item.SubItems.Add(connSpec.Database);
+            item.SubItems.Add(connSpec.FriendlyName);
             item.Tag = connSpec.ID;
 
             lvConnections.SelectedItems.Clear();
@@ -130,6 +132,7 @@ namespace PragmaSQL.Core
                     _groups.Add(serverName, group);
                 }
                 item = new ListViewItem(normalKey, group);
+                item.SubItems.Add(connSpec.FriendlyName);
                 item.SubItems.Add(connSpec.Database);
                 item.Tag = connSpec.ID;
                 lvConnections.Items.Add(item);

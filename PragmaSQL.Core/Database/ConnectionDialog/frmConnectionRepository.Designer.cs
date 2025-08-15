@@ -32,9 +32,6 @@ namespace PragmaSQL.Core
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnectionRepository));
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvConnections = new PragmaSQL.Core.DetailListView(this.components);
-            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colInitialCat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
@@ -42,6 +39,10 @@ namespace PragmaSQL.Core
             this.lblPersonalEdLimit = new System.Windows.Forms.ToolStripLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnOk = new System.Windows.Forms.Button();
+            this.lvConnections = new PragmaSQL.Core.DetailListView(this.components);
+            this.colFriendlyName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colInitialCat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace PragmaSQL.Core
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCancel.Location = new System.Drawing.Point(291, 270);
+            this.btnCancel.Location = new System.Drawing.Point(488, 343);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 27);
             this.btnCancel.TabIndex = 3;
@@ -67,43 +68,14 @@ namespace PragmaSQL.Core
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Location = new System.Drawing.Point(5, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 251);
+            this.groupBox1.Size = new System.Drawing.Size(569, 324);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select connection from the list";
             // 
-            // lvConnections
-            // 
-            this.lvConnections.ColumnClickSortEnabled = true;
-            this.lvConnections.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colName,
-            this.colInitialCat});
-            this.lvConnections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvConnections.FullRowSelect = true;
-            this.lvConnections.HideSelection = false;
-            this.lvConnections.Location = new System.Drawing.Point(3, 41);
-            this.lvConnections.Name = "lvConnections";
-            this.lvConnections.ShowGroups = false;
-            this.lvConnections.Size = new System.Drawing.Size(366, 207);
-            this.lvConnections.TabIndex = 1;
-            this.lvConnections.UseCompatibleStateImageBehavior = false;
-            this.lvConnections.View = System.Windows.Forms.View.Details;
-            this.lvConnections.SelectedIndexChanged += new System.EventHandler(this.lvConnections_SelectedIndexChanged);
-            this.lvConnections.DoubleClick += new System.EventHandler(this.lvConnections_DoubleClick);
-            // 
-            // colName
-            // 
-            this.colName.Text = "Server";
-            this.colName.Width = 205;
-            // 
-            // colInitialCat
-            // 
-            this.colInitialCat.Text = "Default Db.";
-            this.colInitialCat.Width = 141;
-            // 
             // toolStrip1
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNew,
@@ -112,7 +84,7 @@ namespace PragmaSQL.Core
             this.lblPersonalEdLimit});
             this.toolStrip1.Location = new System.Drawing.Point(3, 16);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(366, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(563, 25);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Click += new System.EventHandler(this.toolStrip1_Click);
@@ -169,11 +141,46 @@ namespace PragmaSQL.Core
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOk.Location = new System.Drawing.Point(203, 270);
+            this.btnOk.Location = new System.Drawing.Point(400, 343);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(80, 27);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "OK";
+            // 
+            // lvConnections
+            // 
+            this.lvConnections.ColumnClickSortEnabled = true;
+            this.lvConnections.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colName,
+            this.colFriendlyName,
+            this.colInitialCat});
+            this.lvConnections.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvConnections.FullRowSelect = true;
+            this.lvConnections.HideSelection = false;
+            this.lvConnections.Location = new System.Drawing.Point(3, 41);
+            this.lvConnections.Name = "lvConnections";
+            this.lvConnections.ShowGroups = false;
+            this.lvConnections.Size = new System.Drawing.Size(563, 280);
+            this.lvConnections.TabIndex = 1;
+            this.lvConnections.UseCompatibleStateImageBehavior = false;
+            this.lvConnections.View = System.Windows.Forms.View.Details;
+            this.lvConnections.SelectedIndexChanged += new System.EventHandler(this.lvConnections_SelectedIndexChanged);
+            this.lvConnections.DoubleClick += new System.EventHandler(this.lvConnections_DoubleClick);
+            // 
+            // colFriendlyName
+            // 
+            this.colFriendlyName.Text = "Name";
+            this.colFriendlyName.Width = 200;
+            // 
+            // colName
+            // 
+            this.colName.Text = "Server";
+            this.colName.Width = 205;
+            // 
+            // colInitialCat
+            // 
+            this.colInitialCat.Text = "Default Db.";
+            this.colInitialCat.Width = 141;
             // 
             // frmConnectionRepository
             // 
@@ -181,7 +188,7 @@ namespace PragmaSQL.Core
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(386, 307);
+            this.ClientSize = new System.Drawing.Size(583, 380);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOk);
@@ -215,5 +222,6 @@ namespace PragmaSQL.Core
     private System.Windows.Forms.ToolStripButton btnEdit;
 		private System.Windows.Forms.ToolStripButton btnRemove;
     private System.Windows.Forms.ToolStripLabel lblPersonalEdLimit;
-  }
+        private System.Windows.Forms.ColumnHeader colFriendlyName;
+    }
 }
