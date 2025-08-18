@@ -100,7 +100,6 @@ namespace PragmaSQL.Core
 
       _connParams.IsConnected = true;
       _connParams.Server = txtServer.Text;
-      _connParams.PersistSecurityInfo = "TRUE";
       _connParams.TimeOut = txtTimeOut.Text;
       _connParams.UserName = txtUserName.Text;
       _connParams.Password = txtPassword.Text;
@@ -175,7 +174,6 @@ namespace PragmaSQL.Core
 
       connSpec.IsConnected = true;
       connSpec.Server = txtServer.Text;
-      connSpec.PersistSecurityInfo = "TRUE";
       connSpec.TimeOut = txtTimeOut.Text;
       connSpec.UserName = txtUserName.Text;
       connSpec.Password = txtPassword.Text;

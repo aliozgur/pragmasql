@@ -247,7 +247,8 @@ namespace SQLManagement
 
             cmb.Items.Clear();
             var connStr = cp.GetConnectionString(true, false);
-            ServerConnection srvConn = new ServerConnection(connStr);
+            ServerConnection srvConn = new ServerConnection();
+            srvConn.ConnectionString = connStr;
             try
             {
                 srvConn.Connect();

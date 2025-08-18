@@ -176,7 +176,8 @@ namespace SQLManagement
         public void DropWithDepends()
         {
             var connStr = this.ConnectionParams.GetConnectionString(true, false);
-            ServerConnection srvConn = new ServerConnection(connStr);
+            ServerConnection srvConn = new ServerConnection();
+            srvConn.ConnectionString = connStr;
             try
             {
                 srvConn.Connect();
@@ -202,7 +203,8 @@ namespace SQLManagement
         {
             var connStr = this.ConnectionParams.GetConnectionString(true, false);
 
-            ServerConnection srvConn = new ServerConnection(connStr);
+            ServerConnection srvConn = new ServerConnection();
+            srvConn.ConnectionString = connStr;
             try
             {
                 srvConn.Connect();
@@ -230,7 +232,8 @@ namespace SQLManagement
         public void Rename(string newName)
         {
             var connStr = this.ConnectionParams.GetConnectionString(true, false);
-            ServerConnection srvConn = new ServerConnection(connStr);
+            ServerConnection srvConn = new ServerConnection();
+            srvConn.ConnectionString = connStr;
             try
             {
                 srvConn.Connect();

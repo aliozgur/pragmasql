@@ -4290,7 +4290,7 @@ namespace PragmaSQL
             newCp.Database = cmbDatabases.Text;
             try
             {
-                SqlConn.ConnectionString = newCp.NonPooledConnectionString;
+                SqlConn.ConnectionString = newCp.ConnectionString;
                 SqlConn.Open();
                 SqlConnParams = newCp.CreateCopy();
                 prevSelectedDatabase = cmbDatabases.Text;

@@ -54,6 +54,7 @@ namespace PragmaSQL.Core
             this.lblInfoMsg = new System.Windows.Forms.Label();
             this.bwTestConn = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.chkEncrypt = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.grpServerDb.SuspendLayout();
             this.grpbLogon.SuspendLayout();
@@ -63,7 +64,7 @@ namespace PragmaSQL.Core
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(203, 327);
+            this.btnOK.Location = new System.Drawing.Point(203, 347);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 27);
             this.btnOK.TabIndex = 7;
@@ -74,7 +75,7 @@ namespace PragmaSQL.Core
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(291, 327);
+            this.btnCancel.Location = new System.Drawing.Point(291, 347);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 27);
             this.btnCancel.TabIndex = 8;
@@ -89,12 +90,13 @@ namespace PragmaSQL.Core
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox2.Location = new System.Drawing.Point(5, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 288);
+            this.groupBox2.Size = new System.Drawing.Size(368, 319);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // grpServerDb
             // 
+            this.grpServerDb.Controls.Add(this.chkEncrypt);
             this.grpServerDb.Controls.Add(this.btnLoadTemplateFromRepo);
             this.grpServerDb.Controls.Add(this.txtServer);
             this.grpServerDb.Controls.Add(this.txtTimeOut);
@@ -104,7 +106,7 @@ namespace PragmaSQL.Core
             this.grpServerDb.Controls.Add(this.txtDefultDB);
             this.grpServerDb.Location = new System.Drawing.Point(15, 39);
             this.grpServerDb.Name = "grpServerDb";
-            this.grpServerDb.Size = new System.Drawing.Size(338, 107);
+            this.grpServerDb.Size = new System.Drawing.Size(338, 136);
             this.grpServerDb.TabIndex = 0;
             this.grpServerDb.TabStop = false;
             this.grpServerDb.Text = "Server/Database Specification";
@@ -185,7 +187,7 @@ namespace PragmaSQL.Core
             this.grpbLogon.Controls.Add(this.grpbUserSpec);
             this.grpbLogon.Controls.Add(this.rbUseIntegratedSecurity);
             this.grpbLogon.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.grpbLogon.Location = new System.Drawing.Point(15, 150);
+            this.grpbLogon.Location = new System.Drawing.Point(15, 181);
             this.grpbLogon.Name = "grpbLogon";
             this.grpbLogon.Size = new System.Drawing.Size(338, 124);
             this.grpbLogon.TabIndex = 1;
@@ -260,7 +262,7 @@ namespace PragmaSQL.Core
             // btnTest
             // 
             this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTest.Location = new System.Drawing.Point(2, 327);
+            this.btnTest.Location = new System.Drawing.Point(2, 347);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(94, 27);
             this.btnTest.TabIndex = 9;
@@ -277,13 +279,23 @@ namespace PragmaSQL.Core
             this.lblInfoMsg.TabIndex = 10;
             this.lblInfoMsg.Text = "Please specify database connection parameters.";
             // 
+            // chkEncrypt
+            // 
+            this.chkEncrypt.AutoSize = true;
+            this.chkEncrypt.Location = new System.Drawing.Point(124, 111);
+            this.chkEncrypt.Name = "chkEncrypt";
+            this.chkEncrypt.Size = new System.Drawing.Size(74, 17);
+            this.chkEncrypt.TabIndex = 55;
+            this.chkEncrypt.Text = "Encrypted";
+            this.chkEncrypt.UseVisualStyleBackColor = true;
+            // 
             // frmConnectionParams
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(374, 361);
+            this.ClientSize = new System.Drawing.Size(374, 381);
             this.Controls.Add(this.lblInfoMsg);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.groupBox2);
@@ -291,7 +303,7 @@ namespace PragmaSQL.Core
             this.Controls.Add(this.btnCancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(390, 400);
+            this.MaximumSize = new System.Drawing.Size(390, 420);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(390, 390);
             this.Name = "frmConnectionParams";
@@ -338,5 +350,6 @@ namespace PragmaSQL.Core
 		private System.ComponentModel.BackgroundWorker bwTestConn;
 		private System.Windows.Forms.Button btnLoadTemplateFromRepo;
 		private System.Windows.Forms.ToolTip toolTip1;
-  }
+        private System.Windows.Forms.CheckBox chkEncrypt;
+    }
 }

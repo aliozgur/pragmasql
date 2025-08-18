@@ -596,9 +596,7 @@
     <Compile Include="Editor\TextEditor\TextEditorFactory.cs" />
     <Compile Include="Editor\ContentPersistance\IContentPersister.cs" />
     <Compile Include="Editor\ContentPersistance\DefaultContentPersister.cs" />
-    <Compile Include="Editor\ScriptEditor\frmScriptEditor.Actions.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Editor\ScriptEditor\frmScriptEditor.Actions.cs" />
     <Compile Include="Editor\ScriptEditor\ObjectHelperPopupBuilder.cs" />
     <Compile Include="SharedScripts\frmSharedScriptSelectDialog.cs">
       <SubType>Form</SubType>

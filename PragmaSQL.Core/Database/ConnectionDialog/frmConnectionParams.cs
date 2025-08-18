@@ -114,6 +114,7 @@ namespace PragmaSQL.Core
             txtServer.Text = cp.Server;
             txtDefultDB.Text = cp.Database;
             txtTimeOut.Text = cp.TimeOut;
+            chkEncrypt.Checked = cp.Encrypt;
 
             if (cp.FriendlyName != null)
             {
@@ -158,8 +159,8 @@ namespace PragmaSQL.Core
 
             connSpec.IsConnected = true;
             connSpec.Server = txtServer.Text;
-            connSpec.PersistSecurityInfo = "TRUE";
             connSpec.TimeOut = txtTimeOut.Text;
+            connSpec.Encrypt = chkEncrypt.Checked;
             connSpec.UserName = txtUserName.Text;
             connSpec.Password = txtPassword.Text;
             connSpec.FriendlyName = txtFriendlyName.Text;

@@ -56,7 +56,7 @@ namespace PragmaSQL
 
         ConnectionParams cp = spec[key].CreateCopy();
 				string tmpKey = key;
-				if (String.IsNullOrEmpty(cp.IntegratedSecurity) && cp.IsEncrypted)
+				if (String.IsNullOrEmpty(cp.IntegratedSecurity) && cp.SaveEncrypted)
           cp.Password = encrypt ? EncryiptionHelper.Encrypt(cp.Password) : EncryiptionHelper.Decrypt(cp.Password);
 				else if (!String.IsNullOrEmpty(cp.IntegratedSecurity))
 					cp.Password = String.Empty;

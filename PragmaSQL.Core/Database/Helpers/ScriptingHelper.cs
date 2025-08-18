@@ -606,7 +606,7 @@ namespace PragmaSQL.Core
             {
                 throw new NullParameterException("Connection is null!");
             }
-            return GetAlterScript(cp.NonPooledConnectionString, cp.Database, objid, objType);
+            return GetAlterScript(cp.ConnectionString, cp.Database, objid, objType);
         }
 
         public static string GetAlterScript(ConnectionParams connParams, string database, long objid, int objType)
@@ -615,7 +615,7 @@ namespace PragmaSQL.Core
             {
                 throw new NullParameterException("Connection params is null!");
             }
-            return GetAlterScript(connParams.NonPooledConnectionString, database, objid, objType);
+            return GetAlterScript(connParams.ConnectionString, database, objid, objType);
         }
 
         public static string GetAlterScript(string connectionString, string database, long objid, int objType)

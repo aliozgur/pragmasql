@@ -1,5 +1,6 @@
 
 using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Sdk.Sfc;
 using Microsoft.SqlServer.Management.Smo;
 using PragmaSQL.Core;
 using System;
@@ -35,7 +36,7 @@ namespace PragmaSQL.Scripting.Smo
 
         private bool _pauseScripting = false;
 
-        private Server srvr = null;
+        private Server server = null;
         private Scripter scrp = null;
         private Database db = null;
         private ServerConnection sqlConn = null;
@@ -96,11 +97,12 @@ namespace PragmaSQL.Scripting.Smo
             ConnParams = cp;
 
             var connStr = _connParams.GetConnectionString(false, false);
-            sqlConn = new ServerConnection(connStr);
+            sqlConn = new ServerConnection();
+            sqlConn.ConnectionString = connStr;
             sqlConn.Connect();
-            srvr = new Server(sqlConn);
-            db = srvr.Databases[_connParams.Database];
-            scrp = new Scripter(srvr);
+            server = new Server(sqlConn);
+            db = server.Databases[_connParams.Database];
+            scrp = new Scripter(server);
             scrp.ScriptingProgress += new ProgressReportEventHandler(scrp_ScriptingProgress);
         }
 
@@ -130,12 +132,13 @@ namespace PragmaSQL.Scripting.Smo
 
             FireTaskProgressInfo("Preparing for scripting...");
 
+            
             scrp.Options = args.Options;
             scrp.Options.ToFileOnly = false;
             scrp.Options.AppendToFile = false;
             scrp.Options.FileName = String.Empty;
             scrp.Server.ConnectionContext.BatchSeparator = "GO";
-            StringCollection scr = null;
+            StringCollection scr = new StringCollection();
             _recentErrors = null;
 
             if (scrp.Options.ContinueScriptingOnError)
@@ -146,21 +149,49 @@ namespace PragmaSQL.Scripting.Smo
 
             try
             {
+                
                 if (scrp.Options.WithDependencies)
                 {
                     scrp.DiscoveryProgress += new ProgressReportEventHandler(dWalk_DiscoveryProgress);
+                    
                     FireTaskProgressInfo("Discovering dependencies. (Task 1 of 3)");
                     DependencyTree dTree = scrp.DiscoverDependencies(PrepareObjectUrns(args.Objects), DependencyType.Parents);
+                    
                     FireTaskProgressInfo("Walking dependencies. (Task 2 of 3)");
                     DependencyCollection dCol = scrp.WalkDependencies(dTree);
+
+
+                    var filtered = new List<Urn>();
+                    foreach (DependencyCollectionNode n in dCol)
+                    {
+                        var dbName = n.Urn.GetAttribute("Name", "Database");
+                        if (string.Equals(dbName, db.Name, StringComparison.OrdinalIgnoreCase))
+                        {
+                            filtered.Add(n.Urn);
+                        }
+                    }
+
                     FireTaskProgressInfo("Scripting objects. (Task 3 of 3)");
-                    scr = scrp.ScriptWithList(dCol);
+                    var scripts = scrp.EnumScriptWithList(filtered.ToArray());
+                    foreach (var script in scripts)
+                    {
+                        scr.Add(script);
+                    }
                 }
                 else
                 {
                     FireTaskProgressInfo("Scripting objects. (Task 1 of 1)");
-                    scr = scrp.ScriptWithList(PrepareObjectUrns(args.Objects));
+                    var scripts = scrp.EnumScriptWithList(PrepareObjectUrns(args.Objects));
+                    foreach (var script in scripts)
+                    {
+                        scr.Add(script);
+                    }
+
                 }
+                
+              
+
+
             }
             catch (Exception ex)
             {

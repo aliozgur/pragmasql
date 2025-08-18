@@ -103,7 +103,8 @@ namespace PragmaSQL.Scripting.Smo
         {
             ConnParams = cp;
             var connStr = _connParams.GetConnectionString(false, false);
-            sqlConn = new ServerConnection(connStr);
+            sqlConn = new ServerConnection();
+            sqlConn.ConnectionString = connStr;
             sqlConn.Connect();
             srvr = new Server(sqlConn);
 

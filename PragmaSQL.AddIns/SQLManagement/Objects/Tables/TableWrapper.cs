@@ -674,7 +674,8 @@ namespace SQLManagement
             ServerConnection srvConn = null;
             try
             {
-                srvConn = new ServerConnection(connStr);
+                srvConn = new ServerConnection();
+                srvConn.ConnectionString = connStr;
                 srvConn.Connect();
                 srvConn.BeginTransaction();
                 CreateTable(srvConn, true, false);
@@ -860,7 +861,8 @@ namespace SQLManagement
             ServerConnection srvConn = null;
             try
             {
-                srvConn = new ServerConnection(connStr);
+                srvConn = new ServerConnection();
+                srvConn.ConnectionString = connStr;
 
                 bool recreateNeeded = RecreateTableNeeded();
                 if (!recreateNeeded)
@@ -1432,7 +1434,8 @@ namespace SQLManagement
             Table tbl = null;
             try
             {
-                srvConn = new ServerConnection(connStr);
+                srvConn = new ServerConnection();
+                srvConn.ConnectionString = connStr;
                 srvConn.BeginTransaction();
                 Server server = new Server(srvConn);
                 Database db = server.Databases[_cp.Database];

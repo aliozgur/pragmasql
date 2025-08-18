@@ -22,14 +22,15 @@ namespace PragmaSQL.Core
         public string IntegratedSecurity = String.Empty;
         public string Server = String.Empty;
         public string FriendlyName = String.Empty;
-        public string PersistSecurityInfo = String.Empty;
         public string Database = String.Empty;
         public string UserName = String.Empty;
         public string Password = String.Empty;
         public string TimeOut = "15";
         public bool IsConnected = true;
         public object Connection;
-        public bool IsEncrypted = true;
+        public bool SaveEncrypted = true;
+        public bool Encrypt = false;
+
 
         private bool UseConnectionPooling
         {
@@ -47,20 +48,13 @@ namespace PragmaSQL.Core
         {
             get
             {
-                //return SqlClientConnectionString;
-                return NonPooledConnectionString;
+                return SqlClientConnectionString;
             }
         }
 
 
 
-        public string NonPooledConnectionString
-        {
-            get
-            {
-                return SqlClientConnectionString + (UseConnectionPooling ? ";Pooling = true" : ";Pooling = false");
-            }
-        }
+       
 
         private string SqlClientConnectionString
         {
@@ -68,10 +62,7 @@ namespace PragmaSQL.Core
             {
 
                 string connString = "Data Source=" + Server +
-                                                        "; Persist Security Info=" + PersistSecurityInfo +
                                                         "; Initial Catalog=" + Database +
-                                                        "; User ID=" + UserName +
-                                                        "; Password=" + Password +
                                                         "; Connection Timeout=" + TimeOut +
                                                         "; Application Name=PragmaSQL";
 
@@ -79,6 +70,22 @@ namespace PragmaSQL.Core
                 {
                     connString += "; Integrated Security=" + IntegratedSecurity;
                 }
+                else
+                {
+                    connString += 
+                        "; User ID=" + UserName +
+                        "; Password=" + Password;
+                }
+
+                if(Encrypt)
+                {
+                    connString += "; Encrypt=True";
+                }
+                else
+                {
+                    connString += "; Encrypt=False";
+                }
+
                 return connString;
             }
         }
@@ -91,14 +98,14 @@ namespace PragmaSQL.Core
             result.IntegratedSecurity = this.IntegratedSecurity;
             result.Server = this.Server;
             result.FriendlyName = this.FriendlyName;
-            result.PersistSecurityInfo = this.PersistSecurityInfo;
             result.Database = this.Database;
             result.UserName = this.UserName;
             result.Password = this.Password;
             result.TimeOut = this.TimeOut;
+            result.Encrypt = this.Encrypt;
             result.IsConnected = this.IsConnected;
             result.Connection = this.Connection;
-            result.IsEncrypted = this.IsEncrypted;
+            result.SaveEncrypted = this.SaveEncrypted;
 
             return result;
         }
@@ -240,6 +247,7 @@ namespace PragmaSQL.Core
             string UserName,
             string Password,
             string TimeOut,
+            bool Encrypt,
             bool IsConnected)
         {
             ConnectionParams cp = new ConnectionParams();
@@ -247,11 +255,11 @@ namespace PragmaSQL.Core
             //cp.Provider = Provider;
             cp.IntegratedSecurity = IntegratedSecurity;
             cp.Server = Name;
-            cp.PersistSecurityInfo = PersistSecurityInfo;
             cp.Database = InitialCatalog;
             cp.UserName = UserName;
             cp.Password = Password;
             cp.TimeOut = TimeOut;
+            cp.Encrypt = Encrypt;
             cp.IsConnected = IsConnected;
             this.Add(cp);
         }
@@ -335,7 +343,7 @@ namespace PragmaSQL.Core
 
             foreach (ConnectionParams cp in _connParams)
             {
-                if (!cp.IsEncrypted)
+                if (!cp.SaveEncrypted)
                     SaveEncrypted = true;
                 else
                     cp.Password = EncryiptionHelper.Decrypt(cp.Password);
@@ -361,7 +369,7 @@ namespace PragmaSQL.Core
             string normalServerName = String.Empty;
             foreach (ConnectionParams cp in _connParams)
             {
-                if (cp.IsEncrypted)
+                if (cp.SaveEncrypted)
                     cp.Password = EncryiptionHelper.Decrypt(cp.Password);
 
                 normalServerName = cp.Server.Trim().ToLowerInvariant();
@@ -376,7 +384,7 @@ namespace PragmaSQL.Core
         {
             foreach (ConnectionParams cp in connParams)
             {
-                cp.IsEncrypted = true;
+                cp.SaveEncrypted = true;
                 cp.Password = EncryiptionHelper.Encrypt(cp.Password);
             }
             /*
