@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Script_GetInlinedTableFunctions" xml:space="preserve">
     <value>declare @compLevel smallint
@@ -545,31 +545,77 @@ order by
  so.name</value>
   </data>
   <data name="Script_GetColsAndParams" xml:space="preserve">
-    <value>select   
-  sc.*, case when LOWER( st.name) = 'nvarchar' or  LOWER( st.name) = 'nchar' THEN sc.length / 2 ELSE sc.length END 'lengthx' 
-, so.type as parentType
-, st.name as typename
-, case  when ( sc.status &amp; 0x08)  = 0x08 
-    then 1
-    else 0
-  end as allowNulls
-, case when ( sc.status &amp; 0x40 ) = 0x40
-    then 1
-    else 0
-  end as isOutputParam
-, case when( sc.status &amp; 0x80 = 0x80 )
-    then 1
-    else 0
-  end as IsIdentity,CASE WHEN {0} &lt; 90 THEN  USER_NAME(so.uid) ELSE SCHEMA_NAME(so.uid) END 'owner'
-from syscolumns sc
-join sysobjects so on sc.id = so.id
-left outer join systypes st on sc.xtype = st.xusertype
-where ISNULL(sc.name,'') &lt;&gt; '' 
-and sc.id = @id
-order by 
-IsIdentity DESC
-,  sc.colorder
-, sc.name
+    <value>;WITH cols AS
+(
+    SELECT
+        c.column_id                               AS colorder,
+        c.name                                    AS name,
+        CASE WHEN ty.is_user_defined = 1
+             THEN QUOTENAME(SCHEMA_NAME(ty.schema_id)) + N'.' + QUOTENAME(ty.name)
+             ELSE ty.name
+        END                                       AS typename,
+        CASE
+            WHEN ty.name IN (N'nchar', N'nvarchar')
+                 THEN CASE WHEN c.max_length = -1 THEN -1 ELSE c.max_length / 2 END
+            ELSE c.max_length
+        END                                       AS lengthx,
+        c.[precision]                             AS prec,
+        c.scale                                   AS scale,
+        o.[type]                                  AS parenttype,
+
+        -- legacy-compatible bitmask:
+        -- 0x08 = nullable, 0x80 = identity, (optionally 0x10 = computed, 0x04 = rowguid)
+        ((CASE WHEN c.is_nullable = 1 THEN 0x08 ELSE 0 END) +
+         (CASE WHEN c.is_identity = 1 THEN 0x80 ELSE 0 END) +
+         (CASE WHEN c.is_computed = 1 THEN 0x10 ELSE 0 END) +
+         (CASE WHEN c.is_rowguidcol = 1 THEN 0x04 ELSE 0 END)) AS status,
+
+        CONVERT(bit, c.is_nullable)               AS allownulls,
+        CONVERT(bit, 0)                           AS isoutputparam,
+        CONVERT(bit, c.is_identity)               AS isidentity,
+        SCHEMA_NAME(o.schema_id)                  AS owner
+    FROM sys.columns AS c
+    JOIN sys.objects AS o     ON o.object_id = c.object_id
+    JOIN sys.types   AS ty    ON ty.user_type_id = c.user_type_id
+    WHERE c.object_id = @id
+),
+prms AS
+(
+    SELECT
+        p.parameter_id                            AS colorder,
+        p.name                                    AS name,
+        CASE WHEN ty.is_user_defined = 1
+             THEN QUOTENAME(SCHEMA_NAME(ty.schema_id)) + N'.' + QUOTENAME(ty.name)
+             ELSE ty.name
+        END                                       AS typename,
+        CASE
+            WHEN ty.name IN (N'nchar', N'nvarchar')
+                 THEN CASE WHEN p.max_length = -1 THEN -1 ELSE p.max_length / 2 END
+            ELSE p.max_length
+        END                                       AS lengthx,
+        p.[precision]                             AS prec,
+        p.scale                                   AS scale,
+        o.[type]                                  AS parenttype,
+
+        -- legacy-compatible bitmask for parameters:
+        -- 0x08 = nullable, 0x40 = output
+        ((CASE WHEN p.is_nullable = 1 THEN 0x08 ELSE 0 END) +
+         (CASE WHEN p.is_output   = 1 THEN 0x40 ELSE 0 END))   AS status,
+
+        CONVERT(bit, p.is_nullable)               AS allownulls,
+        CONVERT(bit, p.is_output)                 AS isoutputparam,
+        CONVERT(bit, 0)                           AS isidentity,
+        SCHEMA_NAME(o.schema_id)                  AS owner
+    FROM sys.parameters AS p
+    JOIN sys.objects    AS o  ON o.object_id = p.object_id
+    JOIN sys.types      AS ty ON ty.user_type_id = p.user_type_id
+    WHERE p.object_id = @id
+)
+SELECT *
+FROM cols
+UNION ALL
+SELECT * FROM prms
+ORDER BY isidentity DESC, colorder, name;
 </value>
   </data>
   <data name="Script_ForeignKeys" xml:space="preserve">

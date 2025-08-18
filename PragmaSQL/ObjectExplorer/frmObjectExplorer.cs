@@ -1183,20 +1183,25 @@ namespace PragmaSQL
             {
                 while (reader.Read())
                 {
+                    if(reader["name"] == DBNull.Value || reader["typename"] == DBNull.Value)
+                    {
+                        continue;
+                    }
+
                     string pName = (string)reader["name"];
                     string name = (string)reader["name"];
 
                     //pName = pName + " [ " + (string)reader["typename"] + " (" + ((short)reader["length"]).ToString() + ") " + "]";
                     int len = reader["lengthx"].GetType() == typeof(DBNull) ? (int)0 : (int)reader["lengthx"];
-                    short prec = reader["prec"].GetType() == typeof(DBNull) ? (short)0 : (short)reader["prec"];
-                    int scale = reader["scale"].GetType() == typeof(DBNull) ? 0 : (int)reader["scale"];
+                    short prec = reader["prec"].GetType() == typeof(DBNull) ? (byte)0 : (byte)reader["prec"];
+                    int scale = reader["scale"].GetType() == typeof(DBNull) ? 0 : (byte)reader["scale"];
 
                     pName = pName + " [ " + DBConstants.GetFullyQualifiedDataTypeName(false, (string)reader["typename"], len, scale, prec) + "]";
 
                     int type = -1;
 
 
-                    if ((int)reader["isoutparam"] == 1)
+                    if ((bool)reader["isoutputparam"])
                     {
                         type = DBObjectType.ParameterOut;
                     }
@@ -1246,7 +1251,7 @@ namespace PragmaSQL
                     }
                     else if (nodeType == DBObjectType.UserTable || nodeType == DBObjectType.SystemTable || nodeType == DBObjectType.View)
                     {
-                        byte status = (byte)reader["status"];
+                        var status = (int)reader["status"];
                         if ((status & 128) == 128)
                         {
                             type = DBObjectType.IdentityCol;
