@@ -130,7 +130,10 @@ namespace PragmaSQL.Core
             var connStr = GetConnectionString(open: open, enablePooling: enablePooling);
             SqlConnection result = new SqlConnection(connStr);
             if (open)
+            {
                 result.Open();
+            }
+
             return result;
         }
 

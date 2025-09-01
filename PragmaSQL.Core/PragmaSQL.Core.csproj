@@ -385,6 +385,7 @@
     <Compile Include="Database\ConnectionDialog\frmConnectionRepository.Designer.cs">
       <DependentUpon>frmConnectionRepository.cs</DependentUpon>
     </Compile>
+    <Compile Include="PragmaSqlConnectionSource.cs" />
     <Compile Include="Recover\RecoverContent.cs" />
     <Compile Include="Resources\DBScripts.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -404,6 +405,7 @@
     <Compile Include="ResultRenderers\IResultRendererFactory.cs" />
     <Compile Include="ResultRenderers\ScriptExecutionResult.cs" />
     <Compile Include="Services\IResultRendererService.cs" />
+    <Compile Include="SqlConnectionExtensions.cs" />
     <Compile Include="UserControls\DataFilter.Designer.cs">
       <DependentUpon>DataFilter.cs</DependentUpon>
     </Compile>

@@ -30,8 +30,8 @@ namespace PragmaSQL
       {
         frm.MdiParent = Program.MainForm;
         frm.Show();
-				frm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			}
+                frm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            }
       else
       {
         frm.Show(Program.MainForm.DockPanel);

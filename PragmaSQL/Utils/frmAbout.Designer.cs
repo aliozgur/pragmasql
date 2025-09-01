@@ -126,7 +126,7 @@
             this.linkLabel12.AutoSize = true;
             this.linkLabel12.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel12.Location = new System.Drawing.Point(376, 104);
+            this.linkLabel12.Location = new System.Drawing.Point(345, 104);
             this.linkLabel12.Name = "linkLabel12";
             this.linkLabel12.Size = new System.Drawing.Size(69, 13);
             this.linkLabel12.TabIndex = 33;
@@ -469,7 +469,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(7, 183);
+            this.label22.Location = new System.Drawing.Point(6, 183);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(130, 13);
             this.label22.TabIndex = 57;
@@ -496,7 +496,7 @@
             this.linkLabel11.Size = new System.Drawing.Size(148, 13);
             this.linkLabel11.TabIndex = 55;
             this.linkLabel11.TabStop = true;
-            this.linkLabel11.Text = "Current PragmaSQL Logo";
+            this.linkLabel11.Text = "Original PragmaSQL Logo";
             // 
             // label14
             // 
@@ -744,18 +744,18 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(308, 5);
+            this.label2.Location = new System.Drawing.Point(277, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 17);
+            this.label2.Size = new System.Drawing.Size(298, 17);
             this.label2.TabIndex = 30;
-            this.label2.Text = "T-SQL Editor for Miscrosoft SQL Server";
+            this.label2.Text = "Database Editor for Miscrosoft SQL Server";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabel1.Location = new System.Drawing.Point(310, 104);
+            this.linkLabel1.Location = new System.Drawing.Point(279, 104);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(62, 13);
             this.linkLabel1.TabIndex = 29;
@@ -769,7 +769,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(309, 81);
+            this.label4.Location = new System.Drawing.Point(278, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(216, 13);
             this.label4.TabIndex = 28;
@@ -792,11 +792,11 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(310, 39);
+            this.label23.Location = new System.Drawing.Point(279, 30);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(301, 13);
+            this.label23.Size = new System.Drawing.Size(354, 13);
             this.label23.TabIndex = 27;
-            this.label23.Text = "SQL Server Versions: 2000,2005,2008, 2012, 2016 and 2022";
+            this.label23.Text = "Supported SQL Server Versions: 2000,2005,2008, 2012, 2016 and 2022";
             // 
             // lblVersion
             // 
@@ -804,7 +804,7 @@
             this.lblVersion.BackColor = System.Drawing.Color.Transparent;
             this.lblVersion.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblVersion.ForeColor = System.Drawing.Color.Black;
-            this.lblVersion.Location = new System.Drawing.Point(310, 61);
+            this.lblVersion.Location = new System.Drawing.Point(279, 61);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(52, 13);
             this.lblVersion.TabIndex = 27;

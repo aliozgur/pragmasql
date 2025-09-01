@@ -22,9 +22,9 @@ namespace PragmaSQL
         private DataTable _tblObjects = null;
         private BindingSource _bsObjects = new BindingSource();
         private SqlConnection _conn = new SqlConnection();
-
-        private string _currentDatabase = String.Empty;
-        private string _defaultDatabase = String.Empty;
+        
+        private string _currentDatabase = string.Empty;
+        private string _defaultDatabase = string.Empty;
         private bool _parsedObjectsAvailable = false;
 
         private bool _isInitialized = false;
@@ -79,17 +79,14 @@ namespace PragmaSQL
             }
         }
 
-        public void SetConnection(SqlConnection conn)
+        public void SetConnection(ConnectionParams conn)
         {
             if (conn == null)
             {
                 throw new Exception("Database connection is null!");
             }
 
-            if (conn.State != ConnectionState.Open)
-            {
-                throw new InvalidConnectionState("Connection is in state \"" + _conn.State.ToString() + "\".");
-            }
+           
 
             if (_conn.State == ConnectionState.Open)
             {
@@ -101,7 +98,7 @@ namespace PragmaSQL
             PopulateDatabasesAndUsers(false);
         }
 
-        public void InitializeCompletionProposal(SqlConnection conn)
+        public void InitializeCompletionProposal(ConnectionParams conn)
         {
             _currentDatabase = String.Empty;
             SetConnection(conn);

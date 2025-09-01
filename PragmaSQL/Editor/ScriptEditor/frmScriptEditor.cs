@@ -630,7 +630,7 @@ namespace PragmaSQL
                 FireBeforeCodeCompletionShowed(CodeCompletionType.DatabaseObjectList, requestedFor);
 
                 Point final = GetCaretPosition();
-                _codeCompWindow.SetConnection(SqlConn);
+                _codeCompWindow.SetConnection(SqlConnParams);
 
                 SqlAnalyzerResults r = null;
                 if (_canAnalyzeSql)
@@ -4376,7 +4376,7 @@ namespace PragmaSQL
 
             if (changeOk && _codeCompWindow != null)
             {
-                _codeCompWindow.InitializeCompletionProposal(SqlConn);
+                _codeCompWindow.InitializeCompletionProposal(SqlConnParams);
             }
         }
 

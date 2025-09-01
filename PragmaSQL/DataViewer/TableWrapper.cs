@@ -14,26 +14,26 @@ namespace PragmaSQL
 {
   public class TableWrapper 
   {
-		private string _owner;
-		public string Owner
-		{
-			get { return _owner; }
-			set { _owner = value; }
-		}
+        private string _owner;
+        public string Owner
+        {
+            get { return _owner; }
+            set { _owner = value; }
+        }
 
-		private string _name;
-		public string Name
-		{
-			get { return _name; }
-			set { _name = value; }
-		}
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
 
-		private long _id;
-		public long ID
-		{
-			get { return _id; }
-			set { _id = value; }
-		}
+        private long _id;
+        public long ID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
     private string _fileGroup;
     public string FileGroup
@@ -68,40 +68,40 @@ namespace PragmaSQL
       }
     }
 
-		IDictionary<string, ColumnWrapper> _computedCols = new Dictionary<string, ColumnWrapper>();
-		public IDictionary<string, ColumnWrapper> ComputedCols
-		{
-			get { return _computedCols; }
-		}
+        IDictionary<string, ColumnWrapper> _computedCols = new Dictionary<string, ColumnWrapper>();
+        public IDictionary<string, ColumnWrapper> ComputedCols
+        {
+            get { return _computedCols; }
+        }
 
 
-		public string NormalizedName
-		{
-			get
-			{
-				return TableWrapper.ReplaceQuatations(_name);
-			}
-		}
+        public string NormalizedName
+        {
+            get
+            {
+                return TableWrapper.ReplaceQuatations(_name);
+            }
+        }
 
-		/// <summary>
-		/// owner.name
-		/// <para>Special characters removed</para>
-		/// </summary>
-		public string NormalizedFullName
-		{
-			get
-			{
-				return TableWrapper.ReplaceQuatations(_owner) + "." + TableWrapper.ReplaceQuatations(_name);
-			}
-		}
+        /// <summary>
+        /// owner.name
+        /// <para>Special characters removed</para>
+        /// </summary>
+        public string NormalizedFullName
+        {
+            get
+            {
+                return TableWrapper.ReplaceQuatations(_owner) + "." + TableWrapper.ReplaceQuatations(_name);
+            }
+        }
 
-		public string FullName
-		{
-			get
-			{
-				return _owner + "." + _name;
-			}
-		}
+        public string FullName
+        {
+            get
+            {
+                return _owner + "." + _name;
+            }
+        }
 
     public TableWrapper( )
     {
@@ -120,14 +120,14 @@ namespace PragmaSQL
       this.ID = id;
     }
 
-		public TableWrapper(string name)
-			:this()
-		{
-			this.Name = name;
-			LoadPropsUsingName();
-		}
+        public TableWrapper(string name)
+            :this()
+        {
+            this.Name = name;
+            LoadPropsUsingName();
+        }
 
-		public void LoadPropsUsingId( )
+        public void LoadPropsUsingId( )
     {
       string cmdText = String.Empty;
       using (SqlConnection conn = _cp.CreateSqlConnection(true, false))
@@ -138,7 +138,7 @@ namespace PragmaSQL
         SqlDataReader reader = null;
         try
         {
-					reader = TableWrapper.ExecuteReader(cmdText, conn);
+                    reader = TableWrapper.ExecuteReader(cmdText, conn);
 
           while (reader.Read())
           {
@@ -183,13 +183,13 @@ namespace PragmaSQL
         SqlDataReader reader = null;
         try
         {
-					reader = TableWrapper.ExecuteReader(cmdText, conn);
+                    reader = TableWrapper.ExecuteReader(cmdText, conn);
 
           while (reader.Read())
           {
             this.ID = reader.GetInt32(2);
-						this.Owner = reader.GetString(1);
-					}
+                        this.Owner = reader.GetString(1);
+                    }
         }
         finally
         {
@@ -233,7 +233,7 @@ namespace PragmaSQL
     public void LoadColumns( )
     {
       _columns.Clear();
-			_computedCols.Clear();
+            _computedCols.Clear();
 
       string cmdText = "";
       cmdText += "declare @cmplevel int select @cmplevel = cmptlevel from  master..sysdatabases where name = DB_NAME()\r\n";
@@ -287,15 +287,15 @@ namespace PragmaSQL
 
       using (SqlConnection conn = _cp.CreateSqlConnection(true, false))
       {
-				DataTable columnsDataTable = TableWrapper.ExecuteDataTable(cmdText, conn);
+                DataTable columnsDataTable = TableWrapper.ExecuteDataTable(cmdText, conn);
 
-				DataTable dscTbl = TableWrapper.ExecuteDataTable(cmdDesc, conn);
+                DataTable dscTbl = TableWrapper.ExecuteDataTable(cmdDesc, conn);
         DataColumn[] dscPkCols = new DataColumn[2];
         dscPkCols[0] = dscTbl.Columns["objname"];
         dscPkCols[1] = dscTbl.Columns["objtype"];
         dscTbl.PrimaryKey = dscPkCols;
 
-				DataTable defTbl = TableWrapper.ExecuteDataTable(cmdDefaults, conn);
+                DataTable defTbl = TableWrapper.ExecuteDataTable(cmdDefaults, conn);
         DataColumn[] defPkCols = new DataColumn[1];
         defPkCols[0] = defTbl.Columns["colName"];
         defTbl.PrimaryKey = defPkCols;
@@ -304,57 +304,57 @@ namespace PragmaSQL
         {
           ColumnWrapper newColumn = new ColumnWrapper();
           newColumn.Name = DbNullSafeToString(columnRow["name"]);
-					newColumn.DataType = DbNullSafeToString(columnRow["datatype"]);
+                    newColumn.DataType = DbNullSafeToString(columnRow["datatype"]);
 
-					newColumn.Width = DbNullSafeToString(columnRow["length"]);
+                    newColumn.Width = DbNullSafeToString(columnRow["length"]);
           newColumn.Scale = DbNullSafeToString(columnRow["scale"]);
-					newColumn.IsIdentity = DbNullSafeToBool(columnRow["identity"]);
-					newColumn.IsComputed = DbNullSafeToBool(columnRow["iscomputed"]);
+                    newColumn.IsIdentity = DbNullSafeToBool(columnRow["identity"]);
+                    newColumn.IsComputed = DbNullSafeToBool(columnRow["iscomputed"]);
 
-					newColumn.Formula = DbNullSafeToString(columnRow["formula"]);
+                    newColumn.Formula = DbNullSafeToString(columnRow["formula"]);
 
-					newColumn.DefaultConstraint = DbNullSafeToString(columnRow["defConstraint"]);
+                    newColumn.DefaultConstraint = DbNullSafeToString(columnRow["defConstraint"]);
 
-					newColumn.AllowNulls = DbNullSafeToBool(columnRow["isnull"]);
+                    newColumn.AllowNulls = DbNullSafeToBool(columnRow["isnull"]);
           newColumn.ColId = DbNullSafeToString(columnRow["colid"]);
           newColumn.Precision = DbNullSafeToString(columnRow["prec"]);
           newColumn.RuleBinding = DbNullSafeToString(columnRow["ruleBindName"]);
           newColumn.Collation = DbNullSafeToString(columnRow["collation"]);
-					newColumn.CollationId = TableWrapper.IsDbValueValid(columnRow["collationid"]) ? (int)columnRow["collationid"] : -1; ;
+                    newColumn.CollationId = TableWrapper.IsDbValueValid(columnRow["collationid"]) ? (int)columnRow["collationid"] : -1; ;
 
           if (newColumn.IsIdentity)
           {
-						newColumn.Seed = ((int)(TableWrapper.IsDbValueValid(columnRow["ident_seed"]) ? (decimal)columnRow["ident_seed"] : 0)).ToString();
-						newColumn.Increment = ((int)(TableWrapper.IsDbValueValid(columnRow["ident_increment"]) ? (decimal)columnRow["ident_increment"] : 0)).ToString();
+                        newColumn.Seed = ((int)(TableWrapper.IsDbValueValid(columnRow["ident_seed"]) ? (decimal)columnRow["ident_seed"] : 0)).ToString();
+                        newColumn.Increment = ((int)(TableWrapper.IsDbValueValid(columnRow["ident_increment"]) ? (decimal)columnRow["ident_increment"] : 0)).ToString();
           }
 
 
           //Primary key
-					newColumn.IsPrimaryKey = TableWrapper.IsDbValueValid(columnRow["IsInPK"]) && (bool)columnRow["IsInPK"] == true;
+                    newColumn.IsPrimaryKey = TableWrapper.IsDbValueValid(columnRow["IsInPK"]) && (bool)columnRow["IsInPK"] == true;
 
 
           //Default
           DataRow defRow = defTbl.Rows.Find(newColumn.Name);
           if (defRow != null)
           {
-						if (TableWrapper.IsDbValueValid(defRow["sysconst"]) && (int)defRow["sysconst"] == 0)
+                        if (TableWrapper.IsDbValueValid(defRow["sysconst"]) && (int)defRow["sysconst"] == 0)
             {
               newColumn.Default = "";
               newColumn.DefaultBinding = TableWrapper.IsDbValueValid(defRow["defName"]) ? (string)defRow["defName"] : String.Empty;
             }
             else
             {
-							newColumn.Default = TableWrapper.IsDbValueValid(defRow["text"]) ? ((string)defRow["text"]).Trim('(', ')') : String.Empty;
+                            newColumn.Default = TableWrapper.IsDbValueValid(defRow["text"]) ? ((string)defRow["text"]).Trim('(', ')') : String.Empty;
               newColumn.DefaultBinding = "";
             }
           }
           
-					_columns.Add(newColumn);
+                    _columns.Add(newColumn);
 
-					if (newColumn.IsComputed)
-					{
-						_computedCols.Add(newColumn.LowerName, newColumn);
-					}
+                    if (newColumn.IsComputed)
+                    {
+                        _computedCols.Add(newColumn.LowerName, newColumn);
+                    }
         }
       }
     }
@@ -377,7 +377,7 @@ namespace PragmaSQL
       cmdtext += " SELECT sysconstraints.constid as id, OBJECT_NAME(sysconstraints.constid) as ConstName, 'FK' as ConstType FROM sysconstraints";
       cmdtext += " WHERE sysconstraints.id=" + this.ID + " AND ((sysconstraints.status & 0x3)=0x3)";
 
-			return TableWrapper.ExecuteDataTable(cmdtext, _cp);
+            return TableWrapper.ExecuteDataTable(cmdtext, _cp);
     }
 
     public DataTable GetDependencies( )
@@ -421,20 +421,20 @@ namespace PragmaSQL
       cmdtext += " FROM        dbo.sysreferences INNER JOIN dbo.sysobjects ON dbo.sysreferences.rkeyid = dbo.sysobjects.id";
       cmdtext += " WHERE       (dbo.sysreferences.fkeyid = OBJECT_ID('" + this.NormalizedFullName + "'))";
 
-			return TableWrapper.ExecuteDataTable(cmdtext, _cp);
+            return TableWrapper.ExecuteDataTable(cmdtext, _cp);
     }
 
-		public ColumnWrapper GetIdentityColumn()
-		{
-			foreach (ColumnWrapper col in _columns)
-			{
-				if (col.IsIdentity)
-					return col;
-			}
-			return null;
-		}
+        public ColumnWrapper GetIdentityColumn()
+        {
+            foreach (ColumnWrapper col in _columns)
+            {
+                if (col.IsIdentity)
+                    return col;
+            }
+            return null;
+        }
 
-		public bool HasIdentityColumn()
+        public bool HasIdentityColumn()
     {
       foreach (ColumnWrapper col in _columns)
       {
@@ -445,138 +445,138 @@ namespace PragmaSQL
       return false;
     }
 
-		public bool HasComputedColumn()
-		{
-			return _computedCols.Count > 0;
-		}
+        public bool HasComputedColumn()
+        {
+            return _computedCols.Count > 0;
+        }
 
     public override string ToString( )
     {
       return this._id.ToString() + ":" + this._name;
     }
 
-		#region Execution helper functions
-		public static DataTable ExecuteDataTable(string cmdText, ConnectionParams cp)
-		{
-			if (cp == null)
-			{
-				throw new Exception("Connection parameters not specified!");
-			}
+        #region Execution helper functions
+        public static DataTable ExecuteDataTable(string cmdText, ConnectionParams cp)
+        {
+            if (cp == null)
+            {
+                throw new Exception("Connection parameters not specified!");
+            }
 
-			return ExecuteDataTable(cmdText, cp.CreateSqlConnection(true, false));
-		}
+            return ExecuteDataTable(cmdText, cp.CreateSqlConnection(true, false));
+        }
 
-		public static DataTable ExecuteDataTable(string cmdText, SqlConnection conn)
-		{
-			if (conn == null)
-			{
-				throw new Exception("Connection not specified!");
-			}
+        public static DataTable ExecuteDataTable(string cmdText, SqlConnection conn)
+        {
+            if (conn == null)
+            {
+                throw new Exception("Connection not specified!");
+            }
 
-			DataTable result = new DataTable();
-			SqlDataAdapter adapter = new SqlDataAdapter(cmdText, conn);
-			adapter.Fill(result);
-			return result;
-		}
+            DataTable result = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdText, conn);
+            adapter.Fill(result);
+            return result;
+        }
 
-		public static SqlDataReader ExecuteReader(string cmdText, SqlConnection conn)
-		{
-			if (conn == null)
-			{
-				throw new Exception("Connection not specified!");
-			}
+        public static SqlDataReader ExecuteReader(string cmdText, SqlConnection conn)
+        {
+            if (conn == null)
+            {
+                throw new Exception("Connection not specified!");
+            }
 
-			SqlCommand cmd = new SqlCommand(cmdText, conn);
-			return cmd.ExecuteReader();
-		}
+            SqlCommand cmd = new SqlCommand(cmdText, conn);
+            return cmd.ExecuteReader();
+        }
 
-		public static void ExecuteCommand(string cmdText, ConnectionParams cp)
-		{
-			if (cp == null)
-			{
-				throw new Exception("Connection parameters not specified!");
-			}
-			ExecuteCommand(cmdText, cp.CreateSqlConnection(true, false));
-		}
+        public static void ExecuteCommand(string cmdText, ConnectionParams cp)
+        {
+            if (cp == null)
+            {
+                throw new Exception("Connection parameters not specified!");
+            }
+            ExecuteCommand(cmdText, cp.CreateSqlConnection(true, false));
+        }
 
-		public static void ExecuteCommand(string cmdText, SqlConnection conn)
-		{
-			ExecuteCommand(cmdText, conn, null);
-		}
+        public static void ExecuteCommand(string cmdText, SqlConnection conn)
+        {
+            ExecuteCommand(cmdText, conn, null);
+        }
 
-		public static void ExecuteCommand(string cmdText, SqlConnection conn, SqlTransaction tran)
-		{
-			if (conn == null)
-			{
-				throw new Exception("Connection parameters not specified!");
-			}
+        public static void ExecuteCommand(string cmdText, SqlConnection conn, SqlTransaction tran)
+        {
+            if (conn == null)
+            {
+                throw new Exception("Connection parameters not specified!");
+            }
 
-			SqlCommand cmd = new SqlCommand(cmdText, conn);
-			if (tran != null)
-				cmd.Transaction = tran;
+            SqlCommand cmd = new SqlCommand(cmdText, conn);
+            if (tran != null)
+                cmd.Transaction = tran;
 
-			cmd.ExecuteNonQuery();
-		}
+            cmd.ExecuteNonQuery();
+        }
 
-		#endregion //Execution helper functions
+        #endregion //Execution helper functions
 
-		#region General utility functions
-		public static string ReplaceQuatations(string value)
-		{
-			return value.Replace("'", "''");
-		}
+        #region General utility functions
+        public static string ReplaceQuatations(string value)
+        {
+            return value.Replace("'", "''");
+        }
 
-		public static string Qualify(string value)
-		{
-			return "[" + value + "]";
-		}
+        public static string Qualify(string value)
+        {
+            return "[" + value + "]";
+        }
 
-		public static string GetFormattedNow()
-		{
-			DateTime t = DateTime.UtcNow;
-			return
-				t.Year.ToString("0000") + t.Month.ToString("00") + t.Day.ToString("00") + "_" + t.Hour.ToString("00") + t.Minute.ToString("00") + t.Second.ToString("00") + t.Millisecond.ToString("000");
+        public static string GetFormattedNow()
+        {
+            DateTime t = DateTime.UtcNow;
+            return
+                t.Year.ToString("0000") + t.Month.ToString("00") + t.Day.ToString("00") + "_" + t.Hour.ToString("00") + t.Minute.ToString("00") + t.Second.ToString("00") + t.Millisecond.ToString("000");
 
-		}
+        }
 
-		public static bool IsDbValueValid(object value)
-		{
-			return (value != null && value.GetType() != typeof(DBNull));
-		}
+        public static bool IsDbValueValid(object value)
+        {
+            return (value != null && value.GetType() != typeof(DBNull));
+        }
 
-		public static bool IsRowItemValid(DataRow row, int index)
-		{
-			return !(row.ItemArray[index] == null || row.ItemArray[index].GetType() == typeof(DBNull));
-		}
+        public static bool IsRowItemValid(DataRow row, int index)
+        {
+            return !(row.ItemArray[index] == null || row.ItemArray[index].GetType() == typeof(DBNull));
+        }
 
-		public static bool IsRowItemValid(DataRow row, string colName)
-		{
-			return !(row[colName] == null || row[colName].GetType() == typeof(DBNull));
-		}
+        public static bool IsRowItemValid(DataRow row, string colName)
+        {
+            return !(row[colName] == null || row[colName].GetType() == typeof(DBNull));
+        }
 
-		public static bool IsGridRowItemValid(DataGridViewRow row, int index)
-		{
-			return !(row.Cells[index].Value == null || row.Cells[index].Value.GetType() == typeof(DBNull));
-		}
+        public static bool IsGridRowItemValid(DataGridViewRow row, int index)
+        {
+            return !(row.Cells[index].Value == null || row.Cells[index].Value.GetType() == typeof(DBNull));
+        }
 
-		public static bool IsReaderItemValid(SqlDataReader reader, string colName)
-		{
-			return !(reader[colName] == null || reader[colName].GetType() == typeof(DBNull));
-		}
+        public static bool IsReaderItemValid(SqlDataReader reader, string colName)
+        {
+            return !(reader[colName] == null || reader[colName].GetType() == typeof(DBNull));
+        }
 
-		public static bool DbNullSafeToBool(object value)
-		{
-			return !TableWrapper.IsDbValueValid(value) ? false : Convert.ToBoolean(value);
-		}
+        public static bool DbNullSafeToBool(object value)
+        {
+            return !TableWrapper.IsDbValueValid(value) ? false : Convert.ToBoolean(value);
+        }
 
-		public static string DbNullSafeToString(object value)
-		{
-			return !TableWrapper.IsDbValueValid(value) ? String.Empty : value.ToString();
-		}
+        public static string DbNullSafeToString(object value)
+        {
+            return !TableWrapper.IsDbValueValid(value) ? String.Empty : value.ToString();
+        }
 
 
-		#endregion //General utility functions
+        #endregion //General utility functions
 
-	}
+    }
 
 }
